@@ -1,0 +1,78 @@
+////////// LAYOUT WRAPPER //////////
+
+#layout {
+	width: 100%;
+	min-height: 100vh;
+}
+
+////////// LAYOUT WRAPPER //////////
+
+
+////////// CSSTRANSITION CLASSES //////////
+
+.fade-enter {
+	opacity: 0;
+}
+
+.fade-enter-active {
+	opacity: 1;
+  transition: opacity 300ms ease-out;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms ease-out;
+}
+
+////////// CSSTRANSITION CLASSES //////////
+
+
+
+
+////////// PAGE WRAPPERS //////////
+
+.page {
+	// Absolute position to allow smooth transitions
+	// when both dom elements are present
+	position: absolute;
+}
+
+////////// PAGE WRAPPERS //////////
+
+
+
+
+////////// NAVBAR //////////
+
+#navbar {
+	width: 100%;
+	position: fixed;
+	z-index: 1;
+}
+
+.ddm-icon {
+    width: 55px;
+    height: 55px;
+
+    position: absolute;
+    top: 10px; left: 10px;
+}
+
+////////// NAVBAR //////////
+
+
+
+
+////////// CONTENT WRAPPER //////////
+
+#content {
+	width: 80%;
+	margin: auto 50px;
+	position: relative;
+}
+
+////////// CONTENT WRAPPER //////////
