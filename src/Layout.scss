@@ -8,6 +8,8 @@
 ////////// LAYOUT WRAPPER //////////
 
 
+
+
 ////////// CSSTRANSITION CLASSES //////////
 
 .fade-enter {
@@ -16,7 +18,7 @@
 
 .fade-enter-active {
 	opacity: 1;
-  transition: opacity 300ms ease-out;
+  transition: opacity 500ms ease-out;
 }
 
 .fade-exit {
@@ -25,7 +27,7 @@
 
 .fade-exit-active {
   opacity: 0;
-  transition: opacity 300ms ease-out;
+  transition: opacity 500ms ease-out;
 }
 
 ////////// CSSTRANSITION CLASSES //////////
@@ -39,6 +41,7 @@
 	// Absolute position to allow smooth transitions
 	// when both dom elements are present
 	position: absolute;
+	margin-top: 50px;
 }
 
 ////////// PAGE WRAPPERS //////////

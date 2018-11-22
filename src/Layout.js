@@ -1,10 +1,9 @@
 import React from 'react'
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import { BrowserRouter, Link, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Link, Route } from 'react-router-dom'
 import Helmet from 'react-helmet'
 
 import  NavComponents from './NavComponents'
-import  BookComponents from './BookComponents'
 import './Layout.scss'
 
 
@@ -45,13 +44,8 @@ const Content = () => (
 	<Route render={({ location }) => (
 		<div id='content' > 
 			<TransitionGroup style={{ width: '100%' }}>
-				<CSSTransition key={ location.key } classNames="fade" timeout={ 300 } unmountOnExit >
-
-					<div>
-						<NavComponents location={location}/>
-						<BookComponents location={location}/>
-					</div>
-
+				<CSSTransition key={ location.key } classNames="fade" timeout={ 500 } unmountOnExit >
+					<NavComponents location={location}/>
 				</CSSTransition>
 			</TransitionGroup>
 		</div>
