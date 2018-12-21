@@ -1,18 +1,16 @@
 import React from 'react'
-import { Link, Route, Switch } from 'react-router-dom'
+import { Link, Route } from 'react-router-dom'
 
 export default ({ prefix }) => (
 	<div>
-		<Switch>
-			{ Chapters.map(x => 
-				<Route key={x.des} path={prefix + '/chapter' + x.id} component={x.component} /> 
-			)}
-			<Route exact path={prefix} component={ () => (
-				<div className="page" >
-					{ Chapters.map(x => <ChapterPreview key={x.id} prefix={prefix} data={x} /> )}
-				</div>
-			)}/>
-		</Switch>
+		{ Chapters.map(x => 
+			<Route key={x.des} path={prefix + '/chapter' + x.id} component={x.component} /> 
+		)}
+		<Route exact path={prefix} component={ () => (
+			<div className="page" >
+				{ Chapters.map(x => <ChapterPreview key={x.id} prefix={prefix} data={x} /> )}
+			</div>
+		)}/>
 	</div>
 );
 

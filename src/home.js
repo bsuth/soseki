@@ -3,73 +3,18 @@ import { Switch, Route, Link } from 'react-router-dom'
 import Botchan from './botchan/index'
 
 
-////////// GLOBALS //////////
-
-// CSS ID's
-const HOME_ID = "home";
-
-////////// GLOBALS //////////
-
-
-
-
-////////// INDEX ROUTING //////////
-
-export default ({ location }) => (
-	<Switch location={ location }>
-		{ NavRoutes.map(x => 
-			<Route key={x.path} path={x.path} component={x.component} />
-		)}
-	</Switch>
-);
-
-// Route information for all components that may
-// be accessed via the navigation bar. These components
-// are each quite light and may be convenient, so it's not 
-// very costly to always load them.
-//
-const NavRoutes = [
-	{
-		path: '/about',
-		component: () => <About />
-	},
-	{
-		path: '/features',
-		component: () => <Features />
-	},
-	{
-		path: '/media',
-		component: () => <Media />
-	},
-	{
-		path: '/contact',
-		component: () => <Contact />
-	},
-	{
-		path: '/links',
-		component: () => <Links />
-	},
-	{
-		path: '/',
-		component: () => <Home />
-	}
-];
-
-////////// INDEX ROUTING //////////
-
-
 
 
 ////////// HOME //////////
 
 // NOTE: The wrapping div is NECESSARY, as CSSTransitions requires a hook
 // to apply the various css animation classes.
-const Home = () => (
+export default () => (
 	<div>
 		<Switch>
 			{ Books.map(x => <Route key={x.title} path={x.path} component={x.component} /> )}
 			<Route exact path="/" component={ () => (
-				<div className="page" id={ HOME_ID }>
+				<div className="page" id="home">
 					{ Books.map(x => <BookPreview key={x.title} data={x} /> )}
 				</div>
 			)}/>
@@ -78,72 +23,6 @@ const Home = () => (
 );
 
 ////////// HOME //////////
-
-
-
-
-////////// ABOUT ///////////
-
-const About = () => (
-	<div className="page">
-		<p>Here is the about</p>
-	</div>
-);
-
-////////// ABOUT ///////////
-
-
-
-
-////////// FEATURES ///////////
-
-const Features = () => (
-	<div className="page">
-		<p>Features go here</p>
-	</div>
-);
-
-////////// FEATURES ///////////
-
-
-
-
-////////// MEDIA ///////////
-
-const Media = () => (
-	<div className="page">
-		<p>This is for media</p>
-	</div>
-);
-
-////////// MEDIA ///////////
-
-
-
-
-////////// CONTACT ///////////
-
-const Contact = () => (
-	<div className="page">
-		<p>Contact me for troubles</p>
-	</div>
-);
-
-////////// CONTACT ///////////
-
-
-
-
-////////// LINKS ///////////
-
-const Links = () => (
-	<div className="page">
-		<p>Sausage links</p>
-	</div>
-);
-
-////////// LINKS ///////////
-
 
 
 

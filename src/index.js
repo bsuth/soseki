@@ -1,7 +1,128 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+// React packages
+//
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { TransitionGroup, CSSTransition } from "react-transition-group";
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import Helmet from 'react-helmet'
 
-import './index.scss';
-import Layout from './Layout';
+// pages for navbar
+//
+import Navbar from './components/navbar'
+import Home from './home'
+import About from './about'
+import Features from './features'
+import Media from './media'
+import Contact from './contact'
+import Links from './links'
 
-ReactDOM.render(<Layout />, document.getElementById('root'));
+// styling
+//
+import './index.scss'
+
+
+
+
+////////// CONTENT //////////
+
+// Content wrapper for transitions between pages.
+//
+const Content = () => (
+	<Route render={({ location }) => (
+		<TransitionGroup style={{ width: '100%' }}>
+			<CSSTransition key={ location.key } classNames="fade" timeout={ 300 } unmountOnExit >
+
+				<Switch location={ location }>
+					{ Routes.map(x => 
+						<Route key={x.path} path={x.path} component={x.component} />
+					)}
+				</Switch>
+
+			</CSSTransition>
+		</TransitionGroup>
+	)}/>
+);
+
+
+// Route information for all components that may
+// be accessed via the navbar. 
+// 
+const Routes = [
+	{
+		path: '/about',
+		component: () => <About />
+	},
+	{
+		path: '/features',
+		component: () => <Features />
+	},
+	{
+		path: '/media',
+		component: () => <Media />
+	},
+	{
+		path: '/contact',
+		component: () => <Contact />
+	},
+	{
+		path: '/links',
+		component: () => <Links />
+	},
+	{
+		path: '/',
+		component: () => <Home />
+	}
+];
+
+////////// CONTENT //////////
+
+
+
+
+
+
+
+
+////////// HEAD TAG ///////////
+
+// The <head></head> element of the root html.
+//
+const Head = () => (
+	<Helmet> 
+		<title>Sōseki Project</title>
+		<html lang="en" />
+		<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet" />
+	</Helmet>
+);
+
+////////// HEAD TAG ///////////
+
+
+
+
+
+
+
+
+/////////// MAIN //////////
+
+// 0) Router (for react-router)
+	// 0) Wrapper (for react-router/css) 
+	// Note: BrowserRouter may only have one child
+		// 0) <head></head>
+		// 1) Navbar
+		// 2) Content wrapper
+//
+var Main = (
+	<BrowserRouter>
+		<div>
+			<Head />
+			<Navbar />
+			<Content />
+		</div>
+	</BrowserRouter>
+);
+
+ReactDOM.render(Main, document.getElementById('root'));
+
+/////////// MAIN //////////

@@ -15,11 +15,6 @@ ul {
 	list-style-type: none;
 }
 
-body, {
-	margin: 0;
-	padding: 0;
-}
-
 * {
 	box-sizing: border-box;
 }
@@ -29,11 +24,57 @@ body, {
 
 
 
+////////// DEFAULTS //////////
+
 html, body {
+	margin: 0;
+	padding: 0;
 	width: 100% ;
 	min-height: 100vh;
 
-	background: linear-gradient(#020202, #242424) fixed;
+	background: #080808;
 	color: white;
 	font-family: 'Cormorant Garamond', serif;
+	font-size: 18px;
 }
+
+////////// DEFAULTS //////////
+
+
+
+
+////////// PAGE WRAPPERS //////////
+
+.page {
+	// Absolute position to allow smooth transitions
+	// when both dom elements are present (overlapping transitions)
+	position: absolute;
+	margin-top: 50px;
+}
+
+////////// PAGE WRAPPERS //////////
+
+
+
+
+////////// CSSTRANSITION CLASSES //////////
+
+.fade-enter {
+	opacity: 0;
+}
+
+.fade-enter-active {
+	opacity: 1;
+  transition: opacity 300ms ease-out;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 100ms ease-out;
+}
+
+////////// CSSTRANSITION CLASSES //////////
