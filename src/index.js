@@ -91,7 +91,7 @@ const Head = () => (
 	<Helmet> 
 		<title>Sōseki Project</title>
 		<html lang="en" />
-		<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet"/>
 	</Helmet>
 );
 

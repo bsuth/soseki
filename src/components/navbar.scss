@@ -1,14 +1,79 @@
+@import '../resources/cssglobals';
+
+
+////////// BASE/MOBILE //////////
+
 #navbar {
 	width: 100%;
 	position: fixed;
 	z-index: 1;
-	background: red;
 }
 
-.ddm-icon {
-    width: 55px;
-    height: 55px;
+.navWrapper {
+	width: 100%;
+	height: 100vh;
+	padding: 40px 0;
 
-    position: absolute;
-    top: 10px; left: 10px;
+	position: absolute;
+	top: 0;
+
+	display: flex;
+	flex-direction: column;
+
+	background: rgba(20, 20, 20, 0.8);
+
+	a {
+		flex: auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 }
+
+.navbarIcon {
+	width: 40px;
+	height: 40px;
+	margin: 5px 10px;
+
+	// Necessary to have the navbarIcon appear
+	// above the navbarWrapper
+	position: relative;
+	
+	line {
+		fill: none;
+		stroke: #fff;
+		stroke-width: 2px;
+	}
+}
+
+////////// BASE/MOBILE //////////
+
+
+
+
+////////// TABLET //////////
+
+@media only screen and (min-width: $TABLET) {
+
+#navbar {
+	background: blue;
+}
+
+}
+
+////////// TABLET //////////
+
+
+
+
+////////// DESKTOP //////////
+
+@media only screen and (min-width: $DESKTOP) {
+
+#navbar {
+	background: green;
+}
+
+}
+
+////////// DESKTOP //////////
