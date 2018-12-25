@@ -4,7 +4,7 @@ import { Link, Route } from 'react-router-dom'
 export default ({ prefix }) => (
 	<div>
 		{ Chapters.map(x => 
-			<Route key={x.desc} path={prefix + '/chapter' + x.id} component={x.component} /> 
+			<Route key={x.des} path={prefix + '/chapter' + x.id} component={x.component} /> 
 		)}
 		<Route exact path={prefix} component={ () => (
 			<div className="page" >

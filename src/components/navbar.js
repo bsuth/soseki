@@ -97,6 +97,10 @@ export default class Navbar extends React.Component {
 		window.addEventListener('resize', this.handleResize);
 	}
 
+	componentWillUnmount() {
+		window.removeEventListener('resize', this.handleResize);
+	}
+
 	// Handle onClick of NavbarIcon.
 	handleClick = () => {
 		this.setState((state) => ({ 

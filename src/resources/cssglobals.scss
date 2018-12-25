@@ -1,11 +1,28 @@
 //
-// GLOBAL VARIABLES
-// ----------------
+// CSS GLOBAL VARIABLES
+// --------------------
 //
 // Global values to be used across all sass files.
 // This file is imported via @import, to allow 
 // for maintainability.
+// 
+// NOTE: The media query values should agree
+// with those from the cssglobals file.
 //
 
+
+//
+// MEDIA QUERIES
+// -------------
+//
 $TABLET: 600px;
 $DESKTOP: 1024px;
+
+
+
+
+//
+// COLORS
+// ------
+//
+$WHITE: #e0e0e0;

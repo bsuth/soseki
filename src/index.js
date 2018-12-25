@@ -1,5 +1,4 @@
 // React packages
-//
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { TransitionGroup, CSSTransition } from "react-transition-group";
@@ -7,7 +6,6 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Helmet from 'react-helmet'
 
 // pages for navbar
-//
 import Navbar from './components/navbar'
 import Home from './home'
 import About from './about'
@@ -17,7 +15,6 @@ import Contact from './contact'
 import Links from './links'
 
 // styling
-//
 import './index.scss'
 
 
@@ -26,7 +23,7 @@ import './index.scss'
 ////////// CONTENT //////////
 
 // Content wrapper for transitions between pages.
-//
+// The outer <Route> is needed to set the key of <CSSTransition>
 const Content = () => (
 	<Route render={({ location }) => (
 		<TransitionGroup style={{ width: '100%' }}>
@@ -46,7 +43,6 @@ const Content = () => (
 
 // Route information for all components that may
 // be accessed via the navbar. 
-// 
 const Routes = [
 	{
 		path: '/about',
@@ -86,12 +82,12 @@ const Routes = [
 ////////// HEAD TAG ///////////
 
 // The <head></head> element of the root html.
-//
 const Head = () => (
 	<Helmet> 
 		<title>Sōseki Project</title>
 		<html lang="en" />
-		<link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet"/>
+		<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
+		<link href="https://fonts.googleapis.com/css?family=Cinzel|Cormorant+Garamond" rel="stylesheet"/>
 	</Helmet>
 );
 
@@ -108,11 +104,10 @@ const Head = () => (
 
 // 0) Router (for react-router)
 	// 0) Wrapper (for react-router/css) 
-	// Note: BrowserRouter may only have one child
+	// Note: BrowserRouter can only have one child
 		// 0) <head></head>
 		// 1) Navbar
 		// 2) Content wrapper
-//
 var Main = (
 	<BrowserRouter>
 		<div>
