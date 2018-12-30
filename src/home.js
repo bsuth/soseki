@@ -2,20 +2,23 @@ import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 
 import { TABLET, DESKTOP, MediaEnum } from './resources/jsglobals'
+import Book from './components/book'
+import styles from './home.module.scss'
 
+// Decoration svgs
+import { BotchanD1, SanshiroD1 } from './components/decoration'
+
+// Pages
 import Botchan from './botchan/index'
 import Sanshiro from './sanshiro/index'
 import Kokoro from './kokoro/index'
 import Neko from './neko/index'
 
-import Book from './components/book'
-
+// Images for covers
 import BotchanCover from './resources/botchancover.jpg'
 import SanshiroCover from './resources/sanshirocover.jpg'
 import KokoroCover from './resources/kokorocover.jpg'
 import NekoCover from './resources/nekocover.jpg'
-
-import { BotchanD1, SanshiroD1 } from './components/decoration'
 
 
 
@@ -46,7 +49,7 @@ export default class Home extends React.Component {
 
 					{ Books.map(x => <Route key={x.data.title_en} path={x.data.path} component={x.component} /> )}
 					<Route exact path="/" component={ () => (
-						<div className="page" id="home">
+						<div className="page" id={styles.home}>
 							{ Books.map(x => <Book 
 								key={x.data.title_en} 
 								data={x.data} 
@@ -103,39 +106,76 @@ const Books = [
 			<BotchanD1 />,
 			<></>, // No decorations for desktop
 		],
-		component: (route) => <Botchan prefix={route.match.path}/>
+		component: (route) => <Botchan />
 	},
-	//{
-		//title_en: 'Sanshiro',
-		//title_jp: '三四郎',
-		//year: '1908',
-		//desc: 'The charming story of Sanshirō, a young man who arrives from the country to study at the University of Tokyo. Passive by nature and just beginning to explore life\'s possibilities, Sanshirō cautiously samples the offerings of his new environment: the big city, elite academia, and captivating young ladies.',
-		//img: SanshiroCover,
-		//imgAlt: 'Sanshiro cover',
-		//path: '/sanshiro',
-		//decoration: <SanshiroD1 />,
-		//component: (route) => <Sanshiro prefix={route.match.path}/>
-	//},
-	//{
-		//title_en: 'Kokoro',
-		//title_jp: 'こゝろ',
-		//year: '1914',
-		//desc: 'A young student forms a friendship with an enigmatic older man, whom he refers to as \'Sensei.\' Over time, and finally through a long confessional letter, the younger man comes to know of Sensei\'s past and to understand the reasons behind his eccentric demeanor.',
-		//img: KokoroCover,
-		//imgAlt: 'Kokoro cover',
-		//path: '/kokoro',
-		//component: (route) => <Kokoro prefix={route.match.path}/>
-	//},
-	//{
-		//title_en: 'I am a Cat',
-		//title_jp: '吾輩は猫である',
-		//year: '1905',
-		//desc: 'A lost cat takes up residence in the home of a teacher, from where he offers a no-holds-barred commentary on his master, his master\'s household, the neighborhood, Japanese society, and human beings in general.',
-		//img: NekoCover,
-		//imgAlt: 'I am a Cat cover',
-		//path: '/neko',
-		//component: (route) => <Neko prefix={route.match.path}/>
-	//},
+	{
+		data: {
+			title_en: 'Sanshiro',
+			title_jp: '三四郎',
+			year: '1908',
+			desc: 'The charming story of Sanshirō, a young man who arrives from the country to study at the University of Tokyo. Passive by nature and just beginning to explore life\'s possibilities, Sanshirō cautiously samples the offerings of his new environment: the big city, elite academia, and captivating young ladies.',
+			img: SanshiroCover,
+			imgAlt: 'Sanshiro cover',
+			path: '/sanshiro',
+		},
+		decoration: [
+			<SanshiroD1 />,
+			<SanshiroD1 />,
+			<></>,
+		],
+		component: (route) => <Sanshiro prefix={route.match.path}/>
+	},
+	{
+		data: {
+			title_en: 'Kokoro',
+			title_jp: 'こゝろ',
+			year: '1914',
+			desc: 'A young student forms a friendship with an enigmatic older man, whom he refers to as \'Sensei.\' Over time, and finally through a long confessional letter, the younger man comes to know of Sensei\'s past and to understand the reasons behind his eccentric demeanor.',
+			img: KokoroCover,
+			imgAlt: 'Kokoro cover',
+			path: '/kokoro',
+		},
+		decoration: [
+			<SanshiroD1 />,
+			<SanshiroD1 />,
+			<></>,
+		],
+		component: (route) => <Kokoro prefix={route.match.path}/>
+	},
+	{
+		data: {
+			title_en: 'I am a Cat',
+			title_jp: '吾輩は猫である',
+			year: '1905',
+			desc: 'A lost cat takes up residence in the home of a teacher, from where he offers a no-holds-barred commentary on his master, his master\'s household, the neighborhood, Japanese society, and human beings in general.',
+			img: NekoCover,
+			imgAlt: 'I am a Cat cover',
+			path: '/neko',
+		},
+		decoration: [
+			<SanshiroD1 />,
+			<SanshiroD1 />,
+			<></>,
+		],
+		component: (route) => <Neko prefix={route.match.path}/>
+	},
+	{
+		data: {
+			title_en: 'Ten Nights of Dreams',
+			title_jp: '夢十夜',
+			year: '1908',
+			desc: 'A series of ten dreams set in various times and touching on various themes.\n1st Night - 100 years\' vigil; 2nd night - the priest and the samurai; 3rd night - child of stone; 4th night - the old man with the snake; 5th Night - racing against the dawn; 6th night - rendering Niō; 7th night - voyage to somewhere; 8th night - the barber shop; 9th night - a mother\'s story; 10th night - the demise of Shōtarō',
+			img: NekoCover,
+			imgAlt: 'Ten Nights of Dreams cover',
+			path: '/neko',
+		},
+		decoration: [
+			<SanshiroD1 />,
+			<SanshiroD1 />,
+			<></>,
+		],
+		component: (route) => <Neko prefix={route.match.path}/>
+	},
 ];
 
 ////////// BOOKS //////////

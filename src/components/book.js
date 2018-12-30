@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import styles from './book.module.scss'
 import { MediaEnum } from '../resources/jsglobals'
+import styles from './book.module.scss'
 
 
 // NOTE: 'mode' holds the current media query state 
@@ -59,8 +59,10 @@ export default ({data, decoration, mode}) => {
 	return(
 		<div className={styles.book}>
 			<Link to={path} className={styles.cover}> 
-				<img src={img} alt={imgAlt}/>
+				<img src={img} alt={imgAlt} />
 			</Link>
+
+			<div className={styles.mask} />
 
 			{ DecorLayout }
 			{ TextLayout }

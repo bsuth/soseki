@@ -1,0 +1,80 @@
+@import '../resources/cssglobals';
+
+////////// MOBILE/BASE //////////
+
+#index {
+	width: 100%;
+	min-height: 100vh;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.column {
+	width: 30%;
+	margin: 0 auto;
+	padding: 0 10px;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.center {
+	img {
+		display: none;
+	}
+}
+
+.preview {
+	padding: 10px 5px;
+	margin: 20px 0;
+
+	z-index: 1;
+
+	background: rgba(190, 182, 165, 0.85);
+	border: 3px solid rgb(76,50,22);
+	border-radius: 3px;
+	* { color: #202020; }
+}
+
+////////// MOBILE/BASE //////////
+
+
+
+
+////////// TABLET //////////
+
+@media only screen and (min-width: $TABLET) {
+
+#index {
+	flex-direction: row;
+}
+
+.column {
+	margin: 0 50px;
+}
+
+.center {
+	position: absolute;
+	left: 50%;
+
+	opacity: 0.4;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	img {
+		width: 400px;
+		position: fixed;
+		top: 50%; left: 50%;
+		transform: translate(-50%, -50%);
+		display: block;
+	}
+}
+
+}
+
+////////// TABLET //////////

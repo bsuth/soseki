@@ -76,7 +76,7 @@ export default class Navbar extends React.Component {
 
 		if(!mobile) {
 			Title = <div className={styles.title}>&gt; Sōseki Project &lt;</div>
-			HR = <hr style={{ width: '90%' }}/>
+			HR = <hr style={{ width: '90%', margin: 'auto' }}/>
 		}
 
 		// NOTE: order matters here!
