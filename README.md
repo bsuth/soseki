@@ -1,44 +1,43 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Sōseki Project
 
-## Available Scripts
+The purpose of this site is to make the works of Natsume Sōseki more accessible to 
+students of Japanese. These works date from the early 1900s, and the language can be 
+challenging, but reading the original texts is well worth the effort.
 
-In the project directory, you can run:
+To visit the site, click [here](http://www.sosekiproject.org/). 
 
-### `npm start`
+[//]: # (ADD SCREENSHOTS LATER)
+[//]: # (Below are a couple of screenshots of the site:)
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Table of Contents
+* [Introduction](#introduction)
+* [Features](#features)
+* [Contact](#contact)
+* [Contributing](#contribute)
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
 
-### `npm test`
+## <a name="introduction"></a> Introduction
+Welcome to Sōseki Project's Github! Here you will find the source code for
+the website as well as the build files (built with Webpack using create-react-app).
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This site is strictly non-commercial, with no advertisements or solicitations. 
+The only request of site users is to provide comments or suggestions 
+for how the site could be improved. Also, a short note from any who find the site 
+useful would be appreciated, as the site coding includes no scripts to track users or usage.
 
-### `npm run build`
+## <a name="features"></a> Features
+The site provides a number of tools to assist the reader.
+However, a solid understanding of Japanese grammar and mastery of basic 
+vocabulary have been assumed in order keep the extent of vocabulary helps, 
+explanations, and notes reasonable. A minimum of two or three years of college-level 
+Japanese study (or equivalent) is recommended before starting on these works.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## <a name="contact"></a> Contact
+Please contact Ian Sutherland at Sōseki Project (sosekiproject@gmail.com) with any questions, 
+suggestions, corrections (note title and section number), or general comments. Especially 
+looking for proofreading help from anyone willing to flag errors and sent notification.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## <a name="contribute"></a> Contributing
+This is a branch of the original Sōseki Project, implemented with [React](https://reactjs.org/).
+The switch to React was encouraged to achieve a better UI/UX while still having
+relatively maintainable code.

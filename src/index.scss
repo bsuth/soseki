@@ -1,6 +1,9 @@
-////////// REMOVE DEFAULTS //////////
+@import './resources/cssglobals.scss';
 
-h1 {
+
+////////// DEFAULTS //////////
+
+h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
 }
 
@@ -10,8 +13,6 @@ a {
 }
 
 ul {
-	margin: 0 ;
-	padding: 0;
 	list-style-type: none;
 }
 
@@ -21,26 +22,25 @@ ul {
 	box-sizing: border-box;
 }
 
-////////// REMOVE DEFAULTS //////////
-
-
-
-
 ////////// DEFAULTS //////////
 
+
+
+
+////////// HTML/BODY //////////
+
 html, body {
-	margin: 0;
-	padding: 0;
 	width: 100% ;
 	min-height: 100vh;
 
-	background: #181818;
-	color: white;
+	background: $BACKGROUND;
+	color: $FOREGROUND;
+
 	font-family: 'Cormorant Garamond', serif;
 	font-size: 18px;
 }
 
-////////// DEFAULTS //////////
+////////// HTML/BODY //////////
 
 
 
@@ -49,7 +49,8 @@ html, body {
 
 .page {
 	// Absolute position to allow smooth transitions
-	// when both dom elements are present (overlapping transitions)
+	// when both dom elements are present (For
+	// transitions done with <CSSTransition>).
 	position: absolute;
 }
 

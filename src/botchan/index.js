@@ -1,8 +1,10 @@
+// React
 import React from 'react'
 
-import Cover from './botchanindex.jpg'
+// Components
 import BookIndex from '../components/BookIndex'
 
+// Routes
 import Chapter1 from './chapters/Chapter1'
 import Chapter2 from './chapters/Chapter2'
 import Chapter3 from './chapters/Chapter3'
@@ -14,6 +16,9 @@ import Chapter8 from './chapters/Chapter8'
 import Chapter9 from './chapters/Chapter9'
 import Chapter10 from './chapters/Chapter10'
 import Chapter11 from './chapters/Chapter11'
+
+// Images
+import Cover from './sosekiportrait.jpg'
 
 
 export default () => (

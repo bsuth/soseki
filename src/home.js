@@ -1,29 +1,37 @@
+// React
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 
+// Globals
 import { TABLET, DESKTOP, MediaEnum } from './resources/jsglobals'
-import Book from './components/book'
 import styles from './home.module.scss'
 
-// Decoration svgs
-import { BotchanD1, SanshiroD1 } from './components/decoration'
+// Components
+import Book from './components/book'
 
-// Pages
+// Routes
 import Botchan from './botchan/index'
 import Sanshiro from './sanshiro/index'
 import Kokoro from './kokoro/index'
 import Neko from './neko/index'
 
-// Images for covers
+// Images
 import BotchanCover from './resources/botchancover.jpg'
 import SanshiroCover from './resources/sanshirocover.jpg'
 import KokoroCover from './resources/kokorocover.jpg'
 import NekoCover from './resources/nekocover.jpg'
 
 
-
-
 ////////// HOME //////////
+
+// This renders the actual view of the Home page,
+// as well as <Route> elements to all books.
+//
+// This component is responsible for all resizing. 
+// When the media query changes, it is responsible
+// for notifying all of its children in order for
+// them to update accordingly. This is controlled
+// via 'state' to allow for automatic rerendering.
 
 export default class Home extends React.Component {
 	constructor() {
@@ -39,8 +47,8 @@ export default class Home extends React.Component {
 		}
 	}
 
-	// NOTE: The wrapping div is necessary, as CSSTransitions requires a hook
-	// to apply the various css animation classes.
+	// NOTE: The wrapping div is necessary. <CSSTransitions> requires 
+	// a hook to apply the various css animation classes.
 	render() {
 		let { mode } = this.state;
 		return (
@@ -90,6 +98,10 @@ export default class Home extends React.Component {
 
 ////////// BOOKS //////////
 
+// All books that may be accessed via the home page.
+// This data is passed into the <Book> component,
+// which takes care of all rendering.
+
 const Books = [
 	{
 		data: {
@@ -101,10 +113,10 @@ const Books = [
 			imgAlt: 'Botchan cover',
 			path: '/botchan',
 		},
-		decoration: [ 
-			<BotchanD1 />,
-			<BotchanD1 />,
-			<></>, // No decorations for desktop
+		decoration: [ // SVGS HERE
+			<></>,
+			<></>,
+			<></>,
 		],
 		component: (route) => <Botchan />
 	},
@@ -119,8 +131,8 @@ const Books = [
 			path: '/sanshiro',
 		},
 		decoration: [
-			<SanshiroD1 />,
-			<SanshiroD1 />,
+			<></>,
+			<></>,
 			<></>,
 		],
 		component: (route) => <Sanshiro prefix={route.match.path}/>
@@ -136,8 +148,8 @@ const Books = [
 			path: '/kokoro',
 		},
 		decoration: [
-			<SanshiroD1 />,
-			<SanshiroD1 />,
+			<></>,
+			<></>,
 			<></>,
 		],
 		component: (route) => <Kokoro prefix={route.match.path}/>
@@ -153,8 +165,8 @@ const Books = [
 			path: '/neko',
 		},
 		decoration: [
-			<SanshiroD1 />,
-			<SanshiroD1 />,
+			<></>,
+			<></>,
 			<></>,
 		],
 		component: (route) => <Neko prefix={route.match.path}/>
@@ -170,8 +182,8 @@ const Books = [
 			path: '/neko',
 		},
 		decoration: [
-			<SanshiroD1 />,
-			<SanshiroD1 />,
+			<></>,
+			<></>,
 			<></>,
 		],
 		component: (route) => <Neko prefix={route.match.path}/>

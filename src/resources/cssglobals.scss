@@ -6,23 +6,22 @@
 // This file is imported via @import, to allow 
 // for maintainability.
 // 
-// NOTE: The media query values should agree
-// with those from the cssglobals file.
-//
 
 
 //
 // MEDIA QUERIES
 // -------------
+// NOTE: These values should agree
+// with those from the jsglobals file.
 //
 $TABLET: 600px;
 $DESKTOP: 1024px;
-
-
 
 
 //
 // COLORS
 // ------
 //
+$BACKGROUND: #181818;
+$FOREGROUND: #e0e0e0;
 $WHITE: #e0e0e0;

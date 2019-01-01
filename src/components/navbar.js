@@ -1,6 +1,8 @@
+// React
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+// Globals
 import { TABLET } from '../resources/jsglobals'
 import styles from './navbar.module.scss'
 
@@ -10,7 +12,8 @@ import styles from './navbar.module.scss'
 // An SVG of the icon for the mobile drop down menu. A single 'click' 
 // props is passed to assign an onClick listener that acts at the
 // <Navbar> level.
-const NavbarIcon = ({click}) => (
+
+const Icon = ({click}) => (
 	<svg 
 		onClick={click}
 		className={styles.icon}
@@ -35,9 +38,10 @@ const NavbarIcon = ({click}) => (
 // 'cssClass' is assigned by the <Navbar> component to either hide 
 // or show Links, depending on the current state of <Navbar>.
 //
-// This class could be collapsed into <Navbar>, but is kept separate
-// to keep <Navbar> from getting too cluttered.
-const NavbarLinks = ({cssClass}) => (
+// This component could be collapsed into <Navbar>, but is kept 
+// separate to keep <Navbar>'s 'render()' from getting too cluttered.
+
+const Links = ({cssClass}) => (
 	<div className={cssClass}>
 		<Link to="/">Home</Link>
 		<hr className={styles.divider} />
@@ -59,6 +63,11 @@ const NavbarLinks = ({cssClass}) => (
 
 
 ////////// NAVBAR //////////
+
+// This component controls everything pertaining to
+// the navbar, including conditional rendering of
+// the title/<hr> (tablet & desktop but not mobile)
+// and toggling the drop down menu (mobile).
 
 export default class Navbar extends React.Component {
 	constructor() {
@@ -82,12 +91,12 @@ export default class Navbar extends React.Component {
 		// NOTE: order matters here!
 		// -------------------------
 		// To save on the extra css of applying z-indices
-		// we render NavbarIcon after NavbarLinks.
+		// we render <Icon> after <Links>
 		return (
 			<div id={styles.navbar}>
 				{ Title }
-				<NavbarLinks cssClass={toggle ? styles.linkWrapper : styles.none}/>
-				<NavbarIcon click={this.handleClick}/>
+				<Links cssClass={toggle ? styles.links : styles.none}/>
+				<Icon click={this.handleClick}/>
 				{ HR }
 			</div>
 		);
@@ -101,14 +110,14 @@ export default class Navbar extends React.Component {
 		window.removeEventListener('resize', this.handleResize);
 	}
 
-	// Handle onClick of NavbarIcon.
 	handleClick = () => {
 		this.setState((state) => ({ 
 			toggle: !state.toggle,
 		}));
 	}
 
-	// Show or hide NavbarLinks based on current window size.
+	// If the media query changes, hide or show the navbar accordingly.
+	// Ex. Shrinking from tablet to mobile should hide the navbar.
 	handleResize = () => {
 		if(window.innerWidth < TABLET) {
 			this.setState({ toggle: false, mobile: true });

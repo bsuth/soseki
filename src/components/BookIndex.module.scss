@@ -4,7 +4,6 @@
 
 #index {
 	width: 100%;
-	min-height: 100vh;
 
 	display: flex;
 	flex-direction: column;
@@ -12,21 +11,17 @@
 }
 
 .column {
-	width: 30%;
-	margin: 0 auto;
-	padding: 0 10px;
-
+	margin: 0 5%;
 	display: flex;
 	flex-direction: column;
 }
 
-.center {
-	img {
-		display: none;
-	}
+.img {
+	display: none;
 }
 
 .preview {
+	width: 230px;
 	padding: 10px 5px;
 	margin: 20px 0;
 
@@ -52,27 +47,17 @@
 }
 
 .column {
-	margin: 0 50px;
 }
 
-.center {
+.img {
+	width: 400px;
+
 	position: absolute;
-	left: 50%;
+	top: 50%; left: 50%;
+	transform: translate(-50%, -50%);
 
+	display: block;
 	opacity: 0.4;
-
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-
-	img {
-		width: 400px;
-		position: fixed;
-		top: 50%; left: 50%;
-		transform: translate(-50%, -50%);
-		display: block;
-	}
 }
 
 }

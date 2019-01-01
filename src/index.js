@@ -1,11 +1,9 @@
-// React packages
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { TransitionGroup, CSSTransition } from "react-transition-group";
+import { TransitionGroup, CSSTransition } from "react-transition-group"
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Helmet from 'react-helmet'
 
-// pages for navbar
 import Navbar from './components/navbar'
 import Home from './home'
 import About from './about'
@@ -14,8 +12,30 @@ import Media from './media'
 import Contact from './contact'
 import Links from './links'
 
-// styling
 import './index.scss'
+
+
+////////// HEAD TAG ///////////
+
+// The <head></head> element of the root html.
+// This is required, as the actual html page will be
+// generated for us.
+//
+// NOTE: The root html page and <head> element
+// can be edited at /soseki/public/index.html. 
+// I simply chose to use <Helmet> here to keep 
+// all source files in one location.
+
+const Head = () => (
+	<Helmet> 
+		<title>Sōseki Project</title>
+		<html lang="en" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
+		<link href="https://fonts.googleapis.com/css?family=Cinzel|Cormorant+Garamond" rel="stylesheet"/>
+	</Helmet>
+);
+
+////////// HEAD TAG ///////////
 
 
 
@@ -24,6 +44,12 @@ import './index.scss'
 
 // Content wrapper for transitions between pages.
 // The outer <Route> is needed to set the key of <CSSTransition>
+//
+// NOTE: <CSSTransition> depends on css classes, whose names are
+// derived from the prop 'classNames' (in this case "fade"). These
+// classes may be found in './index.scss'. The timeout prop should
+// match the maximum duration of the css transition classes.
+
 const Content = () => (
 	<Route render={({ location }) => (
 		<TransitionGroup style={{ width: '100%' }}>
@@ -41,8 +67,7 @@ const Content = () => (
 );
 
 
-// Route information for all components that may
-// be accessed via the navbar. 
+// Routes that may be accessed on any page (via navbar). 
 const Routes = [
 	{
 		path: '/about',
@@ -75,40 +100,19 @@ const Routes = [
 
 
 
-
-
-
-
-////////// HEAD TAG ///////////
-
-// The <head></head> element of the root html.
-const Head = () => (
-	<Helmet> 
-		<title>Sōseki Project</title>
-		<html lang="en" />
-		<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
-		<link href="https://fonts.googleapis.com/css?family=Cinzel|Cormorant+Garamond" rel="stylesheet"/>
-	</Helmet>
-);
-
-////////// HEAD TAG ///////////
-
-
-
-
-
-
-
-
 /////////// MAIN //////////
 
-// 0) Router (for react-router)
-	// 0) Wrapper (for react-router/css) 
-	// Note: BrowserRouter can only have one child
-		// 0) <head></head>
-		// 1) Navbar
-		// 2) Content wrapper
-var Main = (
+// This begins all of the control flow for the entire website.
+// The <div> element is necessary, as <BrowserRouter> may only
+// be allowed one child.
+//
+// NOTE: Since we use ReactDOM.render() to attach this element,
+// it must come after the definitions of all components it uses
+// (namely <Head> and <Content>, as they share the same file).
+// For this reason <Main> must stay at the bottom of this page,
+// but this may be changed if <Head> and <Content> are imported.
+
+const Main = (
 	<BrowserRouter>
 		<div>
 			<Head />
