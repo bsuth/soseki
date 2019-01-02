@@ -48,13 +48,19 @@ html, body {
 ////////// PAGE WRAPPERS //////////
 
 .page {
-	// Navbar height + margin + padding
-	margin-top: $NAVBAR_TOTAL;
+	width: 100%;
 
 	// Absolute position to allow smooth transitions
 	// when both dom elements are present (For
 	// transitions done with <CSSTransition>).
 	position: absolute;
+}
+
+@media only screen and (min-width: $TABLET) {
+	.page {
+		// Navbar height + margin + padding
+		margin-top: $NAVBAR_TOTAL;
+	}
 }
 
 ////////// PAGE WRAPPERS //////////

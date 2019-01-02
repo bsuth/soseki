@@ -1,0 +1,72 @@
+@import '../resources/cssglobals.scss';
+
+
+#ChapterText {
+	padding: 0 5%;
+}
+
+
+
+////////// SECTION BREAKS //////////
+
+.section_break {
+	width: 100%;
+	margin: 30px 0;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	* { margin: 10px 0; }
+}
+
+@media only screen and (min-width: $TABLET) {
+	.section_break {
+		flex-direction: row;
+		* { margin: 0 20px; }
+	}
+}
+
+////////// SECTION BREAKS //////////
+
+
+
+
+////////// VOCAB //////////
+
+.vocab {
+	text-decoration: underline;
+	text-decoration-color: rgba(210, 210, 210, 0.5);
+}
+
+////////// VOCAB //////////
+
+
+
+
+////////// VOCAB DEF //////////
+
+.vocab:hover > .vocabdef {
+	display: block;
+}
+
+.vocabdef {
+	width: 90%;
+	padding: 10px;
+
+	position: fixed;
+	top: 0; left: 50%;
+	transform: translateX(-50%);
+
+	display: none;
+
+	border-radius: 3px;
+	background: rgb(190, 182, 165);
+	color: black;
+
+	font-size: 20px;
+	text-align: center;
+}
+
+////////// VOCAB DEF //////////
