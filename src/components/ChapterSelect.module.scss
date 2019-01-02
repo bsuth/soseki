@@ -1,0 +1,110 @@
+@import '../resources/cssglobals';
+
+
+////////// INDEX //////////
+
+.index {
+	width: 100%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+@media only screen and (min-width: $TABLET) {
+	.index {
+		flex-direction: row;
+	}
+}
+
+////////// INDEX //////////
+
+
+
+
+////////// TITLE //////////
+
+.title {
+	margin: 30px 0 0;
+	text-align: center;
+	font-size: 30px;
+	font-family: 'Cinzel', serif;
+}
+
+@media only screen and (min-width: $TABLET) {
+	.title {
+	}
+}
+
+////////// TITLE //////////
+
+
+
+
+////////// IMG //////////
+
+.img {
+	display: none;
+}
+
+@media only screen and (min-width: $DESKTOP) {
+	.img {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		img {
+			width: 433px;
+			height: 590px;
+		}
+	}
+}
+
+////////// IMG //////////
+
+
+
+
+////////// COLUMN //////////
+
+.column {
+	width: auto;
+	margin: 0 auto;
+
+	display: flex;
+	flex-direction: column;
+}
+
+@media only screen and (min-width: $TABLET) {
+	.column {
+		margin: 0 5%;
+	}
+}
+
+////////// COLUMN //////////
+
+
+
+
+////////// LINK //////////
+
+.link {
+	width: 230px;
+	padding: 10px;
+	margin: 20px 0;
+
+	z-index: 1;
+
+	background: rgba(190, 182, 165, 0.9);
+	border: 3px solid rgb(76,50,22);
+	border-radius: 3px;
+	* { color: #202020; }
+}
+
+@media only screen and (min-width: $TABLET) {
+	.link {
+
+	}
+}
+
+////////// LINK //////////

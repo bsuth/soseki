@@ -4,6 +4,8 @@ import { Switch, Route } from 'react-router-dom'
 
 // Globals
 import { TABLET, DESKTOP, MediaEnum } from './resources/jsglobals'
+
+// Styles
 import styles from './home.module.scss'
 
 // Components
@@ -48,7 +50,8 @@ export default class Home extends React.Component {
 	}
 
 	// NOTE: The wrapping div is necessary. <CSSTransitions> requires 
-	// a hook to apply the various css animation classes.
+	// a hook to apply the various css animation classes and <Switch>
+	// does not render any DOM elements.
 	render() {
 		let { mode } = this.state;
 		return (

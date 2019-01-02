@@ -3,7 +3,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 // Globals
-import { TABLET } from '../resources/jsglobals'
+import { TABLET, NAVBAR_TOTAL } from '../resources/jsglobals'
+
+// Styles
 import styles from './navbar.module.scss'
 
 
@@ -73,14 +75,24 @@ export default class Navbar extends React.Component {
 	constructor() {
 		super();
 		if(window.innerWidth < TABLET) {
-			this.state = { toggle: false, mobile: true };
+			this.state = { 
+				toggle: false, 
+				mobile: true,
+				hidden: false,
+				lastScroll: 0,
+			};
 		} else {
-			this.state = { toggle: true, mobile: false };
+			this.state = { 
+				toggle: true, 
+				mobile: false, 
+				hidden: false,
+				lastScroll: 0,
+			};
 		}
 	}
 
 	render() {
-		let { mobile, toggle } = this.state;
+		let { mobile, toggle, hidden } = this.state;
 		let Title, HR;
 
 		if(!mobile) {
@@ -93,7 +105,7 @@ export default class Navbar extends React.Component {
 		// To save on the extra css of applying z-indices
 		// we render <Icon> after <Links>
 		return (
-			<div id={styles.navbar}>
+			<div className={`${styles.navbar} ${hidden ? styles.hide : styles.show}`}>
 				{ Title }
 				<Links cssClass={toggle ? styles.links : styles.none}/>
 				<Icon click={this.handleClick}/>
@@ -104,10 +116,12 @@ export default class Navbar extends React.Component {
 
 	componentDidMount() {
 		window.addEventListener('resize', this.handleResize);
+		window.addEventListener('scroll', this.handleScroll);
 	}
 
 	componentWillUnmount() {
 		window.removeEventListener('resize', this.handleResize);
+		window.removeEventListener('scroll', this.handleScroll);
 	}
 
 	handleClick = () => {
@@ -123,6 +137,31 @@ export default class Navbar extends React.Component {
 			this.setState({ toggle: false, mobile: true });
 		} else {
 			this.setState({ toggle: true, mobile: false });
+		}
+	}
+
+	// Source: https://stackoverflow.com/questions/31223341/detecting-scroll-direction
+	handleScroll = () => {
+		let { lastScroll } = this.state;
+		let st = window.pageYOffset || document.documentElement.scrollTop; 
+
+		if(st > NAVBAR_TOTAL) {
+			// For Mobile or negative scrolling
+			if (st > lastScroll){
+				// downscroll code
+				window.NavHidden = true;
+				this.setState({ 
+					hidden: true, 
+					lastScroll: st,
+				});
+			} else {
+				// upscroll code
+				window.NavHidden = false;
+				this.setState({ 
+					hidden: false, 
+					lastScroll: st,
+				});
+			}
 		}
 	}
 }

@@ -1,0 +1,40 @@
+#textWrap {
+	padding: 0 5%;
+}
+
+.section {
+	width: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	* { margin: 0 20px; }
+}
+
+.vocab {
+	text-decoration: underline;
+	text-decoration-color: rgba(210, 210, 210, 0.5);
+}
+
+.vocabdef {
+	width: 90%;
+	padding: 10px;
+
+	position: fixed;
+	top: 0; left: 50%;
+	transform: translateX(-50%);
+
+	display: none;
+
+	border-radius: 3px;
+	background: rgb(190, 182, 165);
+	color: black;
+
+	font-size: 20px;
+	text-align: center;
+}
+
+.vocab:hover > .vocabdef {
+	display: block;
+}

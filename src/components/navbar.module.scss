@@ -1,13 +1,36 @@
 @import '../resources/cssglobals';
 
 
-////////// BASE/MOBILE //////////
+////////// ICON //////////
 
-#navbar {
-	width: 100%;
-	position: fixed;
-	z-index: 5;
+.icon {
+	width: 40px;
+	height: 40px;
+	margin: 15px;
+
+	// Necessary to have the icon appear
+	// above the navbarWrapper
+	position: relative;
+	
+	line {
+		fill: none;
+		stroke: #fff;
+		stroke-width: 2px;
+	}
 }
+
+@media only screen and (min-width: $TABLET) {
+	.icon {
+		display: none;
+	}
+}
+
+////////// ICON //////////
+
+
+
+
+////////// LINKS //////////
 
 .links {
 	width: 100%;
@@ -36,32 +59,37 @@
 	}
 }
 
-.icon {
-	width: 40px;
-	height: 40px;
-	margin: 15px;
+@media only screen and (min-width: $TABLET) {
+	.links {
+		width: 85%;
+		height: auto;
+		margin: auto;
+		padding: 0;
 
-	// Necessary to have the icon appear
-	// above the navbarWrapper
-	position: relative;
-	
-	line {
-		fill: none;
-		stroke: #fff;
-		stroke-width: 2px;
+		/* required for 'margin: auto' to center */
+		position: relative;
+		flex-direction: row;
+		background: transparent;
+
+		a {
+			flex: auto;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.divider {
+			display: none;
+		}
 	}
 }
 
-.none { 
-	display: none; 
-}
-
-////////// BASE/MOBILE //////////
+////////// LINKS //////////
 
 
 
 
-////////// TABLET //////////
+////////// TITLE //////////
 
 .title {
 	font-size: 45px;
@@ -69,54 +97,54 @@
 	font-family: 'Cinzel', serif;
 }
 
+////////// TITLE //////////
+
+
+
+
+////////// NAVBAR //////////
+
+.navbar {
+	width: 100%;
+	position: fixed;
+	z-index: 5;
+}
+
 @media only screen and (min-width: $TABLET) {
-
-#navbar {
-	margin: 50px 0 30px;
-	position: relative;
-}
-
-.links {
-	width: 85%;
-	height: auto;
-	margin: auto;
-	padding: 0;
-
-	/* required for 'margin: auto' to center */
-	position: relative;
-	flex-direction: row;
-	background: transparent;
-
-	a {
-		flex: auto;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-
-	.divider {
-		display: none;
+	.navbar {
+		height: 150px; // also accounts for padding
+		margin-bottom: 30px;
+		padding-top: 50px;
+		background: $BACKGROUND;
 	}
 }
 
-.icon {
-	display: none;
+
+////////// NAVBAR //////////
+
+
+
+
+////////// EXTRA //////////
+
+.hide { 
+	animation: hide 250ms forwards;
 }
 
+.show {
+	animation: show 250ms forwards;
 }
 
-////////// TABLET //////////
-
-
-
-
-////////// DESKTOP //////////
-
-@media only screen and (min-width: $DESKTOP) {
-
-// TODO?
-// May not need to do anything here
-
+@keyframes hide {
+	0% { top: 0; }
+	30% { top: -10%; }
+	100% { top: -100%; }
 }
 
-////////// DESKTOP //////////
+@keyframes show {
+	0% { top: -100%; }
+	30% { top: -10%; }
+	100% { top: 0; }
+}
+
+////////// EXTRA //////////

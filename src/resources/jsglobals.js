@@ -22,3 +22,13 @@ export const MediaEnum = Object.freeze({
 	tablet: 1,
 	desktop: 2,
 })
+
+
+//
+// NAVBAR
+// ------
+//
+export const NAVBAR_HEIGHT = 100;
+export const NAVBAR_BOTTOM = 30;
+export const NAVBAR_TOP = 50;
+export const NAVBAR_TOTAL = NAVBAR_HEIGHT + NAVBAR_TOP + NAVBAR_BOTTOM;

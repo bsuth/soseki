@@ -48,6 +48,9 @@ html, body {
 ////////// PAGE WRAPPERS //////////
 
 .page {
+	// Navbar height + margin + padding
+	margin-top: $NAVBAR_TOTAL;
+
 	// Absolute position to allow smooth transitions
 	// when both dom elements are present (For
 	// transitions done with <CSSTransition>).

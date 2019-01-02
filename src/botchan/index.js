@@ -2,7 +2,7 @@
 import React from 'react'
 
 // Components
-import BookIndex from '../components/BookIndex'
+import ChapterSelect from '../components/ChapterSelect'
 
 // Routes
 import Chapter1 from './chapters/Chapter1'
@@ -22,7 +22,7 @@ import Cover from './sosekiportrait.jpg'
 
 
 export default () => (
-	<BookIndex
+	<ChapterSelect
 		root='/botchan'
 		imgSrc={Cover}
 		imgAlt="Soseki Portrait"

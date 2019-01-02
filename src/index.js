@@ -1,9 +1,14 @@
+// React
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { TransitionGroup, CSSTransition } from "react-transition-group"
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Helmet from 'react-helmet'
 
+// Styles
+import './index.scss'
+
+// Routes
 import Navbar from './components/navbar'
 import Home from './home'
 import About from './about'
@@ -11,8 +16,6 @@ import Features from './features'
 import Media from './media'
 import Contact from './contact'
 import Links from './links'
-
-import './index.scss'
 
 
 ////////// HEAD TAG ///////////

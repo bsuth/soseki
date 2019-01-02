@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 
 // Globals
 import { MediaEnum } from '../resources/jsglobals'
+
+// Styles
 import styles from './book.module.scss'
 
 
