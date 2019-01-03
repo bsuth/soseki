@@ -50,9 +50,10 @@ html, body {
 .page {
 	width: 100%;
 
-	// Absolute position to allow smooth transitions
-	// when both dom elements are present (For
-	// transitions done with <CSSTransition>).
+	// Needed for smooth transitions between pages.
+	// In particular, need pages to overlap during
+	// the transition period when both elements
+	// (the previous and current pages) are present.
 	position: absolute;
 }
 

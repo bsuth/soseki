@@ -1,6 +1,6 @@
 // React
 import React from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 
 // Globals
 import { TABLET, DESKTOP, MediaEnum } from './resources/jsglobals'
@@ -56,7 +56,6 @@ export default class Home extends React.Component {
 		let { mode } = this.state;
 		return (
 			<div>
-				<Switch>
 
 					{ Books.map(x => <Route key={x.data.title_en} path={x.data.path} component={x.component} /> )}
 					<Route exact path="/" component={ () => (
@@ -70,7 +69,6 @@ export default class Home extends React.Component {
 						</div>
 					)}/>
 
-				</Switch>
 			</div>
 		);
 	}

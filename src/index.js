@@ -1,7 +1,7 @@
 // React
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { TransitionGroup, CSSTransition } from "react-transition-group"
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Helmet from 'react-helmet'
 
@@ -52,6 +52,11 @@ const Head = () => (
 // derived from the prop 'classNames' (in this case "fade"). These
 // classes may be found in './index.scss'. The timeout prop should
 // match the maximum duration of the css transition classes.
+//
+// NOTE: <Switch> is needed for both smooth transition and to default
+// to the 404 error page. Details on why <Switch> is useful for these
+// situations can be found here: 
+// https://reacttraining.com/react-router/core/api/Switch
 
 const Content = () => (
 	<Route render={({ location }) => (
@@ -74,28 +79,28 @@ const Content = () => (
 const Routes = [
 	{
 		path: '/about',
-		component: () => <About />
+		component: About,
 	},
 	{
 		path: '/features',
-		component: () => <Features />
+		component: Features
 	},
 	{
 		path: '/media',
-		component: () => <Media />
+		component: Media,
 	},
 	{
 		path: '/contact',
-		component: () => <Contact />
+		component: Contact,
 	},
 	{
 		path: '/links',
-		component: () => <Links />
+		component: Links,
 	},
 	{
 		path: '/',
-		component: () => <Home />
-	}
+		component: Home,
+	},
 ];
 
 ////////// CONTENT //////////

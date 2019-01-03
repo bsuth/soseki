@@ -34,19 +34,16 @@ export default (props) => {
 				<Route key={x.path} path={x.path} component={x.component} />
 			)}
 			<Route exact path={root} component={() => (
-				<>
-					<h2 className={styles.title}>Botchan</h2>
-					<div className={`page ${styles.index}`}>
+				<div className={`page ${styles.index}`}>
 
-						<Column data={Left} />
-						<div className={styles.img}>
-							<img src={imgSrc} alt={imgAlt} />
-							<p>Portrait of Natsume Soseki</p>
-						</div>
-						<Column data={Right} />
-
+					<Column data={Left} />
+					<div className={styles.img}>
+						<img src={imgSrc} alt={imgAlt} />
+						<p>Portrait of Natsume Soseki</p>
 					</div>
-				</>
+					<Column data={Right} />
+
+				</div>
 			)}/>
 
 		</div>

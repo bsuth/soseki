@@ -1,5 +1,6 @@
 // React
 import React from 'react'
+import { Route } from 'react-router-dom'
 
 // Globals
 import { NAVBAR_HEIGHT, NAVBAR_TOP} from '../resources/jsglobals'
@@ -15,10 +16,16 @@ export default class ChapterText extends React.Component {
 	}
 
 	render() {
-		let { children } = this.props;
+		let { path, guides, children } = this.props;
+
 		return(
-			<div className="page" id="ChapterText">
-				{ children }
+			<div>
+				{ guides.map(x => <Route key={x.path} path={x.path} component={x.component}/>) }
+				<Route exact path={path} component={ () => (
+					<div className="page" id="ChapterText">
+						{ children }
+					</div>
+				)}/>
 			</div>
 		);
 	}

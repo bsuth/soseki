@@ -5,7 +5,7 @@ import React from 'react'
 import ChapterSelect from '../components/ChapterSelect'
 
 // Routes
-import Chapter1 from './chapters/Chapter1'
+import Chapter1 from './chapters/Chapter1/Chapter1'
 import Chapter2 from './chapters/Chapter2'
 import Chapter3 from './chapters/Chapter3'
 import Chapter4 from './chapters/Chapter4'
