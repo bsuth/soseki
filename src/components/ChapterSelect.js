@@ -34,13 +34,11 @@ export default (props) => {
 				<Route key={x.path} path={x.path} component={x.component} />
 			)}
 			<Route exact path={root} component={() => (
-				<div className={`page ${styles.index}`}>
+				<div className={`page ${styles.wrapper}`}>
 
+					<h2 className={styles.title}>Botchan</h2>
 					<Column data={Left} />
-					<div className={styles.img}>
-						<img src={imgSrc} alt={imgAlt} />
-						<p>Portrait of Natsume Soseki</p>
-					</div>
+					<img className={styles.img} src={imgSrc} alt={imgAlt} />
 					<Column data={Right} />
 
 				</div>
@@ -59,11 +57,12 @@ export default (props) => {
 
 // Component to map data to the actual html
 // elements that get rendered on screen.
+
 const Column = ({ data }) => (
 	<ul className={styles.column}>
 		{ data.map(x => (
 
-			<li key={x.path} className={styles.link}>
+			<li key={x.title} className={styles.chapterLink}>
 				<Link to={x.path}>
 					<h5> {x.title} </h5>
 					<p> {x.desc} </p>

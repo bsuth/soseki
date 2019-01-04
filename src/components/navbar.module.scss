@@ -30,31 +30,31 @@
 
 
 
-////////// LINKS //////////
+////////// MENU //////////
 
-.links {
+.menu {
 	width: 100%;
-	height: 100vh;
-	padding: 40px 0;
+	height: $NAVBAR_HEIGHT_M;
 
 	position: absolute;
-	top: 0;
+	top: 0; left: 0;
 
 	display: flex;
-	flex-direction: column;
 
-	background: linear-gradient(#404040 0%, #282828 25%, #181818);
+	overflow: auto;
+	background: rgba(20, 20, 20, 0.9);
 	font-size: 25px;
 
-	a {
-		flex: auto;
+	li {
+		margin: 5px 10px;
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 	}
 
 	.divider {
-		width: 60%;
+		width: 15%;
 		border-color: $WHITE;
 	}
 }
@@ -84,7 +84,7 @@
 	}
 }
 
-////////// LINKS //////////
+////////// MENU //////////
 
 
 
@@ -106,6 +106,8 @@
 
 .navbar {
 	width: 100%;
+	height: $NAVBAR_HEIGHT_M;
+	max-width: $MAX-WIDTH;
 	position: fixed;
 	z-index: 5;
 	background: $BACKGROUND;
@@ -113,9 +115,8 @@
 
 @media only screen and (min-width: $TABLET) {
 	.navbar {
-		height: 150px; // also accounts for padding
-		margin-bottom: 30px;
-		padding-top: 50px;
+		height: $NAVBAR_HEIGHT; // also accounts for padding
+		margin: $NAVBAR_TOP 0 $NAVBAR_BOTTOM;
 	}
 }
 

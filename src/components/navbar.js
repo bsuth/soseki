@@ -3,7 +3,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 // Globals
-import { TABLET, NAVBAR_TOTAL } from '../resources/jsglobals'
+import { TABLET } from '../resources/jsglobals'
 
 // Styles
 import styles from './navbar.module.scss'
@@ -38,25 +38,37 @@ const Icon = ({click}) => (
 
 // A simple component to hold all of the <Link> elements of <Navbar>.
 // 'cssClass' is assigned by the <Navbar> component to either hide 
-// or show Links, depending on the current state of <Navbar>.
+// or show <Menu>, depending on the current state of <Navbar>.
 //
 // This component could be collapsed into <Navbar>, but is kept 
 // separate to keep <Navbar>'s 'render()' from getting too cluttered.
 
-const Links = ({cssClass}) => (
-	<div className={cssClass}>
-		<Link to="/">Home</Link>
-		<hr className={styles.divider} />
-		<Link to="/about">About</Link>
-		<hr className={styles.divider} />
-		<Link to="/features">Features</Link>
-		<hr className={styles.divider} />
-		<Link to="/media">Media</Link>
-		<hr className={styles.divider} />
-		<Link to="/contact">Contact</Link>
-		<hr className={styles.divider} />
-		<Link to="/links">Links</Link>
-	</div>
+const Menu = ({cssClass}) => (
+	<ul className={cssClass}>
+		<li>
+			<Link to="/">Home</Link>
+			<hr className={styles.divider} />
+		</li>
+		<li>
+			<Link to="/about">About</Link>
+			<hr className={styles.divider} />
+		</li>
+		<li>
+			<Link to="/features">Features</Link>
+			<hr className={styles.divider} />
+		</li>
+		<li>
+			<Link to="/media">Media</Link>
+			<hr className={styles.divider} />
+		</li>
+		<li>
+			<Link to="/contact">Contact</Link>
+			<hr className={styles.divider} />
+		</li>
+		<li>
+			<Link to="/links">Links</Link>
+		</li>
+	</ul>
 );
 
 ////////// NAVBAR LINKS //////////
@@ -77,14 +89,12 @@ export default class Navbar extends React.Component {
 		if(window.innerWidth < TABLET) {
 			this.state = { 
 				toggle: false, 
-				mobile: true,
 				hidden: false,
 				lastScroll: 0,
 			};
 		} else {
 			this.state = { 
 				toggle: true, 
-				mobile: false, 
 				hidden: false,
 				lastScroll: 0,
 			};
@@ -92,10 +102,10 @@ export default class Navbar extends React.Component {
 	}
 
 	render() {
-		let { mobile, toggle, hidden } = this.state;
+		let { toggle, hidden } = this.state;
 		let Title, HR;
 
-		if(!mobile) {
+		if(!(window.innerWidth < TABLET)) {
 			Title = <div className={styles.title}>&gt; Sōseki Project &lt;</div>
 			HR = <hr style={{ width: '90%', margin: 'auto' }}/>
 		}
@@ -105,9 +115,9 @@ export default class Navbar extends React.Component {
 		// To save on the extra css of applying z-indices
 		// we render <Icon> after <Links>
 		return (
-			<div className={`${styles.navbar} ${hidden ? styles.hide : styles.show}`}>
+			<div id="navbar" className={`${styles.navbar} ${hidden ? styles.hide : styles.show}`}>
 				{ Title }
-				<Links cssClass={toggle ? styles.links : styles.none}/>
+				<Menu cssClass={toggle ? styles.menu : styles.none}/>
 				<Icon click={this.handleClick}/>
 				{ HR }
 			</div>
@@ -134,35 +144,30 @@ export default class Navbar extends React.Component {
 	// Ex. Shrinking from tablet to mobile should hide the navbar.
 	handleResize = () => {
 		if(window.innerWidth < TABLET) {
-			this.setState({ toggle: false, mobile: true });
+			this.setState({ toggle: false });
 		} else {
-			this.setState({ toggle: true, mobile: false });
+			this.setState({ toggle: true });
 		}
 	}
 
-	// Source: https://stackoverflow.com/questions/31223341/detecting-scroll-direction
+	// Show or hide the navbar based on whether the user scrolls up or
+	// down, respectively. This only takes effect when the user has
+	// scrolled at least the height of the navbar itself.
 	handleScroll = () => {
 		let { lastScroll } = this.state;
-		let st = window.pageYOffset || document.documentElement.scrollTop; 
+		let newScroll = window.pageYOffset || document.documentElement.scrollTop; 
 
-		if(st > NAVBAR_TOTAL) {
-			// For Mobile or negative scrolling
-			if (st > lastScroll){
-				// downscroll code
-				window.NavHidden = true;
-				this.setState({ 
-					hidden: true, 
-					lastScroll: st,
-				});
-			} else {
-				// upscroll code
-				window.NavHidden = false;
-				this.setState({ 
-					hidden: false, 
-					lastScroll: st,
-				});
-			}
-		}
+		if(newScroll > document.getElementById("navbar").offsetHeight) {
+			this.setState({ 
+				hidden: (newScroll > lastScroll), 
+				lastScroll: newScroll,
+			});
+
+			// Set global variable to be read by other components.
+			// The <ChapterText> component needs to be able to read this
+			// in order to adjust the positioning of hovered vocab defs.
+			window.NavHidden = this.state.hidden;
+		} 
 	}
 }
 

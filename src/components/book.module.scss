@@ -1,12 +1,21 @@
 @import '../resources/cssglobals';
 
+// NOTE: All text (title_en, title_jp, and desc) is
+// grouped together in rendering, since it must
+// be wrapped by an external <span> for the tablet
+// layout. This causes some layout issues, which could 
+// be fixed with just conditional rendering, but instead
+// we use the 'order' property to manipulate how things are
+// rendered. This method keeps the code more concise.
 
-////////// BASE/MOBILE //////////
+
+////////// BOOK WRAPPER //////////
 
 .book {
 	width: 100%;
-	height: 670px;
+	margin: 20px 0;
 
+	// Relative position for svgs
 	position: relative;
 
 	display: flex;
@@ -14,174 +23,192 @@
 	justify-content: center;
 	align-items: center;
 
-	* { z-index: 1; } // Force everything above decoration
+	// Necessary to have everything
+	// appear above svg 
+	* { z-index: 0; }
 }
 
+@media only screen and (min-width: $TABLET) {
+	.book {
+		height: 500px;
+		flex-direction: row;
+	}
+}
+
+@media only screen and (min-width: $DESKTOP) {
+	.book {
+		width: 155px;
+		height: auto;
+		margin: 0 30px;
+		flex-direction: column;
+	}
+}
+
+////////// BOOK WRAPPER //////////
+
+
+
+
+////////// TITLES //////////
+
 %title {
-	margin: 0;
-	font-size: 1.3em;
-	font-weight: normal;
+	// Force the titles to render
+	// above the cover.
+	order: -1;
+
+	font-size: 22px;
 	font-family: 'Cinzel', serif;
 	text-align: center;
 }
 
 .title_en {
 	@extend %title;
-	margin-top: 30px;
-	order: 1;
+	margin-top: 20px;
 }
 
 .title_jp {
 	@extend %title;
-	margin-bottom: 30px;
-	order: 2;
-}
-
-.cover {
-	height: 250px; // SPECIFIC TO BOOK?
-	order: 3;
-	box-shadow: 10px 12px 5px black;
-}
-
-.desc {
-	width: 75%;
-	order: 4;
-	text-align: center;
-}
-
-.svgWrapper {
-	width: 100%;
-	height: 100%;
-
-	position: absolute;
-	overflow: hidden;
-	z-index: 0;
-}
-
-.chaptersWrap {
-	width: 100%;
-	height: 100vh;
-
-	position: fixed;
-	z-index: 1; // cover other books
-
-	display: none;
-
-	background: rgba(20, 20, 20, 0.9);
-}
-
-////////// BASE/MOBILE //////////
-
-
-
-
-////////// TABLET //////////
-
-.text {
-	width: 45%;
-	order: 4; // must appear after cover
-
-	// .title_en, .title_jp, .desc
-	* { 
-		width: 100%;
-		text-align: left; 
-	}
+	margin-bottom: 20px;
 }
 
 @media only screen and (min-width: $TABLET) {
-
-.book {
-	height: 500px;
-	flex-direction: row;
+	.title_en, .title_jp{ 
+		margin: 0;
+		text-align: left;
+	}
 }
-
-.title_en { margin-top: 15px; }
-.title_jp { margin-bottom: 15px; }
-
-.cover {
-	margin-right: 70px;
-}
-
-.svgWrapper {
-	svg { position: absolute; left: -20%; top: 0; } // TEMP, DELETE LATER
-}
-
-}
-
-////////// TABLET //////////
-
-
-
-
-////////// DESKTOP //////////
 
 @media only screen and (min-width: $DESKTOP) {
+	.title_en, .title_jp { 
+		margin: 20px 0;
+		text-align: center;
+	}
 
-.book {
-	width: auto;
-	height: auto;
-	margin: 0 30px;
-
-	flex-direction: column;
-	overflow: visible;
+	.title_jp { 
+		// Force the Japanese title to render
+		// underneath the cover.
+		order: 1; 
+	}
 }
 
-.title_en, .title_jp { margin: 20px 0; }
-.title_jp { order: 4; }
+////////// TITLES //////////
 
-.cover {
-	margin: auto;
-}
+
+
+
+////////// DESCRIPTION //////////
 
 .desc {
-	width: 200%;
-	margin: 0;
+	// Restrict width to maintain
+	// slim look on wider screens.
+	max-width: 300px; 
 
-	display: none;
-	
-	position: absolute;
-	z-index: 3;
+	margin-top: 20px;
+	padding: 0 20px;
+	text-align: center;
 }
 
-.book:nth-child(n+1):nth-child(-n+2) > .desc {
-	left: 125%;
-	right: auto;
-	text-align: left;
+@media only screen and (min-width: $TABLET) {
+	.desc {
+		padding: 0;
+		text-align: left;
+	}
 }
 
-.book:nth-child(n+3):nth-child(-n+4) > .desc {
-	left: auto;
-	right: 125%;
-	text-align: right;
+@media only screen and (min-width: $DESKTOP) {
+	.desc {
+		width: 300px;
+		margin: 0;
+		position: absolute;
+		display: none;
+	}
+
+
+	// Change the position of the description and
+	// the text direction based on whether the book
+	// lies on the left or right side of the page.
+
+	.book:nth-child(n+1):nth-child(-n+2) > .desc,
+	.book:nth-child(n+5) > .desc {
+		left: 125%;
+		right: auto;
+		text-align: left;
+	}
+
+	.book:nth-child(n+3):nth-child(-n+4) > .desc {
+		left: auto;
+		right: 125%;
+		text-align: right;
+	}
 }
 
-.book:nth-child(n+5) > .desc {
-	background: green;
+////////// DESCRIPTION //////////
+
+
+
+
+////////// COVER //////////
+
+.cover {
+	height: 250px;
+	box-shadow: 10px 12px 5px black;
 }
 
-.cover:hover ~ .mask {
+@media only screen and (min-width: $TABLET) {
+	.cover { 
+		margin-right: 70px; 
+
+		// Force the cover to appear to 
+		// the left of the text 
+		order: -1;
+	}
+}
+
+@media only screen and (min-width: $DESKTOP) {
+	.cover {
+		margin: 0;
+
+		// Negate the 'order: -1' from the tablet
+		// layout by setting order back to 0.
+		order: 0;
+	}
+}
+
+////////// COVER //////////
+
+
+
+
+////////// COVER HOVER (DESKTOP) //////////
+
+@media only screen and (min-width: $DESKTOP) {
+	.cover:hover ~ * {
+		z-index: 1;
+		display: block;
+	}
+
+	.cover:hover, {
+		z-index: 2;
+	}
+}
+
+////////// COVER HOVER (DESKTOP) //////////
+
+
+
+
+////////// MASK //////////
+
+.mask {
 	width: 100%;
 	height: 100%;
 
 	position: fixed;
 	top: 0; left: 0;
-	z-index: 2;
+
+	display: none;
 
 	background: rgba(20, 20, 20, 0.9);
 }
 
-.cover:hover ~ * {
-	z-index: 3;
-}
-
-.cover:hover ~ .desc {
-	display: flex;
-}
-
-.cover:hover {
-	z-index: 3;
-}
-
-}
-
-////////// DESKTOP //////////
+////////// MASK //////////

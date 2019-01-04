@@ -1,23 +1,39 @@
 @import '../resources/cssglobals';
 
+// NOTE: We need the title to appear towards the
+// top, which poses a problem since our wrapper
+// needs 'flex-direction: row' for the tablet
+// and desktop layouts. To fix this, we apply a
+// padding to our wrapper and absolute position
+// the title to take this space. The amount to 
+// pad as well as the height of the actual title
+// is stored in the following variable.
+$TITLE_HEIGHT: 50px;
 
-////////// INDEX //////////
 
-.index {
-	width: 100%;
+////////// WRAPPER //////////
+
+.wrapper {
+	// Leave room for title
+	// --------------------
+	// NOTE: This must be padding, as this class 
+	// shares a div with the .page class, which
+	// already has its own margin to account for
+	// the fixed navbar.
+	padding-top: $TITLE_HEIGHT;
 
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 }
 
 @media only screen and (min-width: $TABLET) {
-	.index {
+	.wrapper {
 		flex-direction: row;
+		justify-content: center;
 	}
 }
 
-////////// INDEX //////////
+////////// WRAPPER //////////
 
 
 
@@ -25,15 +41,14 @@
 ////////// TITLE //////////
 
 .title {
-	margin: 30px 0 0;
-	text-align: center;
+	height: $TITLE_HEIGHT;
+
+	position: absolute;
+	top: 0; left: 50%;
+	transform: translateX(-50%);
+
 	font-size: 30px;
 	font-family: 'Cinzel', serif;
-}
-
-@media only screen and (min-width: $TABLET) {
-	.title {
-	}
 }
 
 ////////// TITLE //////////
@@ -49,14 +64,8 @@
 
 @media only screen and (min-width: $DESKTOP) {
 	.img {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-
-		img {
-			width: 433px;
-			height: 590px;
-		}
+		height: 600px;
+		display: block;
 	}
 }
 
@@ -68,16 +77,14 @@
 ////////// COLUMN //////////
 
 .column {
-	width: auto;
 	margin: 0 auto;
-
 	display: flex;
 	flex-direction: column;
 }
 
 @media only screen and (min-width: $TABLET) {
 	.column {
-		margin: 0 5%;
+		margin: 0 30px;
 	}
 }
 
@@ -88,23 +95,23 @@
 
 ////////// LINK //////////
 
-.link {
+.chapterLink {
 	width: 230px;
 	padding: 10px;
-	margin: 20px 0;
+	margin: 10px 0;
 
-	z-index: 1;
-
+	// NOTE: NEED TO SET THESE IN THE JS
+	// COMPONENT, AS THEY WILL VARY
 	background: rgba(190, 182, 165, 0.9);
 	border: 3px solid rgb(76,50,22);
+
 	border-radius: 3px;
-	* { color: #202020; }
+	a { color: #202020; }
 }
 
-@media only screen and (min-width: $TABLET) {
-	.link {
-
-	}
+// Align tops of columns and img.
+.chapterLink:first-child {
+	margin-top: 0;
 }
 
 ////////// LINK //////////

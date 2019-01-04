@@ -21,12 +21,12 @@ import styles from './book.module.scss'
 // Instead, this is implemented at the parent level so that 
 // only one rerender call is necessary.
 
-export default ({data, svg, mode}) => {
+export default ({data, mode}) => {
 	let { path, img, imgAlt } = data;
 	let { title_en, title_jp, year, desc } = data;
 
-	let SvgWrap, Mask;
-	let TextLayout = (
+	let Mask;
+	let TextWrap = (
 		<>
 			<h4 className={styles.title_en}>
 				{title_en}
@@ -55,23 +55,31 @@ export default ({data, svg, mode}) => {
 	// Desktop: Render 'mask' <div> to cover the screen
 	// when a book is hovered.
 	
-	if(mode === MediaEnum.mobile) {
-		SvgWrap = <div className={styles.svgWrapper}>{svg}</div>;
-	} else if(mode === MediaEnum.tablet) {
-		TextLayout = <span className={styles.text}> {TextLayout} </span>;
-	} else {
+	if(mode === MediaEnum.tablet) {
+		TextWrap = <span style={{ width: '350px' }}> {TextWrap} </span>;
+	} else if(mode === MediaEnum.desktop) {
 		Mask = <div className={styles.mask} />
 	}
 
+	// NOTE: order matters here!
+	// -------------------------
+	// 'TextWrap' and 'Mask' must both be rendered after <Link>. 
+	// In the desktop layout, the css for these rely on the hover 
+	// state of <Link>. As css is cascading, we render <Link> first
+	// so that we may use css selectors.
+	//
+	// We render 'TextWrap' after 'Mask' to save on the extra css
+	// of z-indices. This way, 'TextWrap' will always render above
+	// 'Mask', even in the case that their z-indices are the same.
+	
 	return(
 		<div className={styles.book}>
 			<Link to={path} className={styles.cover}> 
 				<img src={img} alt={imgAlt} />
 			</Link>
 
-			{ TextLayout }
-			{ SvgWrap }
 			{ Mask }
+			{ TextWrap }
 		</div>
 	);
 }
