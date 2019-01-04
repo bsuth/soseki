@@ -12,10 +12,11 @@ import styles from './home.module.scss'
 import Book from './components/book'
 
 // Routes
-import Botchan from './botchan/index'
+import Botchan from './botchan/botchan'
 import Sanshiro from './sanshiro/index'
 import Kokoro from './kokoro/index'
 import Neko from './neko/index'
+import TenNights from './shortstories/tennights/tennights'
 
 // Images
 import BotchanCover from './resources/botchancover.jpg'
@@ -57,13 +58,14 @@ export default class Home extends React.Component {
 		return (
 			<div>
 
-					{ Books.map(x => <Route key={x.data.title_en} path={x.data.path} component={x.component} /> )}
+					{ Books.map(x => 
+						<Route key={x.data.title_en} path={x.data.path} component={x.component} /> 
+					)}
 					<Route exact path="/" component={ () => (
 						<div className="page" id={styles.home}>
 							{ Books.map(x => <Book 
 								key={x.data.title_en} 
 								data={x.data} 
-								decoration={x.decoration[mode]}
 								mode={mode}
 							/> )}
 						</div>
@@ -114,12 +116,7 @@ const Books = [
 			imgAlt: 'Botchan cover',
 			path: '/botchan',
 		},
-		decoration: [ // SVGS HERE
-			<></>,
-			<></>,
-			<></>,
-		],
-		component: (route) => <Botchan />
+		component: Botchan,
 	},
 	{
 		data: {
@@ -131,12 +128,7 @@ const Books = [
 			imgAlt: 'Sanshiro cover',
 			path: '/sanshiro',
 		},
-		decoration: [
-			<></>,
-			<></>,
-			<></>,
-		],
-		component: (route) => <Sanshiro prefix={route.match.path}/>
+		component: Sanshiro,
 	},
 	{
 		data: {
@@ -148,12 +140,7 @@ const Books = [
 			imgAlt: 'Kokoro cover',
 			path: '/kokoro',
 		},
-		decoration: [
-			<></>,
-			<></>,
-			<></>,
-		],
-		component: (route) => <Kokoro prefix={route.match.path}/>
+		component: Kokoro,
 	},
 	{
 		data: {
@@ -165,12 +152,7 @@ const Books = [
 			imgAlt: 'I am a Cat cover',
 			path: '/neko',
 		},
-		decoration: [
-			<></>,
-			<></>,
-			<></>,
-		],
-		component: (route) => <Neko prefix={route.match.path}/>
+		component: Neko,
 	},
 	{
 		data: {
@@ -182,12 +164,7 @@ const Books = [
 			imgAlt: 'Ten Nights of Dreams cover',
 			path: '/neko',
 		},
-		decoration: [
-			<></>,
-			<></>,
-			<></>,
-		],
-		component: (route) => <Neko prefix={route.match.path}/>
+		component: TenNights
 	},
 ];
 

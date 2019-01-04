@@ -7,6 +7,12 @@
 // for maintainability.
 // 
 
+//
+// RESTRAINTS
+// ----------
+//
+$MAX-WIDTH: 1200PX;
+
 
 //
 // MEDIA QUERIES
@@ -31,6 +37,7 @@ $WHITE: #e0e0e0;
 // NAVBAR
 // ------
 //
+$NAVBAR_HEIGHT_M: 75px;
 $NAVBAR_HEIGHT: 100px;
 $NAVBAR_BOTTOM: 30px;
 $NAVBAR_TOP: 50px;

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import StudyGuide from '../../../components/StudyGuide'
+import StudyGuide from '../../components/StudyGuide'
 
 
 export default () => (

@@ -2,16 +2,16 @@
 import React from 'react'
 
 // Components
-import ChapterText from '../../../components/ChapterText'
-import SectionBreak from '../../../components/SectionBreak'
+import ChapterText from '../../components/ChapterText'
+import SectionBreak from '../../components/SectionBreak'
 
 // Routes
 import StudyGuide001 from './StudyGuide001'
 import StudyGuide002 from './StudyGuide002'
 
 // Audio
-import Audio001 from '../../../audio/botchan/botchan01-001.mp3'
-import Audio002 from '../../../audio/botchan/botchan01-002.mp3'
+import Audio001 from '../../audio/botchan/botchan01-001.mp3'
+import Audio002 from '../../audio/botchan/botchan01-002.mp3'
 
 
 export default () => (

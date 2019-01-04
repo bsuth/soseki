@@ -27,20 +27,24 @@ ul {
 
 
 
-////////// HTML/BODY //////////
+////////// BODY //////////
 
-html, body {
-	width: 100% ;
-	min-height: 100vh;
+body {
+	max-width: $MAX-WIDTH;
+	margin: 0 auto;
+
+	// Force all position absolute and fixed elements
+	// to treat this as the parent.
+	position: relative;
 
 	background: $BACKGROUND;
 	color: $FOREGROUND;
 
-	font-family: 'Cormorant Garamond', serif;
 	font-size: 18px;
+	font-family: 'Cormorant Garamond', serif;
 }
 
-////////// HTML/BODY //////////
+////////// BODY //////////
 
 
 
@@ -49,6 +53,8 @@ html, body {
 
 .page {
 	width: 100%;
+	margin-top: 75px;
+	padding: 0 6%;
 
 	// Needed for smooth transitions between pages.
 	// In particular, need pages to overlap during
