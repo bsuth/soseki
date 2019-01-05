@@ -15,22 +15,23 @@ import styles from './navbar.module.scss'
 // props is passed to assign an onClick listener that acts at the
 // <Navbar> level.
 
-const Icon = ({click}) => (
+const Icon = ({className, click}) => (
 	<svg 
 		onClick={click}
-		className={styles.icon}
-		xmlns='http://www.w3.org/2000/svg' viewBox='0 0 51 28'
+		className={`${className} ${styles.icon}`}
+		xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'
 	>
-		<g transform='translate(-16.5 -22.392)'>
-			<line x2='36' transform='translate(24.5 36.392)' />
-			<line x2='51' transform='translate(16.5 23.392)' />
-			<line x2='18' transform='translate(33.5 49.392)' />
-		</g>
+		<line x2='40'/>
+		<line x2='24'/>
+		<line x2='10'/>
 	</svg>
 );
 
 ///////// NAVBAR ICON //////////
 
+			//<line x2='24' transform={`translate(${x} ${x}) rotate(45)`} />
+			//<line x2='12' transform={'translate(20 20) rotate(-45)'} />
+			//<line x2='12' transform={'translate(20 20) rotate(135)'} />
 
 
 
@@ -43,30 +44,31 @@ const Icon = ({click}) => (
 // This component could be collapsed into <Navbar>, but is kept 
 // separate to keep <Navbar>'s 'render()' from getting too cluttered.
 
-const Menu = ({cssClass}) => (
-	<ul className={cssClass}>
+const Menu = ({className}) => (
+	<ul className={className}>
 		<li>
 			<Link to="/">Home</Link>
-			<hr className={styles.divider} />
+			<hr className={styles.underline} />
 		</li>
 		<li>
 			<Link to="/about">About</Link>
-			<hr className={styles.divider} />
+			<hr className={styles.underline} />
 		</li>
 		<li>
 			<Link to="/features">Features</Link>
-			<hr className={styles.divider} />
+			<hr className={styles.underline} />
 		</li>
 		<li>
 			<Link to="/media">Media</Link>
-			<hr className={styles.divider} />
+			<hr className={styles.underline} />
 		</li>
 		<li>
 			<Link to="/contact">Contact</Link>
-			<hr className={styles.divider} />
+			<hr className={styles.underline} />
 		</li>
 		<li>
 			<Link to="/links">Links</Link>
+			<hr className={styles.underline} />
 		</li>
 	</ul>
 );
@@ -86,40 +88,27 @@ const Menu = ({cssClass}) => (
 export default class Navbar extends React.Component {
 	constructor() {
 		super();
-		if(window.innerWidth < TABLET) {
-			this.state = { 
-				toggle: false, 
-				hidden: false,
-				lastScroll: 0,
-			};
-		} else {
-			this.state = { 
-				toggle: true, 
-				hidden: false,
-				lastScroll: 0,
-			};
-		}
+		this.state = { 
+			toggle: !(window.innerWidth < TABLET), 
+			hidden: false,
+			lastScroll: 0,
+		};
 	}
 
 	render() {
 		let { toggle, hidden } = this.state;
-		let Title, HR;
 
-		if(!(window.innerWidth < TABLET)) {
-			Title = <div className={styles.title}>&gt; Sōseki Project &lt;</div>
-			HR = <hr style={{ width: '90%', margin: 'auto' }}/>
-		}
-
-		// NOTE: order matters here!
-		// -------------------------
-		// To save on the extra css of applying z-indices
-		// we render <Icon> after <Links>
 		return (
 			<div id="navbar" className={`${styles.navbar} ${hidden ? styles.hide : styles.show}`}>
-				{ Title }
-				<Menu cssClass={toggle ? styles.menu : styles.none}/>
-				<Icon click={this.handleClick}/>
-				{ HR }
+
+				<Icon className={toggle ? styles.exit : styles.blah } click={this.handleClick}/>
+				<div className={styles.row}>
+					<h1 className={`${styles.title} ${toggle ? styles.hide1 : styles.show1}`}>
+						Sōseki Project
+					</h1>
+					<Menu className={`${styles.menu} ${toggle ? styles.show2 : styles.hide2}`}/>
+				</div>
+
 			</div>
 		);
 	}
@@ -143,11 +132,10 @@ export default class Navbar extends React.Component {
 	// If the media query changes, hide or show the navbar accordingly.
 	// Ex. Shrinking from tablet to mobile should hide the navbar.
 	handleResize = () => {
-		if(window.innerWidth < TABLET) {
-			this.setState({ toggle: false });
-		} else {
-			this.setState({ toggle: true });
-		}
+		
+		this.setState({ 
+			toggle: !(window.innerWidth < TABLET)
+		});
 	}
 
 	// Show or hide the navbar based on whether the user scrolls up or
