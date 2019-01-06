@@ -51,8 +51,7 @@ export default class Home extends React.Component {
 	}
 
 	// NOTE: The wrapping div is necessary. <CSSTransitions> requires 
-	// a hook to apply the various css animation classes and <Switch>
-	// does not render any DOM elements.
+	// a hook to apply the various css animation classes.
 	render() {
 		let { mode } = this.state;
 		return (
@@ -85,11 +84,20 @@ export default class Home extends React.Component {
 
 	handleResize = () => {
 		let mediaQuery = window.innerWidth;
+		let { mode } = this.state;
+
+		// NOTE: We need to explicitly check the current value of
+		// 'mode' in order to make sure we are not unnecessarily
+		// rerendering everything.
 		if(mediaQuery < TABLET) {
-			this.setState({ mode: MediaEnum.mobile });
+			if(mode !== MediaEnum.mobile) {
+				this.setState({ mode: MediaEnum.mobile });
+			}
 		} else if(mediaQuery < DESKTOP) {
-			this.setState({ mode: MediaEnum.tablet });
-		} else {
+			if(mode !== MediaEnum.tablet) {
+				this.setState({ mode: MediaEnum.tablet });
+			}
+		} else if(mode !== MediaEnum.desktop) {
 			this.setState({ mode: MediaEnum.desktop });
 		}
 	}

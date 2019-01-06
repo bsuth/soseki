@@ -25,6 +25,12 @@ export default (props) => {
 	let { root, imgSrc, imgAlt } = props;
 	let { Left, Right } = props;
 
+	let colors = {
+		background: props.colorPrimary,
+		border: `3px solid ${props.colorSecondary}`,
+	};
+
+
 	// NOTE: The wrapping div is necessary. <CSSTransitions> requires
 	// a hook to apply the various css animation classes.
 	return(
@@ -37,9 +43,9 @@ export default (props) => {
 				<div className={`page ${styles.wrapper}`}>
 
 					<h2 className={styles.title}>Botchan</h2>
-					<Column data={Left} />
+					<Column data={Left} colors={colors} />
 					<img className={styles.img} src={imgSrc} alt={imgAlt} />
-					<Column data={Right} />
+					<Column data={Right} colors={colors} />
 
 				</div>
 			)}/>
@@ -58,20 +64,22 @@ export default (props) => {
 // Component to map data to the actual html
 // elements that get rendered on screen.
 
-const Column = ({ data }) => (
-	<ul className={styles.column}>
-		{ data.map(x => (
+const Column = ({ data, colors }) => {
+	return(
+		<ul className={styles.column}>
+			{ data.map(x => (
 
-			<li key={x.title} className={styles.chapterLink}>
-				<Link to={x.path}>
-					<h5> {x.title} </h5>
-					<p> {x.desc} </p>
-					<p> {x.sections} </p>
-				</Link>
-			</li>
+				<li key={x.title} style={colors} className={styles.link}>
+					<Link to={x.path}>
+						<h5> {x.title} </h5>
+						<p> {x.desc} </p>
+						<p> {x.sections} </p>
+					</Link>
+				</li>
 
-		))}
-	</ul>
-);
+			))}
+		</ul>
+	);
+};
 
 ////////// COLUMN //////////

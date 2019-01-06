@@ -1,6 +1,17 @@
 @import '../resources/cssglobals.scss';
 
 
+////////// TITLE //////////
+
+.blah {
+	margin-bottom: 10px;
+	font-size: 30px;
+	text-align: center;
+}
+
+////////// TITLE //////////
+
+
 ////////// VOCAB //////////
 
 .vocab {
@@ -14,10 +25,6 @@
 
 
 ////////// VOCAB DEF //////////
-
-.vocab:hover > .vocabdef {
-	display: block;
-}
 
 .vocabdef {
 	width: 90%;

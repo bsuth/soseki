@@ -132,7 +132,6 @@ export default class Navbar extends React.Component {
 	// If the media query changes, hide or show the navbar accordingly.
 	// Ex. Shrinking from tablet to mobile should hide the navbar.
 	handleResize = () => {
-		
 		this.setState({ 
 			toggle: !(window.innerWidth < TABLET)
 		});
@@ -146,10 +145,14 @@ export default class Navbar extends React.Component {
 		let newScroll = window.pageYOffset || document.documentElement.scrollTop; 
 
 		if(newScroll > document.getElementById("navbar").offsetHeight) {
-			this.setState({ 
-				hidden: (newScroll > lastScroll), 
-				lastScroll: newScroll,
-			});
+			// Only show/hide when the user has scrolled at least 50px up
+			// or down. This is done to reduce sensitivity.
+			if(Math.abs(newScroll - lastScroll) > 50) {
+				this.setState({ 
+					hidden: (newScroll > lastScroll), 
+					lastScroll: newScroll,
+				});
+			}
 
 			// Set global variable to be read by other components.
 			// The <ChapterText> component needs to be able to read this

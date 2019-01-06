@@ -95,22 +95,17 @@ $TITLE_HEIGHT: 50px;
 
 ////////// LINK //////////
 
-.chapterLink {
+.link {
 	width: 230px;
 	padding: 10px;
 	margin: 10px 0;
-
-	// NOTE: NEED TO SET THESE IN THE JS
-	// COMPONENT, AS THEY WILL VARY
-	background: rgba(190, 182, 165, 0.9);
-	border: 3px solid rgb(76,50,22);
 
 	border-radius: 3px;
 	a { color: #202020; }
 }
 
 // Align tops of columns and img.
-.chapterLink:first-child {
+.link:first-child {
 	margin-top: 0;
 }
 

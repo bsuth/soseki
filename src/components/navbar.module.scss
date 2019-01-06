@@ -209,6 +209,21 @@ $e: 4px, 4px, 2px;
 	animation: show1 250ms forwards;
 }
 
+@media only screen and (min-width: $TABLET) {
+	.hide1 {
+		animation: none;
+	}
+	.show1 {
+		animation: none;
+	}
+	.hide2 {
+		animation: none;
+	}
+	.show2 {
+		animation: none;
+	}
+}
+
 @keyframes hide1 {
 	0% { top: 50%; }
 	50% { top: -40%; }

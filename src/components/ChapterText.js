@@ -3,11 +3,21 @@ import React from 'react'
 import { Route } from 'react-router-dom'
 
 // Globals
-import { NAVBAR_HEIGHT, NAVBAR_TOP} from '../resources/jsglobals'
+import { TABLET, NAVBAR_HEIGHT_M, NAVBAR_HEIGHT, NAVBAR_TOP } from '../resources/jsglobals'
 
 // Styles
 import './ChapterText.scss'
 
+
+////////// CHAPTERTEXT //////////
+
+// This component is responsible for rendering the
+// text pages as well as the routes to the study guides.
+// It also implements some features unavailable to pure
+// css, such as changing the text color of the parent div
+// when hovering a vocab term and adjusting the height of
+// the vocab defs depending on whether the navbar is 
+// currently hidden.
 
 export default class ChapterText extends React.Component {
 	constructor(props) {
@@ -15,24 +25,30 @@ export default class ChapterText extends React.Component {
 		this.props = props;
 	}
 
+	// NOTE: The wrapping div is necessary. <CSSTransitions> requires 
+	// a hook to apply the various css animation classes.
 	render() {
-		let { path, guides, children } = this.props;
-
+		let { path, StudyGuides, children } = this.props;
 		return(
 			<div>
-				{ guides.map(x => <Route key={x.path} path={x.path} component={x.component}/>) }
+ 
+				{ StudyGuides.map(x => <Route key={x.path} path={x.path} component={x.component}/>) }
 				<Route exact path={path} component={ () => (
-					<div className="page" id="ChapterText">
+					<div className="page">
+						<h2 className="blah">Botchan Chapter 1</h2>
+						<hr style={{ width: '10%', margin: 'auto' }} />
 						{ children }
 					</div>
 				)}/>
+
 			</div>
 		);
 	}
 
 	componentDidMount() {
-		this.vocabArray = document.getElementsByClassName("vocab");
-		let { vocabArray } = this;
+		window.addEventListener('scroll', this.handleScroll);
+		let vocabArray = document.getElementsByClassName("vocab");
+
 		for(let i = 0; i < vocabArray.length; ++i) {
 			vocabArray[i].addEventListener('mouseenter', this.handleEnter);
 			vocabArray[i].addEventListener('mouseleave', this.handleExit);
@@ -40,26 +56,48 @@ export default class ChapterText extends React.Component {
 	}
 
 	componentWillUnmount() {
-		let { vocabArray } = this;
+		window.removeEventListener('scroll', this.handleScroll);
+		let vocabArray = document.getElementsByClassName("vocab");
+
 		for(let i = 0; i < vocabArray.length; ++i) {
 			vocabArray[i].removeEventListener('mouseenter', this.handleEnter);
 			vocabArray[i].removeEventListener('mouseleave', this.handleExit);
 		}
 	}
 
+	handleScroll = () => {
+		this.handleExit(this.lastEvent);
+	}
+
 	handleEnter = (event) => {
+		this.lastEvent = event;
 		let vocab = event.target;
 		let vocabdef = vocab.getElementsByClassName("vocabdef")[0];
 
 		vocab.parentElement.style.color = '#a0a0a0';
 		vocab.style.color = 'white';
-		vocabdef.style.top = window.NavHidden ? '5px' : NAVBAR_HEIGHT + NAVBAR_TOP + 'px';
+		vocabdef.style.display = 'block';
+
+		// Read global variable (set by <Navbar> component) to determine
+		// the appropriate height for the vocab def of the currently
+		// hovered vocab.
+		if(window.innerWidth < TABLET) {
+			vocabdef.style.top = window.NavHidden ? '5px' : NAVBAR_HEIGHT_M + 5 + 'px';
+		} else {
+			vocabdef.style.top = window.NavHidden ? '5px' : NAVBAR_HEIGHT + NAVBAR_TOP + 'px';
+		}
 	}
 
 	handleExit = (event) => {
-		let vocab = event.target;
-		vocab.parentElement.style.color = 'white';
-		vocab.style.color = 'inherit';
+		if(event) {
+			let vocab = event.target;
+			let vocabdef = vocab.getElementsByClassName("vocabdef")[0];
+
+			vocab.parentElement.style.color = 'white';
+			vocab.style.color = 'inherit';
+			vocabdef.style.display = 'none';
+		}
 	}
 };
 
+////////// CHAPTERTEXT //////////

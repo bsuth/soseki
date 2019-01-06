@@ -28,6 +28,8 @@ export default () => (
 		imgAlt="Soseki Portrait"
 		Left={ChaptersLeft}
 		Right={ChaptersRight}
+		colorPrimary="rgba(190, 182, 165, 0.9)"
+		colorSecondary="rgb(76, 50, 22)"
 	/>
 );
 
