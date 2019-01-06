@@ -18,7 +18,7 @@ export default ({studyguide, num, audio}) => (
 		</Link>
 
 		<audio controls="controls" preload="none">
-			<source src="http://www.sosekiproject.org/botchan/audio/botchan01-001.mp3"/>
+			<source src={audio}/>
 			This browser does not support HTML5 audio
 		</audio>
 

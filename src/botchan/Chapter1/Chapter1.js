@@ -9,10 +9,6 @@ import SectionBreak from '../../components/SectionBreak'
 import StudyGuide001 from './StudyGuide001'
 import StudyGuide002 from './StudyGuide002'
 
-// Audio
-import Audio001 from '../../audio/botchan/botchan01-001.mp3'
-import Audio002 from '../../audio/botchan/botchan01-002.mp3'
-
 
 export default () => (
 	<ChapterText path="/botchan/chapter1" StudyGuides={StudyGuides}>
@@ -21,7 +17,7 @@ export default () => (
 
 			<SectionBreak 
 				studyguide={StudyGuides[0].path}
-				audio={Audio001}
+				audio={"http://www.sosekiproject.org/audio/botchan01-001.mp3"}
 				num={1} 
 			/>	
 
@@ -32,7 +28,7 @@ export default () => (
 
 			<SectionBreak 
 				studyguide={StudyGuides[1].path}
-				audio={Audio002}
+				audio={"http://www.sosekiproject.org/audio/botchan01-002.mp3"}
 				num={2} 
 			/>	
 
