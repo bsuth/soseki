@@ -120,7 +120,7 @@ const Routes = [
 // For this reason <Main> must stay at the bottom of this page,
 // but this may be changed if <Head> and <Content> are imported.
 
-const Main = (
+const Main = () => (
 	<BrowserRouter>
 		<div>
 			<Head />
@@ -130,6 +130,6 @@ const Main = (
 	</BrowserRouter>
 );
 
-ReactDOM.render(Main, document.getElementById('root'));
+ReactDOM.render(<Main/>, document.getElementById('root'));
 
 /////////// MAIN //////////

@@ -5,16 +5,18 @@ import React from 'react'
 import './StudyGuide.scss'
 
 
-export default class StudyGuide extends React.Component {
+export default ({book, num, children}) => (
+	<div className="page">
 
-	render() {
-		let { children } = this.props;
-		return(
-			<div className="page">
-				<h2 className="blah">Botchan Study Guide<br/>Section 001</h2>	
-				{ children }	
-			</div>
-		);
-	}
+		<h2 className="blah">
+			{book} Study Guide
+			<br/>
+			Section {num.toString().padStart(3, '0')}
+		</h2>	
 
-}
+		<hr style={{ width: '45px', margin: 'auto' }} />
+
+		{ children }	
+
+	</div>
+);

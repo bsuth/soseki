@@ -11,14 +11,16 @@ import styles from './navbar.module.scss'
 
 ///////// NAVBAR ICON //////////
 
-// An SVG of the icon for the mobile drop down menu. A single 'click' 
-// props is passed to assign an onClick listener that acts at the
-// <Navbar> level.
+// An SVG of the icon for the mobile drop down menu. A 'click' 
+// prop is passed to assign an onClick listener that acts at the
+// <Navbar> level. The className is also passed down to control
+// animations between the ddm and cross icons.
 
 const Icon = ({className, click}) => (
 	<svg 
+		id={styles.icon}
+		className={className}
 		onClick={click}
-		className={`${className} ${styles.icon}`}
 		xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'
 	>
 		<line x2='40'/>
@@ -38,14 +40,11 @@ const Icon = ({className, click}) => (
 ////////// NAVBAR LINKS //////////
 
 // A simple component to hold all of the <Link> elements of <Navbar>.
-// 'cssClass' is assigned by the <Navbar> component to either hide 
-// or show <Menu>, depending on the current state of <Navbar>.
-//
 // This component could be collapsed into <Navbar>, but is kept 
 // separate to keep <Navbar>'s 'render()' from getting too cluttered.
 
 const Menu = ({className}) => (
-	<ul className={className}>
+	<ul id={styles.menu} className={className}>
 		<li>
 			<Link to="/">Home</Link>
 			<hr className={styles.underline} />
@@ -89,25 +88,25 @@ export default class Navbar extends React.Component {
 	constructor() {
 		super();
 		this.state = { 
-			toggle: !(window.innerWidth < TABLET), 
+			toggleMenu: !(window.innerWidth < TABLET), 
 			hidden: false,
 			lastScroll: 0,
 		};
 	}
 
 	render() {
-		let { toggle, hidden } = this.state;
+		let { hidden } = this.state;
+		let { iconClass, titleClass, menuClass } = this.state;
+		let { iconClick } = this;
+
 
 		return (
-			<div id="navbar" className={`${styles.navbar} ${hidden ? styles.hide : styles.show}`}>
+			<div id={styles.navbar} className={hidden ? styles.hide : styles.show}>
 
-				<Icon className={toggle ? styles.exit : styles.blah } click={this.handleClick}/>
-				<div className={styles.row}>
-					<h1 className={`${styles.title} ${toggle ? styles.hide1 : styles.show1}`}>
-						Sōseki Project
-					</h1>
-					<Menu className={`${styles.menu} ${toggle ? styles.show2 : styles.hide2}`}/>
-				</div>
+				<Icon className={iconClass} click={iconClick} />
+				<h1 id={styles.title} className={titleClass}> Sōseki Project </h1>
+				<Menu id={styles.menu} className={menuClass} />
+				<hr className={styles.hr} />
 
 			</div>
 		);
@@ -123,17 +122,20 @@ export default class Navbar extends React.Component {
 		window.removeEventListener('scroll', this.handleScroll);
 	}
 
-	handleClick = () => {
-		this.setState((state) => ({ 
-			toggle: !state.toggle,
+	// Toggle to display the navbar menu.
+	iconClick = () => {
+		this.setState(({toggleMenu, iconClass}) => ({
+			iconClass: (toggleMenu ? "" : styles.cross),
+			titleClass: (toggleMenu ? styles.showTitle : styles.hideTitle),
+			menuClass: (toggleMenu ? styles.hideMenu : styles.showMenu),
+			toggleMenu: !toggleMenu,
 		}));
 	}
 
 	// If the media query changes, hide or show the navbar accordingly.
-	// Ex. Shrinking from tablet to mobile should hide the navbar.
 	handleResize = () => {
 		this.setState({ 
-			toggle: !(window.innerWidth < TABLET)
+			toggleMenu: !(window.innerWidth < TABLET)
 		});
 	}
 
@@ -144,7 +146,7 @@ export default class Navbar extends React.Component {
 		let { lastScroll } = this.state;
 		let newScroll = window.pageYOffset || document.documentElement.scrollTop; 
 
-		if(newScroll > document.getElementById("navbar").offsetHeight) {
+		if(newScroll > document.getElementById(styles.navbar).offsetHeight) {
 			// Only show/hide when the user has scrolled at least 50px up
 			// or down. This is done to reduce sensitivity.
 			if(Math.abs(newScroll - lastScroll) > 50) {

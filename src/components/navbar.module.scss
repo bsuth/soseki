@@ -3,7 +3,7 @@
 
 ////////// NAVBAR //////////
 
-.navbar {
+#navbar {
 	width: 100%;
 	height: $NAVBAR_HEIGHT_M;
 
@@ -22,12 +22,35 @@
 }
 
 @media only screen and (min-width: $TABLET) {
-	.navbar {
-		height: $NAVBAR_HEIGHT; // also accounts for padding
-		margin: $NAVBAR_TOP 0 $NAVBAR_BOTTOM;
+	#navbar {
+		height: $NAVBAR_HEIGHT + $NAVBAR_TOP; // NOTE: border-sizing: border-box;
+		padding-top: $NAVBAR_TOP;
+
+		flex-direction: column;
 	}
 }
 
+
+// Hide/Show Animation //
+.hide { 
+	animation: slideNavUp 250ms forwards;
+}
+
+.show {
+	animation: slideNavDown 250ms forwards;
+}
+
+@keyframes slideNavUp {
+	0% { top: 0%; }
+	90% { top: -70%; }
+	100% { top: -100%; }
+}
+
+@keyframes slideNavDown {
+	0% { top: -100%; }
+	70% { top: -10%; }
+	100% { top: 0%; }
+}
 
 ////////// NAVBAR //////////
 
@@ -36,48 +59,59 @@
 
 ////////// ICON //////////
 
-.icon {
-	width: 40px;
+// The total width of the icon, including margins. 
+// This is needed to calculate the widths of the
+// title and menu for the mobile layout, since they
+// simply fill the remaining space.
+//
+// NOTE: We don't use css 'flex' on the title and
+// menu, as they are absolutely positioned.
+
+$ICON_WIDTH: 16%;
+
+
+#icon {
+	width: 9%;
 	height: 40px;
-	margin: 0 20px;
+	margin-left: 7%;
 	z-index: 1;
 	
 	line {
 		width: 40px;
 		fill: none;
 		stroke: #fff;
-		stroke-width: 2px;
 		transition: 250ms cubic-bezier(0.26, 0.73, 0.39, 0.97);
 	}
 }
 
 @media only screen and (min-width: $TABLET) {
-	.icon {
+	#icon {
 		display: none;
 	}
 }
 
 
-// Navbar animation
-
-$a: '0px, 9px', '8px, 20px', '15px, 31px';
-$b: '13px, 13px', '20px, 20px', '20px, 20px';
-$c: 45deg, -45deg, 135deg;
-$d: 0.5, 0.417, 1;
-$e: 4px, 4px, 2px;
+// Navbar animation //
+$line-transforms: (
+	('0px, 9px', '13px, 13px', 45deg, 0.5, 4px),
+	('8px, 20px', '20px, 20px', -45deg, 0.417, 4px),
+	('15px, 31px', '20px, 20px', 135deg, 1, 2px),
+);
+	
 @for $i from 1 through 3 {
-	.icon {
-		line:nth-child(#{$i}) {
-			transform: translate(#{nth($a, $i)});
-		}
+	$line: nth($line-transforms, $i);
+	
+	#icon line:nth-child(#{$i}) {
+		transform: translate(#{nth($line, 1)});
+		stroke-width: 2px;
 	}
 
-	.icon.exit line:nth-child(#{$i}) {
+	#icon.cross line:nth-child(#{$i}) {
 		transform:
-			translate(#{nth($b, $i)}) 
-			rotate(#{nth($c, $i)}) 
-			scale(#{nth($d, $i)});
-		stroke-width: #{nth($e, $i)};
+			translate(#{nth($line, 2)}) 
+			rotate(#{nth($line, 3)}) 
+			scale(#{nth($line, 4)});
+		stroke-width: #{nth($line, 5)};
 	}
 }
 
@@ -88,20 +122,60 @@ $e: 4px, 4px, 2px;
 
 ////////// TITLE //////////
 
-.title {
-	margin: 0 auto;
+#title {
+	width:  100% - $ICON_WIDTH;
+	height: 100%;
 
 	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
+	top: 0; right: 0;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
 	font-size: 25px;
 	font-family: 'Cinzel', serif;
 }
 
 @media only screen and (min-width: $TABLET) {
-	.title {
+	#title {
+		width: auto;
+		height: auto;
+
+		position: relative;
+		top: auto; left: auto;
+		transform: none;
+
 		font-size: 45px;
+	}
+}
+
+
+// Hide/Show Animations //
+#title.hideTitle {
+	animation: slideTitleUp 250ms forwards;
+}
+
+#title.showTitle {
+	animation: slideTitleDown 250ms forwards;
+}
+
+@keyframes slideTitleUp {
+	0% { top: 0%; }
+	50% { top: -90%; }
+	100% { top: -100%; }
+}
+
+@keyframes slideTitleDown {
+	0% { top: -100%; }
+	20% { top: -90%; }
+	100% { top: 0%; }
+}
+
+// Animations removed for tablet/desktop layout
+@media only screen and (min-width: $TABLET) {
+	#title.hideTitle, #title.showTitle {
+		animation: none;
 	}
 }
 
@@ -112,12 +186,12 @@ $e: 4px, 4px, 2px;
 
 ////////// MENU //////////
 
-.menu {
-	width: 100%;
+#menu {
+	width: 100% - $ICON_WIDTH;
 	height: 100%;
 
 	position: absolute;
-	top: 150%; left: 0;
+	top: 100%; right: 0;
 
 	display: flex;
 	align-items: center;
@@ -144,14 +218,15 @@ $e: 4px, 4px, 2px;
 }
 
 @media only screen and (min-width: $TABLET) {
-	.menu {
-		width: 85%;
+	#menu {
+		width: 90%;
 		height: auto;
 		margin: auto;
 		padding: 0;
 
-		/* required for 'margin: auto' to center */
 		position: relative;
+		top: auto;
+
 		flex-direction: row;
 		background: transparent;
 
@@ -162,9 +237,38 @@ $e: 4px, 4px, 2px;
 			align-items: center;
 		}
 
-		.divider {
+		.underline {
 			display: none;
 		}
+	}
+}
+
+
+// Hide/Show Animations //
+#menu.hideMenu { 
+	animation: slideMenuDown 250ms forwards;
+}
+
+#menu.showMenu {
+	animation: slideMenuUp 250ms forwards;
+}
+
+@keyframes slideMenuDown {
+	0% { top: 0; }
+	50% { top: 90%; }
+	100% { top: 100%; }
+}
+
+@keyframes slideMenuUp {
+	0% { top: 100%; }
+	50% { top: 10%; }
+	100% { top: 0; }
+}
+
+// Animations removed for tablet/desktop layout
+@media only screen and (min-width: $TABLET) {
+	#menu.hideMenu, #menu.showMenu {
+		animation: none;
 	}
 }
 
@@ -173,86 +277,18 @@ $e: 4px, 4px, 2px;
 
 
 
-////////// EXTRA //////////
+////////// HR //////////
 
-.row {
-	width: 75%;
-	height: 100%;
-	position: relative;
-}
-
-.hide { 
-	animation: hide 250ms forwards;
-}
-
-.show {
-	animation: show 250ms forwards;
-}
-
-@keyframes hide {
-	0% { top: 0; }
-	50% { top: -90%; }
-	100% { top: -100%; }
-}
-
-@keyframes show {
-	0% { top: -100%; }
-	50% { top: -10%; }
-	100% { top: 0; }
-}
-
-.hide1 { 
-	animation: hide1 250ms forwards;
-}
-
-.show1 {
-	animation: show1 250ms forwards;
+.hr {
+	display: none;
 }
 
 @media only screen and (min-width: $TABLET) {
-	.hide1 {
-		animation: none;
-	}
-	.show1 {
-		animation: none;
-	}
-	.hide2 {
-		animation: none;
-	}
-	.show2 {
-		animation: none;
+	.hr {
+		width: 90%;
+		margin: 20px auto;
+		display: block;
 	}
 }
 
-@keyframes hide1 {
-	0% { top: 50%; }
-	50% { top: -40%; }
-	100% { top: -50%; }
-}
-
-@keyframes show1 {
-	0% { top: -50%; }
-	50% { top: 40%; }
-	100% { top: 50; }
-}
-.hide2 { 
-	animation: hide2 250ms forwards;
-}
-
-.show2 {
-	animation: show2 250ms forwards;
-}
-
-@keyframes hide2 {
-	0% { top: 0; }
-	50% { top: 90%; }
-	100% { top: 100%; }
-}
-
-@keyframes show2 {
-	0% { top: 100%; }
-	50% { top: 10%; }
-	100% { top: 0; }
-}
-
-////////// EXTRA //////////
+////////// HR //////////

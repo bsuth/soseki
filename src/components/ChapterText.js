@@ -36,7 +36,7 @@ export default class ChapterText extends React.Component {
 				<Route exact path={path} component={ () => (
 					<div className="page">
 						<h2 className="blah">Botchan Chapter 1</h2>
-						<hr style={{ width: '10%', margin: 'auto' }} />
+						<hr style={{ width: '45px', margin: 'auto' }} />
 						{ children }
 					</div>
 				)}/>

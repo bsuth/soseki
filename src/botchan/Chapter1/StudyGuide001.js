@@ -4,7 +4,7 @@ import StudyGuide from '../../components/StudyGuide'
 
 
 export default () => (
-	<StudyGuide>
+	<StudyGuide book="Botchan" num={1}>
 		<div className="study_guide_wrapper">
 
 		<div className="practice_text">
