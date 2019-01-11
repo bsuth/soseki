@@ -1,4 +1,9 @@
 #home {
+	// No padding on home page. The svgs
+	// must be allowed to reach the edge of
+	// the page on the mobile and tablet layouts.
+	padding: 0;
+
 	display: flex;
 	justify-content: space-around;
 	flex-wrap: wrap;

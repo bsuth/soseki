@@ -24,6 +24,9 @@ import SanshiroCover from './resources/sanshirocover.jpg'
 import KokoroCover from './resources/kokorocover.jpg'
 import NekoCover from './resources/nekocover.jpg'
 
+// SVGs
+import * as SVG from './resources/svg'
+
 
 ////////// HOME //////////
 
@@ -66,6 +69,7 @@ export default class Home extends React.Component {
 								key={x.data.title_en} 
 								data={x.data} 
 								mode={mode}
+								svg={x.svg[mode]}
 							/> )}
 						</div>
 					)}/>
@@ -124,6 +128,11 @@ const Books = [
 			imgAlt: 'Botchan cover',
 			path: '/botchan',
 		},
+		svg: [
+			<SVG.Botchan_Mobile />,
+			<SVG.Botchan_Tablet />,
+			<SVG.Botchan_Desktop />,
+		],
 		component: Botchan,
 	},
 	{
@@ -136,6 +145,11 @@ const Books = [
 			imgAlt: 'Sanshiro cover',
 			path: '/sanshiro',
 		},
+		svg: [
+			<SVG.Sanshiro_Mobile />,
+			<SVG.Sanshiro_Tablet />,
+			<SVG.Sanshiro_Desktop />,
+		],
 		component: Sanshiro,
 	},
 	{
@@ -148,6 +162,11 @@ const Books = [
 			imgAlt: 'Kokoro cover',
 			path: '/kokoro',
 		},
+		svg: [
+			<SVG.Kokoro_Mobile />,
+			<SVG.Kokoro_Tablet />,
+			<SVG.Kokoro_Desktop />,
+		],
 		component: Kokoro,
 	},
 	{
@@ -160,6 +179,11 @@ const Books = [
 			imgAlt: 'I am a Cat cover',
 			path: '/neko',
 		},
+		svg: [
+			<SVG.Neko_Mobile />,
+			<SVG.Neko_Tablet />,
+			<SVG.Neko_Desktop />,
+		],
 		component: Neko,
 	},
 	{
@@ -172,6 +196,11 @@ const Books = [
 			imgAlt: 'Ten Nights of Dreams cover',
 			path: '/neko',
 		},
+		svg: [
+			0,
+			0,
+			0,
+		],
 		component: TenNights
 	},
 ];

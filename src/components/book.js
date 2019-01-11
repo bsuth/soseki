@@ -21,7 +21,7 @@ import styles from './book.module.scss'
 // Instead, this is implemented at the parent level so that 
 // only one rerender call is necessary.
 
-export default ({data, mode}) => {
+export default ({data, mode, svg}) => {
 	let { path, img, imgAlt } = data;
 	let { title_en, title_jp, year, desc } = data;
 
@@ -78,6 +78,7 @@ export default ({data, mode}) => {
 				<img src={img} alt={imgAlt} />
 			</Link>
 
+			{ svg }
 			{ Mask }
 			{ TextWrap }
 		</div>
