@@ -223,7 +223,7 @@ const Books = [
 			'',
 			'',
 		],
-		component: Tower,
+		component: Buncho,
 	},
 	{
 		data: {
