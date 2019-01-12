@@ -29,8 +29,8 @@ export const Botchan_Tablet = () => (
 export const Botchan_Desktop = () => (
 	<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 155 250'>
 		<g fill='#ffaa3a'>
-			<path d='M 0 0 L 170 0 l 20 10 L 0 0 Z'
-			transform='translate(0 75) rotate(28)' />
+			<path d='M 0 0 L 190 0 l 25 10 L 0 0 Z'
+			transform='translate(-10 65) rotate(32)' />
 		</g>
 	</svg>
 );
@@ -105,8 +105,8 @@ export const Sanshiro_Desktop = () => (
 			</radialGradient>
     </defs>
     <g fill='url(#s_d_1)'>
-			<circle cx='65' cy='55' r='35' />
-			<circle cx='205' cy='250' r='35' />
+			<circle cx='65' cy='65' r='25' />
+			<circle cx='205' cy='240' r='25' />
     </g>
 	</svg>
 );
@@ -152,7 +152,7 @@ export const Kokoro_Tablet = () => (
 );
 
 export const Kokoro_Desktop = () => (
-	<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 318 161'>
+	<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 155 250'>
     <defs>
 			<linearGradient id='k_d_1' x1='0.5' x2='0.5' y2='1' gradientUnits='objectBoundingBox'>
 				<stop offset='0' stopColor='#414141' />
@@ -160,8 +160,9 @@ export const Kokoro_Desktop = () => (
 			</linearGradient>
     </defs>
     <g fill='url(#k_d_1)'>
-        <rect width='240' height='45' transform='translate(26 20)' />
-        <rect width='260' height='26' transform='translate(45 120)' />
+        <rect width='145' height='30' transform='translate(0 80)' />
+        <rect width='30' height='10' transform='translate(-5 115)' />
+        <rect width='155' height='20' transform='translate(10 150)' />
     </g>
 	</svg>
 );
