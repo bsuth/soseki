@@ -141,12 +141,14 @@ export default class Navbar extends React.Component {
 
 	// Show or hide the navbar based on whether the user scrolls up or
 	// down, respectively. This only takes effect when the user has
-	// scrolled at least the height of the navbar itself.
+	// scrolled at least the height of the navbar itself or if the
+	// navbar is already hidden.
 	handleScroll = () => {
-		let { lastScroll } = this.state;
+		let { lastScroll, hidden } = this.state;
 		let newScroll = window.pageYOffset || document.documentElement.scrollTop; 
+		let navbarHeight = document.getElementById(styles.navbar).offsetHeight;
 
-		if(newScroll > document.getElementById(styles.navbar).offsetHeight) {
+		if(newScroll > navbarHeight || hidden) {
 			// Only show/hide when the user has scrolled at least 50px up
 			// or down. This is done to reduce sensitivity.
 			if(Math.abs(newScroll - lastScroll) > 50) {
