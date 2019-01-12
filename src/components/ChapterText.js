@@ -3,7 +3,7 @@ import React from 'react'
 import { Route } from 'react-router-dom'
 
 // Globals
-import { TABLET, NAVBAR_HEIGHT_M, NAVBAR_HEIGHT, NAVBAR_TOP } from '../resources/jsglobals'
+import { TABLET, NAVBAR_HEIGHT_M, NAVBAR_TOTAL } from '../resources/jsglobals'
 
 // Styles
 import './ChapterText.scss'
@@ -55,6 +55,16 @@ export default class ChapterText extends React.Component {
 		}
 	}
 
+	// When the user is directed to this page via a link,
+	// this is required in order to attach the event listeners
+	// to the 'vocab' class elements. I'm not quite sure why
+	// is necessary, but only attaching the event listeners in
+	// componentDidMount() does not suffice, and all elements 
+	// will lack event listeners unless the page is refreshed.
+	componentDidUpdate() {
+		this.componentDidMount();
+	}
+
 	componentWillUnmount() {
 		window.removeEventListener('scroll', this.handleScroll);
 		let vocabArray = document.getElementsByClassName("vocab");
@@ -81,10 +91,10 @@ export default class ChapterText extends React.Component {
 		// Read global variable (set by <Navbar> component) to determine
 		// the appropriate height for the vocab def of the currently
 		// hovered vocab.
-		if(window.innerWidth < TABLET) {
-			vocabdef.style.top = window.NavHidden ? '5px' : NAVBAR_HEIGHT_M + 5 + 'px';
+		if(window.NavHidden) {
+			vocabdef.style.top = '5px';
 		} else {
-			vocabdef.style.top = window.NavHidden ? '5px' : NAVBAR_HEIGHT + NAVBAR_TOP + 'px';
+			vocabdef.style.top = (window.innerWidth < TABLET ? NAVBAR_HEIGHT_M : NAVBAR_TOTAL) + 'px';
 		}
 	}
 
