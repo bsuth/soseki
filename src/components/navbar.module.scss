@@ -23,7 +23,7 @@
 
 @media only screen and (min-width: $TABLET) {
 	#navbar {
-		height: $NAVBAR_HEIGHT + $NAVBAR_TOP; // NOTE: border-sizing: border-box;
+		height: $NAVBAR_TOTAL; // NOTE: border-sizing: border-box;
 		padding-top: $NAVBAR_TOP;
 
 		flex-direction: column;

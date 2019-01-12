@@ -5,6 +5,9 @@
 // Global values to be used across all sass files.
 // This file is imported via @import, to allow 
 // for maintainability.
+//
+// NOTE: All values here should agree with those
+// in the jsglobals.js file!!!
 // 
 
 //
@@ -17,8 +20,6 @@ $MAX-WIDTH: 1200PX;
 //
 // MEDIA QUERIES
 // -------------
-// NOTE: These values should agree
-// with those from the jsglobals file.
 //
 $TABLET: 600px;
 $DESKTOP: 1024px;

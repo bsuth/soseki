@@ -44,9 +44,8 @@
 
 @media only screen and (min-width: $DESKTOP) {
 	.book {
-		width: 155px;
+		width: 25%;
 		height: auto;
-		margin: 0 30px;
 		flex-direction: column;
 
 		// SVG's need to be able to extend

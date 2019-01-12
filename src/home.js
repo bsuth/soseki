@@ -17,12 +17,17 @@ import Sanshiro from './sanshiro/index'
 import Kokoro from './kokoro/index'
 import Neko from './neko/index'
 import TenNights from './shortstories/tennights/tennights'
+import Buncho from './shortstories/buncho/buncho'
+import Tower from './shortstories/tower/tower'
 
 // Images
 import BotchanCover from './resources/botchancover.jpg'
 import SanshiroCover from './resources/sanshirocover.jpg'
 import KokoroCover from './resources/kokorocover.jpg'
 import NekoCover from './resources/nekocover.jpg'
+import TenNightsCover from './resources/tennightscover.jpg'
+import BunchoCover from './resources/bunchocover.jpg'
+import TowerCover from './resources/towercover.jpg'
 
 // SVGs
 import * as SVG from './resources/svg'
@@ -192,16 +197,50 @@ const Books = [
 			title_jp: '夢十夜',
 			year: '1908',
 			desc: 'A series of ten dreams set in various times and touching on various themes.\n1st Night - 100 years\' vigil; 2nd night - the priest and the samurai; 3rd night - child of stone; 4th night - the old man with the snake; 5th Night - racing against the dawn; 6th night - rendering Niō; 7th night - voyage to somewhere; 8th night - the barber shop; 9th night - a mother\'s story; 10th night - the demise of Shōtarō',
-			img: NekoCover,
+			img: TenNightsCover,
 			imgAlt: 'Ten Nights of Dreams cover',
-			path: '/neko',
+			path: '/tennights',
 		},
 		svg: [
-			0,
-			0,
-			0,
+			'',
+			'',
+			'',
 		],
-		component: TenNights
+		component: TenNights,
+	},
+	{
+		data: {
+			title_en: 'Buncho',
+			title_jp: '文鳥',
+			year: '1908',
+			desc: 'A solitary writer, prone to musing on a beautiful woman he once knew, toils away in his cold study to complete a novel. At the urging of a friend, he takes a bunchō (Japanese rice sparrow) as a pet. The story traces his relationship with the bird, from initial apprehension, to fascination, to indifference, and finally, to tragic neglect.',
+			img: BunchoCover,
+			imgAlt: 'Buncho cover',
+			path: '/buncho',
+		},
+		svg: [
+			'',
+			'',
+			'',
+		],
+		component: Tower,
+	},
+	{
+		data: {
+			title_en: 'The Tower of London',
+			title_jp: '倫敦塔',
+			year: '1905',
+			desc: 'An impressionistic account of the author\'s sole excursion to the Tower of London during his two years of study abroad in the city. A mix of memories from the visit and fantasies evoked by the sights and sounds and history of the site.',
+			img: TowerCover,
+			imgAlt: 'The Tower of London cover',
+			path: '/tower',
+		},
+		svg: [
+			'',
+			'',
+			'',
+		],
+		component: Tower,
 	},
 ];
 
