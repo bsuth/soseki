@@ -25,8 +25,7 @@ export default ({data, mode, svg}) => {
 	let { path, img, imgAlt } = data;
 	let { title_en, title_jp, year, desc } = data;
 
-	let Mask;
-	let TextWrap = (
+	let TextElements = (
 		<>
 			<h4 className={styles.title_en}>
 				{title_en}
@@ -42,45 +41,23 @@ export default ({data, mode, svg}) => {
 		</>
 	);
 
-	// Conditional rendering based on media query.
-	// -----------------------------------------------
-	// Mobile: Wrap svg with css module class to allow 
-	// for responsive sizing and absolute positioning.
-	//
-	// Tablet: Wrap the text for tablet layout to use 
-	// 'flexbox' and css 'order' to mimic a a 2d layout 
+	// Tablet/Desktop: Wrap the text for tablet/desktop layout 
+	// to use 'flexbox' and css 'order' to mimic a 2d layout 
 	// without having to rely on CSS Grid.
 	// (compatibility still too low as of 12/24/2018)
-	//
-	// Desktop: Render 'mask' <div> to cover the screen
-	// when a book is hovered.
-	
-	if(mode === MediaEnum.tablet) {
-		TextWrap = <span style={{ width: '350px' }}> {TextWrap} </span>;
-	} else if(mode === MediaEnum.desktop) {
-		Mask = <div className={styles.mask} />
-	}
+	if(mode !== MediaEnum.mobile) {
+		TextElements = <span style={{ width: '350px' }}> {TextElements} </span>;
+	} 
 
-	// NOTE: order matters here!
-	// -------------------------
-	// 'TextWrap' and 'Mask' must both be rendered after <Link>. 
-	// In the desktop layout, the css for these rely on the hover 
-	// state of <Link>. As css is cascading, we render <Link> first
-	// so that we may use css selectors.
-	//
-	// We render 'TextWrap' after 'Mask' to save on the extra css
-	// of z-indices. This way, 'TextWrap' will always render above
-	// 'Mask', even in the case that their z-indices are the same.
-	
 	return(
 		<div className={styles.book}>
+
+			{ svg }
 			<Link to={path} className={styles.cover}> 
 				<img src={img} alt={imgAlt} />
 			</Link>
+			{ TextElements }
 
-			{ svg }
-			{ Mask }
-			{ TextWrap }
 		</div>
 	);
 }

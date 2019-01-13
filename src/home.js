@@ -136,7 +136,7 @@ const Books = [
 		svg: [
 			<SVG.Botchan_Mobile />,
 			<SVG.Botchan_Tablet />,
-			<SVG.Botchan_Desktop />,
+			<SVG.Botchan_Tablet />,
 		],
 		component: Botchan,
 	},
