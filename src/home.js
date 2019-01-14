@@ -153,7 +153,7 @@ const Books = [
 		svg: [
 			<SVG.Sanshiro_Mobile />,
 			<SVG.Sanshiro_Tablet />,
-			<SVG.Sanshiro_Desktop />,
+			<SVG.Sanshiro_Tablet />,
 		],
 		component: Sanshiro,
 	},
@@ -170,7 +170,7 @@ const Books = [
 		svg: [
 			<SVG.Kokoro_Mobile />,
 			<SVG.Kokoro_Tablet />,
-			<SVG.Kokoro_Desktop />,
+			<SVG.Kokoro_Tablet />,
 		],
 		component: Kokoro,
 	},

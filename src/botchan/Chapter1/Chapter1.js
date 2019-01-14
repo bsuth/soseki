@@ -13,7 +13,7 @@ import StudyGuide002 from './StudyGuide002'
 export default () => (
 	<ChapterText path="/botchan/chapter1" StudyGuides={StudyGuides}>
 
-		<div onClick={void(0)} className="chapter_text green_vocab_bar">
+		<div onClick={void(0)}>
 
 			<SectionBreak 
 				studyguide={StudyGuides[0].path}

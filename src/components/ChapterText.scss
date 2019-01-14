@@ -3,7 +3,7 @@
 
 ////////// TITLE //////////
 
-.blah {
+.ChapterTitle {
 	margin-bottom: 10px;
 	font-size: 30px;
 	text-align: center;
@@ -27,6 +27,11 @@
 ////////// VOCAB DEF //////////
 
 .vocabdef {
+	// restrict max-width to around
+	// same width as text (text is
+	// bound by $MAX_WIDTH and padding)
+	max-width: 1056px;
+
 	width: 90%;
 	padding: 10px;
 
