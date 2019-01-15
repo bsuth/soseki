@@ -38,7 +38,7 @@
 
 <div class="sectionheader">
 	<ul id="sectionmenu">
-		<li><a name="section003">Section 001</a></li>
+		<li>section 001</li>
 		<li><a href="http://www.sosekiproject.org/botchan/botchanchapter01-001.html">study guide (full furigana / rough translation / vocabulary list)</a></li>
 		<li>audio for this section (by Saki) <audio controls="controls" preload="none">
 			<source src="audio/botchan01-001.mp3">
@@ -207,4 +207,3 @@
 
 
 </body><div style="display: block; opacity: 1;"></div></html>
-
