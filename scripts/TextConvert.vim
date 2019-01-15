@@ -1,7 +1,7 @@
 "-- HELPER FUNCTIONS --"
 
 function! ZeroPad(num, length)
-  return repeat('0', a:length - len(a:s)) . a:s
+  return repeat('0', a:length - len(a:num)) . a:num
 endfunction
 
 " NOTE: Assumes that the cursor is currently on 
@@ -44,13 +44,33 @@ function! ConvertSectionBreak()
 	normal Vnd"cP
 endfunction
 
-" NOTE: This uses the value currently stored in
-" the 'x' register, which is assumed to have already
-" been assigned the correct value (by the 
-" ConvertSectionBreak() function).
+" NOTE: This uses the values currently stored in
+" the a, x, y, and z registers, which is assumed to have 
+" already been assigned the correct value (by the 
+" ConvertMain() and ConvertSectionBreak() functions).
 function! AddGuide()
+	" construct new study guide entry
+	let @b = "\t{\n
+				\\t\tpath: \"/" . @z . "/chapter" . @y . "/"
+	let @b = @b . "studyguide" . ZeroPad(@a, 3) . "\",\n"
+	let @b = @b . "\t\tcomponent: StudyGuide" . ZeroPad(@a, 3) . ",\n"
+	let @b = @b . "\t},\n"
+	
+	" add to array
+	normal gg
+	call search('StudyGuides')
+	normal f[%"bP
 endfunction
 
+function! AddRoute()
+	" construct new study guide route
+	let @b = "import StudyGuide" . ZeroPad(@a, 3) . " from './StudyGuide" . ZeroPad(@a, 3) . "'\n"
+	
+	" add to imports
+	normal gg
+	call search('StudyGuides')
+	normal 2k"bP
+endfunction
 
 "-- HELPER FUNCTIONS --"
 
@@ -75,8 +95,13 @@ function! ConvertMain()
 	normal GVNjd
 	normal gg
 
+	" first 'section #num' tag is different from the rest
+	call search('section ')
+	normal cwSection
+
 	" convert beginning of document to new template
-	let @a = "// React import React from 'react'\n\n
+	let @a = "// React\n
+				\import React from 'react'\n\n
 				\// Components\n
 				\import ChapterText from '../../components/ChapterText'\n
 				\import SectionBreak from '../../components/SectionBreak'\n\n
@@ -93,6 +118,8 @@ function! ConvertMain()
 	" keep track of study guides
 	while search('sectionheader') != 0
 		call ConvertSectionBreak()
+		call AddGuide()
+		call AddRoute()
 	endwhile
 
 	" convert end of document to new template
