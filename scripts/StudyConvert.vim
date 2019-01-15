@@ -5,10 +5,10 @@ function! RemoveTag(class)
 	normal Vkd
 endfunction
 
-" extract book name (@z) and chapter number (@y)
+" extract book name (@z) and section number (@y)
 normal gg
 call search("Chapter")
-normal b"zyiwww"yyiw
+normal b"zyiw5w"yyiw
 
 " remove everything that is not content
 call search("section\"")
@@ -31,11 +31,11 @@ let @a = "// React\n
 			\import StudyGuide from '../../components/StudyGuide'\n\n\n
 			\export default () => (\n
 			\\t<StudyGuide book='"
-let @a = @a . @z . "' num={" . @y . "}>\n"
+let @a = @a . @z . "' num={" . @y . "}>\n\n"
 normal gg"aP
 
 " add new template end
-let @a = "\n\t</StudyGuide>\n);"
+let @a = "\n\n\t</StudyGuide>\n);"
 normal G$"ap
 
 " fix indentation
@@ -43,5 +43,17 @@ normal gg
 call search("<StudyGuide")
 normal jVG2k2>
 
+" fix whitespace between tags
+normal gg
+set nowrapscan
+while search("<p") != 0
+	normal kddj
+endwhile
+
+while search("<span") != 0
+	normal kddj
+endwhile
+
 " save and quit
-" :wq
+:w
+:bd

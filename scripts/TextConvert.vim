@@ -34,7 +34,7 @@ function! ConvertSectionBreak()
 	" create section break
 	let @c = "\t\t\t<SectionBreak\n"
 	let @c = @c . "\t\t\t\tstudyguide={StudyGuides[" . @d . "].path}\n"
-	let @c = @c . "\t\t\t\taudio={'http://www.sosekiproject.org/audio/" . @x . ".mp3'}\n"
+	let @c = @c . "\t\t\t\taudio={'http://www.sosekiproject.org/" . @z . "/audio/" . @x . ".mp3'}\n"
 	let @c = @c . "\t\t\t\tnum={" . @a . "}\n"
 	let @c = @c . "\t\t\t/>\n"
 
@@ -42,6 +42,11 @@ function! ConvertSectionBreak()
 	call search('sectionheader', 'b')
 	let @/ = 'div'
 	normal Vnd"cP
+
+	" remove unnecessary word placed by x register
+	call search('chapter')
+	normal 7x
+	
 endfunction
 
 " NOTE: This uses the values currently stored in
@@ -52,8 +57,8 @@ function! AddGuide()
 	" construct new study guide entry
 	let @b = "\t{\n
 				\\t\tpath: \"/" . @z . "/chapter" . @y . "/"
-	let @b = @b . "studyguide" . ZeroPad(@a, 3) . "\",\n"
-	let @b = @b . "\t\tcomponent: StudyGuide" . ZeroPad(@a, 3) . ",\n"
+	let @b = @b . "studyguide" . @a . "\",\n"
+	let @b = @b . "\t\tcomponent: StudyGuide" . @a . ",\n"
 	let @b = @b . "\t},\n"
 	
 	" add to array
@@ -64,7 +69,7 @@ endfunction
 
 function! AddRoute()
 	" construct new study guide route
-	let @b = "import StudyGuide" . ZeroPad(@a, 3) . " from './StudyGuide" . ZeroPad(@a, 3) . "'\n"
+	let @b = "import StudyGuide" . @a . " from './StudyGuide" . @a . "'\n"
 	
 	" add to imports
 	normal gg
@@ -109,7 +114,7 @@ function! ConvertMain()
 				\const StudyGuides = [\n
 				\];\n\n
 				\export default () => (\n
-				\\t<ChapterText path='"
+				\\t<ChapterText path='/"
 	let @a = @a . @z . "/chapter" . @y . "' StudyGuides={StudyGuides}>\n"
 	let @a = @a . "\t\t<div onClick={void(0)}>\n\n"
 	normal gg"aP
