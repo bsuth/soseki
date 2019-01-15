@@ -128,6 +128,9 @@ function! ConvertMain()
 				\);"
 	norm G$"ap
 
+	" remove unnecessary class="japanese"
+	%s/ class="japanese"//g
+
 	" save and quit
 	" :wq
 endfunction
