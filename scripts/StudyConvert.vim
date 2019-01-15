@@ -21,8 +21,18 @@ call RemoveTag("practicetext")
 call RemoveTag("translation\"")
 call RemoveTag("vocabulary")
 
-" remove unnecessary japanese class
+" remove unnecessary japanese
 %s/ class="japanese"//g
+
+" remove unnecessary vocabdef classes
+normal gg
+let vstart = search("section\"")
+let vend = search("section\"")
+vstart,vend s/ class="vocabdef"//g
+
+" change vocabulary sections vocabdef classes to vocabstudy classes
+let vstart = search("section\"")
+vstart,$ s/vocabdef/vocabstudy/g
 
 " add new template beginning
 let @a = "// React\n
