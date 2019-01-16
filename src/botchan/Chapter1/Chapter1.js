@@ -67,7 +67,7 @@ const StudyGuides = [
 ];
 
 export default () => (
-	<ChapterText path='/botchan/chapter1' StudyGuides={StudyGuides}>
+	<ChapterText book='Botchan' chapter={1} path='/botchan/chapter1' StudyGuides={StudyGuides}>
 		<div onClick={void(0)}>
 
 			<SectionBreak
