@@ -1,0 +1,57 @@
+// React
+import React from 'react'
+
+// Components
+import StudyGuide from '../../components/StudyGuide'
+
+
+export default () => (
+	<StudyGuide book='Sanshirō' num={64}>
+
+		<h3 class="section">Practice text with full furigana</h3>
+		<p><span><ruby><rb>与次郎</rb><rt>よじろう</rt></ruby></span>の<span><ruby><rb>話</rb><rt>はなし</rt></ruby></span>はそれから、それへと<span><ruby><rb>飛</rb><rt>と</rt></ruby>んで<ruby><rb>行</rb><rt>い</rt></ruby>く</span>。<span><ruby><rb>平生</rb><rt>へいぜい</rt></ruby>から</span><span><ruby><rb>締</rb><rt>し</rt></ruby>まりのない</span>うえに、きょうは<span><ruby><rb>家捜</rb><rt>やさが</rt></ruby>し</span>で<span><ruby><rb>少</rb><rt>すこ</rt></ruby>し</span><span>せきこんで</span>いる。話が<span><ruby><rb>一段</rb><rt>いちだん</rt></ruby><ruby><rb>落</rb><rt>らく</rt></ruby>つく</span>と、<span><ruby><rb>相</rb><rt>あい</rt></ruby>の<ruby><rb>手</rb><rt>て</rt></ruby></span>のように、どこかないかないかと<span><ruby><rb>聞</rb><rt>き</rt></ruby>く</span>。しまいには<span><ruby><rb>三四郎</rb><rt>さんしろう</rt></ruby></span>も<span><ruby><rb>笑</rb><rt>わら</rt></ruby>い<ruby><rb>出</rb><rt>だ</rt></ruby>した</span>。</p>
+		<p>そのうち与次郎の<span><ruby><rb>尻</rb><rt>しり</rt></ruby>が<ruby><rb>次第</rb><rt>しだい</rt></ruby>におちついてきて</span>、<span><ruby><rb>燈火</rb><rt>とうか</rt></ruby><ruby><rb>親</rb><rt>した</rt></ruby>しむべし</span>などという<span><ruby><rb>漢語</rb><rt>かんご</rt></ruby></span>さえ<span><ruby><rb>借用</rb><rt>しゃくよう</rt></ruby>して</span>うれしがるようになった。<span><ruby><rb>話題</rb><rt>わだい</rt></ruby></span>は<span>はしなく</span><span><ruby><rb>広田</rb><rt>ひろた</rt></ruby><ruby><rb>先生</rb><rt>せんせい</rt></ruby></span>の<span><ruby><rb>上</rb><rt>うえ</rt></ruby>に<ruby><rb>落</rb><rt>お</rt></ruby>ちた</span>。</p>
+		<p>「<span><ruby><rb>君</rb><rt>きみ</rt></ruby>の</span><span><ruby><rb>所</rb><rt>ところ</rt></ruby></span>の先生の<span><ruby><rb>名</rb><rt>な</rt></ruby></span>はなんというのか」</p>
+		<p>「名は<span><ruby><rb>萇</rb><rt>ちょう</rt></ruby></span>」と<span><ruby><rb>指</rb><rt>ゆび</rt></ruby></span>で<span><ruby><rb>書</rb><rt>か</rt></ruby>いて<ruby><rb>見</rb><rt>み</rt></ruby>せて</span>、「<span><ruby><rb>艸冠</rb><rt>くさかんむり</rt></ruby></span>がよけいだ。<span><ruby><rb>字引</rb><rt>じびき</rt></ruby></span>にあるかしらん。<span><ruby><rb>妙</rb><rt>みょう</rt></ruby>な</span>名をつけたものだね」と<span><ruby><rb>言</rb><rt>い</rt></ruby>う</span>。</p>
+		<p>「<span><ruby><rb>高等</rb><rt>こうとう</rt></ruby><ruby><rb>学校</rb><rt>がっこう</rt></ruby></span>の先生か」</p>
+		<p>「<span><ruby><rb>昔</rb><rt>むかし</rt></ruby></span>から<span><ruby><rb>今日</rb><rt>こんにち</rt></ruby></span><span>に<ruby><rb>至</rb><rt>いた</rt></ruby>るまで</span>高等学校の先生。えらいものだ。<span><ruby><rb>十年</rb><rt>じゅうねん</rt></ruby><ruby><rb>一日</rb><rt>いちじつ</rt></ruby>のごとし</span>というが、もう<span><ruby><rb>十二</rb><rt>じゅうに</rt></ruby>、<ruby><rb>三年</rb><rt>さんねん</rt></ruby></span>になるだろう」</p>
+		<p>「<span><ruby><rb>子供</rb><rt>こども</rt></ruby></span>はおるのか」</p>
+		<p>「子供どころか、まだ<span><ruby><rb>独身</rb><rt>ひとりみ</rt></ruby></span>だ」</p>
+		<p>三四郎は少し<span><ruby><rb>驚</rb><rt>おどろ</rt></ruby>いた</span>。あの<span><ruby><rb>年</rb><rt>とし</rt></ruby></span>まで<span><ruby><rb>一人</rb><rt>ひとり</rt></ruby></span>でいられるものかとも<span><ruby><rb>疑</rb><rt>うたが</rt></ruby>った</span>。</p>
+		<p>「なぜ<span><ruby><rb>奥</rb><rt>おく</rt></ruby>さん</span>をもらわないのだろう」</p>
+		<p>「そこが先生の先生たるところで、あれでたいへんな<span><ruby><rb>理論家</rb><rt>りろんか</rt></ruby></span>なんだ。<span><ruby><rb>細君</rb><rt>さいくん</rt></ruby></span>をもらってみないさきから、細君はいかんものと理論できまっているんだそうだ。<span><ruby><rb>愚</rb><rt>ぐ</rt></ruby></span>だよ。だから<span>しじゅう</span><span><ruby><rb>矛盾</rb><rt>むじゅん</rt></ruby></span>ばかりしている。先生、<span><ruby><rb>東京</rb><rt>とうきょう</rt></ruby></span>ほどきたない所はないように言う。それで<span><ruby><rb>石</rb><rt>いし</rt></ruby></span>の<span><ruby><rb>門</rb><rt>もん</rt></ruby></span>を見ると<span><ruby><rb>恐</rb><rt>おそ</rt></ruby>れをなして</span>、いかんいかんとか、りっぱすぎるとか言うだろう」</p>
+		<p>「じゃ細君も<span><ruby><rb>試</rb><rt>こころ</rt></ruby>みに</span><span><ruby><rb>持</rb><rt>も</rt></ruby>って</span>みたらよかろう」</p>
+		<p>「<span><ruby><rb>大</rb><rt>おお</rt></ruby>いに</span>よしとかなんとか言うかもしれない」</p>
+
+
+		<h3 class="section">Rough translation</h3>
+		<p>Yojirō rambled on from one topic to the next. Never one to measure his words, he was particularly flustered after his day of house hunting. Every time there was a lull in the conversation, he would ask again, as if repeating a chorus, if Sanshirō knew of any place. In the end, Sanshirō could no longer keep from laughing.</p>
+		<p>Yojirō gradually calmed down and made himself comfortable. He even amused himself by throwing a phrase from Chinese poetry, about the merits of reading under lamplight on long and cool autumn evenings, into his conversation. After a while, their talk came to touch on Professor Hirota.</p>
+		<p>"What's the first name of that professor of yours?"</p>
+		<p>"It's Chō." Yojirō traced out the character with his finger. "The 'grass' radical over the top makes it unusual. I'm not sure it's even in the dictionary. It's an odd name they gave him."</p>
+		<p>"He's a professor at the high school?"</p>
+		<p>"He's been a high school professor for a long time now. Impressive how he keeps at it. He says 'ten years pass like a day,' but it must be 12 or 13 years."</p>
+		<p>"Does he have any children?"</p>
+		<p>"How could he? He's still single."</p>
+		<p>Sanshirō was a bit surprised. It never occurred to him that a person could remain single that long. "Why doesn't he take a wife?"</p>
+		<p>"It's the academic in him, a theoretician through and through. He's never been married, but he's reasoned out why marriage wouldn't suit him. Utter nonsense. In the end he always contradicts himself. He insists that Tōkyō is the filthiest of cities. Then he frets over a stone gate, saying it won't do because its too lavish."</p>
+		<p>"Maybe he could take a wife on a trial basis."</p>
+		<p>"He might well discover that marriage suits him fine."</p>             
+
+		<h3 class="section">Vocabulary</h3>
+		<span class="vocabstudy"><ruby><rb>与次郎</rb><rt>よじろう</rt></ruby>&nbsp;Yojirō (name)</span><span class="vocabstudy"><ruby><rb>話</rb><rt>はなし</rt></ruby>&nbsp;talk; conversation</span><span class="vocabstudy"><ruby><rb>飛</rb><rt>と</rt></ruby>んで<ruby><rb>行</rb><rt>い</rt></ruby>く&nbsp;jumped around</span><span class="vocabstudy"><ruby><rb>平生</rb><rt>へいぜい</rt></ruby>から&nbsp;ordinarily</span><span class="vocabstudy"><ruby><rb>締</rb><rt>し</rt></ruby>まりのない&nbsp;loose; lax</span><span class="vocabstudy"><ruby><rb>家捜</rb><rt>やさが</rt></ruby>し&nbsp;house hunting</span><span class="vocabstudy"><ruby><rb>少</rb><rt>すこ</rt></ruby>し&nbsp;a little; a bit</span><span class="vocabstudy">せきこんで&nbsp;be agitated; be flurried</span><span class="vocabstudy"><ruby><rb>一段</rb><rt>いちだん</rt></ruby><ruby><rb>落</rb><rt>らく</rt></ruby>つく&nbsp;settle down; reach a moment's pause</span><span class="vocabstudy"><ruby><rb>相</rb><rt>あい</rt></ruby>の<ruby><rb>手</rb><rt>て</rt></ruby>&nbsp;interlude; (musical) refrain (usually <ruby><rb>合</rb><rt>あい</rt></ruby>の<ruby><rb>手</rb><rt>て</rt></ruby>)</span><span class="vocabstudy"><ruby><rb>聞</rb><rt>き</rt></ruby>く&nbsp;ask</span><span class="vocabstudy"><ruby><rb>三四郎</rb><rt>さんしろう</rt></ruby>&nbsp;Sanshirō (name)</span><span class="vocabstudy"><ruby><rb>笑</rb><rt>わら</rt></ruby>い<ruby><rb>出</rb><rt>だ</rt></ruby>した&nbsp;laughed; broke into laughter</span>
+		<span class="vocabstudy"><ruby><rb>尻</rb><rt>しり</rt></ruby>が<ruby><rb>次第</rb><rt>しだい</rt></ruby>におちついてきて&nbsp;gradually became comfortable (lit: one's haunches gradually settled themselves)</span><span class="vocabstudy"><ruby><rb>燈火</rb><rt>とうか</rt></ruby><ruby><rb>親</rb><rt>した</rt></ruby>しむべし&nbsp;one should embrace the lamplight (based on line in Han Yu poem about reading by lamplight on long and cool autumn evenings) </span><span class="vocabstudy"><ruby><rb>漢語</rb><rt>かんご</rt></ruby>&nbsp;Chinese (words)</span><span class="vocabstudy"><ruby><rb>借用</rb><rt>しゃくよう</rt></ruby>して&nbsp;borrow; draw on</span><span class="vocabstudy"><ruby><rb>話題</rb><rt>わだい</rt></ruby>&nbsp;topic</span><span class="vocabstudy">はしなく&nbsp;by chance; as it happened</span><span class="vocabstudy"><ruby><rb>広田</rb><rt>ひろた</rt></ruby><ruby><rb>先生</rb><rt>せんせい</rt></ruby>&nbsp;Professor Hirota</span><span class="vocabstudy"><ruby><rb>上</rb><rt>うえ</rt></ruby>に<ruby><rb>落</rb><rt>お</rt></ruby>ちた&nbsp;landed on; ended up on</span>
+		<span class="vocabstudy"><ruby><rb>君</rb><rt>きみ</rt></ruby>の&nbsp;your</span><span class="vocabstudy"><ruby><rb>所</rb><rt>ところ</rt></ruby>&nbsp;place (residence)</span><span class="vocabstudy"><ruby><rb>名</rb><rt>な</rt></ruby>&nbsp;name</span>
+		<span class="vocabstudy"><ruby><rb>萇</rb><rt>ちょう</rt></ruby>&nbsp;Chō (name)</span><span class="vocabstudy"><ruby><rb>指</rb><rt>ゆび</rt></ruby>&nbsp;finger</span><span class="vocabstudy"><ruby><rb>書</rb><rt>か</rt></ruby>いて<ruby><rb>見</rb><rt>み</rt></ruby>せて&nbsp;show how to write (a character)</span><span class="vocabstudy"><ruby><rb>艸冠</rb><rt>くさかんむり</rt></ruby>&nbsp;grass crown ('grass' radical at top position in a character)</span><span class="vocabstudy"><ruby><rb>字引</rb><rt>じびき</rt></ruby>&nbsp;dictionary</span><span class="vocabstudy"><ruby><rb>妙</rb><rt>みょう</rt></ruby>な&nbsp;odd; strange</span><span class="vocabstudy"><ruby><rb>言</rb><rt>い</rt></ruby>う&nbsp;said; remarked</span>
+		<span class="vocabstudy"><ruby><rb>高等</rb><rt>こうとう</rt></ruby><ruby><rb>学校</rb><rt>がっこう</rt></ruby>&nbsp;high school (equivalent to modern-day college)</span>
+		<span class="vocabstudy"><ruby><rb>昔</rb><rt>むかし</rt></ruby>&nbsp;long ago</span><span class="vocabstudy"><ruby><rb>今日</rb><rt>こんにち</rt></ruby>&nbsp;this day; the present</span><span class="vocabstudy">に<ruby><rb>至</rb><rt>いた</rt></ruby>るまで&nbsp;up until ...</span><span class="vocabstudy"><ruby><rb>十年</rb><rt>じゅうねん</rt></ruby><ruby><rb>一日</rb><rt>いちじつ</rt></ruby>のごとし&nbsp;ten years is like a single day</span><span class="vocabstudy"><ruby><rb>十二</rb><rt>じゅうに</rt></ruby>、<ruby><rb>三年</rb><rt>さんねん</rt></ruby>&nbsp;12 or 13 years</span>
+		<span class="vocabstudy"><ruby><rb>子供</rb><rt>こども</rt></ruby>&nbsp;children</span>
+		<span class="vocabstudy"><ruby><rb>独身</rb><rt>ひとりみ</rt></ruby>&nbsp;single; unmarried</span>
+		<span class="vocabstudy"><ruby><rb>驚</rb><rt>おどろ</rt></ruby>いた&nbsp;be surprised</span><span class="vocabstudy"><ruby><rb>年</rb><rt>とし</rt></ruby>&nbsp;age</span><span class="vocabstudy"><ruby><rb>一人</rb><rt>ひとり</rt></ruby>&nbsp;single; by oneself</span><span class="vocabstudy"><ruby><rb>疑</rb><rt>うたが</rt></ruby>った&nbsp;found hard to believe</span>
+		<span class="vocabstudy"><ruby><rb>奥</rb><rt>おく</rt></ruby>さん&nbsp;wife</span>
+		<span class="vocabstudy"><ruby><rb>理論家</rb><rt>りろんか</rt></ruby>&nbsp;theoretician</span><span class="vocabstudy"><ruby><rb>細君</rb><rt>さいくん</rt></ruby>&nbsp;wife</span><span class="vocabstudy"><ruby><rb>愚</rb><rt>ぐ</rt></ruby>&nbsp;foolishness</span><span class="vocabstudy">しじゅう&nbsp;from start to finish; all the time</span><span class="vocabstudy"><ruby><rb>矛盾</rb><rt>むじゅん</rt></ruby>&nbsp;contradiction; inconsistency</span><span class="vocabstudy"><ruby><rb>東京</rb><rt>とうきょう</rt></ruby>&nbsp;Tōkyō</span><span class="vocabstudy"><ruby><rb>石</rb><rt>いし</rt></ruby>&nbsp;stone</span><span class="vocabstudy"><ruby><rb>門</rb><rt>もん</rt></ruby>&nbsp;gate</span><span class="vocabstudy"><ruby><rb>恐</rb><rt>おそ</rt></ruby>れをなして&nbsp;be frightened; be intimidated</span>
+		<span class="vocabstudy"><ruby><rb>試</rb><rt>こころ</rt></ruby>みに&nbsp;on a trial basis</span><span class="vocabstudy"><ruby><rb>持</rb><rt>も</rt></ruby>って&nbsp;have; take</span>
+		<span class="vocabstudy"><ruby><rb>大</rb><rt>おお</rt></ruby>いに&nbsp;a great deal</span>
+
+	</StudyGuide>
+);

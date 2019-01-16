@@ -1,0 +1,49 @@
+// React
+import React from 'react'
+
+// Components
+import StudyGuide from '../../components/StudyGuide'
+
+
+export default () => (
+	<StudyGuide book='Sanshirō' num={163}>
+
+		<h3 class="section">Practice text with full furigana</h3>
+		<p><span><ruby><rb>原口</rb><rt>はらぐち</rt></ruby></span>さんはこの<span><ruby><rb>時</rb><rt>とき</rt></ruby></span>はじめて、<span><ruby><rb>黒</rb><rt>くろ</rt></ruby>い</span><span><ruby><rb>絵</rb><rt>え</rt></ruby></span>の<span><ruby><rb>方</rb><rt>ほう</rt></ruby></span>を<span><ruby><rb>向</rb><rt>む</rt></ruby>いた</span>。<span><ruby><rb>野々宮</rb><rt>ののみや</rt></ruby></span>さんはそのあいだぽかんとして<span><ruby><rb>同</rb><rt>おな</rt></ruby>じ</span>絵をながめていた。</p>
+		<p>「どうです。<span>ベラスケス</span>は。もっとも<span><ruby><rb>模写</rb><rt>もしゃ</rt></ruby></span>ですがね。しかもあまり<span><ruby><rb>上</rb><rt>じょう</rt></ruby>でき</span>ではない」と原口がはじめて<span><ruby><rb>説明</rb><rt>せつめい</rt></ruby>する</span>。野々宮さんはなんにも<span><ruby><rb>言</rb><rt>い</rt></ruby>う</span><span><ruby><rb>必要</rb><rt>ひつよう</rt></ruby></span>がなくなった。</p>
+		<p>「どなたが<span>お<ruby><rb>写</rb><rt>うつ</rt></ruby>しになった</span>の」と<span><ruby><rb>女</rb><rt>おんな</rt></ruby></span>が<span><ruby><rb>聞</rb><rt>き</rt></ruby>いた</span>。</p>
+		<p>「<span><ruby><rb>三井</rb><rt>みつい</rt></ruby></span>です。三井はもっとうまいんですがね。この絵はあまり<span><ruby><rb>感服</rb><rt>かんぷく</rt></ruby>できない</span>」と<span><ruby><rb>一</rb><rt>いち</rt></ruby>、<ruby><rb>二歩</rb><rt>にほ</rt></ruby></span>さがって<span><ruby><rb>見</rb><rt>み</rt></ruby>た</span>。「どうも、<span><ruby><rb>原画</rb><rt>げんが</rt></ruby></span>が<span><ruby><rb>技巧</rb><rt>ぎこう</rt></ruby></span>の<span><ruby><rb>極点</rb><rt>きょくてん</rt></ruby></span>に<span><ruby><rb>達</rb><rt>たっ</rt></ruby>した</span><span><ruby><rb>人</rb><rt>ひと</rt></ruby></span>のものだから、うまくいかないね」</p>
+		<p>原口は<span><ruby><rb>首</rb><rt>くび</rt></ruby>を<ruby><rb>曲</rb><rt>ま</rt></ruby>げた</span>。<span><ruby><rb>三四郎</rb><rt>さんしろう</rt></ruby></span>は原口の首を曲げたところを見ていた。</p>
+		<p>「もう、みんな見たんですか」と<span><ruby><rb>画工</rb><rt>がこう</rt></ruby></span>が美禰子に聞いた。原口は美禰子にばかり<span><ruby><rb>話</rb><rt>はな</rt></ruby>しかける</span>。</p>
+		<p>「まだ」</p>
+		<p>「どうです。もうよして、いっしょに<span class="vocabstudy"><ruby><rb>出</rb><rt>で</rt></ruby>ちゃ</span>。<span class="vocabstudy"><ruby><rb>精養軒</rb><rt>せいようけん</rt></ruby></span>で<span class="vocabstudy">お<ruby><rb>茶</rb><rt>ちゃ</rt></ruby></span>でもあげます。なにわたしは用があるから、どうせちょっと<span class="vocabstudy"><ruby><rb>行</rb><rt>ゆ</rt></ruby>かなければならない</span>。――<span class="vocabstudy"><ruby><rb>会</rb><rt>かい</rt></ruby></span><span class="vocabstudy">の<ruby><rb>事</rb><rt>こと</rt></ruby></span>でね、<span class="vocabstudy">マネジャー</span>に<span class="vocabstudy"><ruby><rb>相談</rb><rt>そうだん</rt></ruby></span>しておきたい事がある。<span class="vocabstudy"><ruby><rb>懇意</rb><rt>こんい</rt></ruby></span>の<span class="vocabstudy"><ruby><rb>男</rb><rt>おとこ</rt></ruby></span>だから。――<span class="vocabstudy"><ruby><rb>今</rb><rt>いま</rt></ruby></span>ちょうどお茶にいい<span class="vocabstudy"><ruby><rb>時分</rb><rt>じぶん</rt></ruby></span>です。もう<span class="vocabstudy"><ruby><rb>少</rb><rt>すこ</rt></ruby>し</span>するとね、お茶には<span class="vocabstudy">おそし</span><span class="vocabstudy"><ruby><rb>晩餐</rb><rt>デナー</rt></ruby></span>には<span class="vocabstudy"><ruby><rb>早</rb><rt>はや</rt></ruby>し</span>、<span class="vocabstudy"><ruby><rb>中途</rb><rt>ちゅうと</rt></ruby>はんぱ</span>になる。どうです。いっしょにいらっしゃいな」</p>
+		<p>美禰子は三四郎を見た。三四郎はどうでもいい<span class="vocabstudy"><ruby><rb>顔</rb><rt>かお</rt></ruby></span>をしている。野々宮は<span class="vocabstudy"><ruby><rb>立</rb><rt>た</rt></ruby>ったまま</span><span class="vocabstudy"><ruby><rb>関係</rb><rt>かんけい</rt></ruby>しない</span>。</p>
+		<p>「せっかく<span class="vocabstudy"><ruby><rb>来</rb><rt>き</rt></ruby>た</span>ものだから、みんな見てゆきましょう。ねえ、<span class="vocabstudy"><ruby><rb>小川</rb><rt>おがわ</rt></ruby></span>さん」</p>
+		<p>三四郎はええと言った。</p>
+
+		<h3 class="section">Rough translation</h3>
+		<p>At this point, Haraguchi turned toward the dark portrait behind him. Nonomiya, all the while, was gazing blankly at this same work.</p>
+		<p>"What do you think of our Velázquez? Of course, it's a reproduction. And not a very good one, at that," he explained.</p>
+		<p>"Who did it?" asked Mineko.</p>
+		<p>"Mitsui. Mitsui's actually a talented painter. This isn't one of his better efforts." Haraguchi took several steps back and surveyed the work further. "The original was by a true master, at the peak of his art. Hard to imitate."</p>
+		<p>Haraguchi tilted his head. Sanshirō took note of his gesture.</p>
+		<p>"Have you seen the whole collection?" he asked Mineko. All of Haraguchi's words were directed toward Mineko.</p>
+		<p>"Not yet."</p>
+		<p>"What are your plans? How about breaking off and coming with us? I'll treat you to tea at Seiyōken. I have to stop there anyway to tend to some business. -- It's about a gathering. I need to consult with the manager, who's a friend of mine. -- Now would be the right time for tea. If we delay, then it'll be too late for tea and too early for dinner. How about it? Will you join us?"</p>
+		<p>Mineko looked at Sanshirō. Sanshirō seemed indifferent either way. Nonomiya remained where he was and expressed no interest.</p>
+		<p>"Since we're here, I think we should see the rest of the exhibition. Don't you think so?"</p>
+		<p>Sanshirō agreed.</p>               
+
+		<h3 class="section">Vocabulary</h3>
+		<span class="vocabstudy"><ruby><rb>原口</rb><rt>はらぐち</rt></ruby>&nbsp;Haraguchi (name)</span><span class="vocabstudy"><ruby><rb>時</rb><rt>とき</rt></ruby>&nbsp;time; moment</span><span class="vocabstudy"><ruby><rb>黒</rb><rt>くろ</rt></ruby>い&nbsp;black; dark</span><span class="vocabstudy"><ruby><rb>絵</rb><rt>え</rt></ruby>&nbsp;painting</span><span class="vocabstudy"><ruby><rb>方</rb><rt>ほう</rt></ruby>&nbsp;direction</span><span class="vocabstudy"><ruby><rb>向</rb><rt>む</rt></ruby>いた&nbsp;turned (toward)</span><span class="vocabstudy"><ruby><rb>野々宮</rb><rt>ののみや</rt></ruby>&nbsp;Nonomiya (name)</span><span class="vocabstudy"><ruby><rb>同</rb><rt>おな</rt></ruby>じ&nbsp;same</span>
+		<span class="vocabstudy">ベラスケス&nbsp;Diego Velázquez (Spanish painter; 1599 - 1660)</span><span class="vocabstudy"><ruby><rb>模写</rb><rt>もしゃ</rt></ruby>&nbsp;copy; reproduction</span><span class="vocabstudy"><ruby><rb>上</rb><rt>じょう</rt></ruby>でき&nbsp;well done; skillful</span><span class="vocabstudy"><ruby><rb>説明</rb><rt>せつめい</rt></ruby>する&nbsp;explained</span><span class="vocabstudy"><ruby><rb>言</rb><rt>い</rt></ruby>う&nbsp;say; remark</span><span class="vocabstudy"><ruby><rb>必要</rb><rt>ひつよう</rt></ruby>&nbsp;need; necessity</span>
+		<span class="vocabstudy">お<ruby><rb>写</rb><rt>うつ</rt></ruby>しになった&nbsp;copied; reproduced</span><span class="vocabstudy"><ruby><rb>女</rb><rt>おんな</rt></ruby>&nbsp;woman; young lady</span><span class="vocabstudy"><ruby><rb>聞</rb><rt>き</rt></ruby>いた&nbsp;asked</span>
+		<span class="vocabstudy"><ruby><rb>三井</rb><rt>みつい</rt></ruby>&nbsp;Mitsui (name)</span><span class="vocabstudy"><ruby><rb>感服</rb><rt>かんぷく</rt></ruby>できない&nbsp;can't admire; can't applaud</span><span class="vocabstudy"><ruby><rb>一</rb><rt>いち</rt></ruby>、<ruby><rb>二歩</rb><rt>にほ</rt></ruby>&nbsp;a couple of steps</span><span class="vocabstudy"><ruby><rb>見</rb><rt>み</rt></ruby>た&nbsp;surveyed; looked at</span><span class="vocabstudy"><ruby><rb>原画</rb><rt>げんが</rt></ruby>&nbsp;the original (painting)</span><span class="vocabstudy"><ruby><rb>技巧</rb><rt>ぎこう</rt></ruby>&nbsp;technique; mastery</span><span class="vocabstudy"><ruby><rb>極点</rb><rt>きょくてん</rt></ruby>&nbsp;climax; pinnacle</span><span class="vocabstudy"><ruby><rb>達</rb><rt>たっ</rt></ruby>した&nbsp;accomplished; achieved</span><span class="vocabstudy"><ruby><rb>人</rb><rt>ひと</rt></ruby>&nbsp;person; personage</span>
+		<span class="vocabstudy"><ruby><rb>首</rb><rt>くび</rt></ruby>を<ruby><rb>曲</rb><rt>ま</rt></ruby>げた&nbsp;tilted (his) head</span><span class="vocabstudy"><ruby><rb>三四郎</rb><rt>さんしろう</rt></ruby>&nbsp;Sanshirō (name)</span>
+		<span class="vocabstudy"><ruby><rb>画工</rb><rt>がこう</rt></ruby>&nbsp;painter; artist</span><span class="vocabstudy"><ruby><rb>話</rb><rt>はな</rt></ruby>しかける&nbsp;talk to; make conversation with</span>
+		<span class="vocabstudy"><ruby><rb>出</rb><rt>で</rt></ruby>ちゃ&nbsp;leave; go out</span><span class="vocabstudy"><ruby><rb>精養軒</rb><rt>せいようけん</rt></ruby>&nbsp;Seiyōken (name of high-end Western-style restaurant)</span><span class="vocabstudy">お<ruby><rb>茶</rb><rt>ちゃ</rt></ruby>&nbsp;tea</span><span class="vocabstudy"><ruby><rb>行</rb><rt>ゆ</rt></ruby>かなければならない&nbsp;need to go</span><span class="vocabstudy"><ruby><rb>会</rb><rt>かい</rt></ruby>&nbsp;gathering; party</span><span class="vocabstudy">の<ruby><rb>事</rb><rt>こと</rt></ruby>&nbsp;concerning ...</span><span class="vocabstudy">マネジャー&nbsp;manager</span><span class="vocabstudy"><ruby><rb>相談</rb><rt>そうだん</rt></ruby>&nbsp;discussion; consultation</span><span class="vocabstudy"><ruby><rb>懇意</rb><rt>こんい</rt></ruby>&nbsp;friendship</span><span class="vocabstudy"><ruby><rb>男</rb><rt>おとこ</rt></ruby>&nbsp;man; fellow</span><span class="vocabstudy"><ruby><rb>今</rb><rt>いま</rt></ruby>&nbsp;now</span><span class="vocabstudy"><ruby><rb>時分</rb><rt>じぶん</rt></ruby>&nbsp;time</span><span class="vocabstudy"><ruby><rb>少</rb><rt>すこ</rt></ruby>し&nbsp;a little; a bit</span><span class="vocabstudy">おそし&nbsp;late</span><span class="vocabstudy"><ruby><rb>晩餐</rb><rt>デナー</rt></ruby>&nbsp;dinner</span><span class="vocabstudy"><ruby><rb>早</rb><rt>はや</rt></ruby>し&nbsp;early</span><span class="vocabstudy"><ruby><rb>中途</rb><rt>ちゅうと</rt></ruby>はんぱ&nbsp;halfway; half-baked</span>
+		<span class="vocabstudy"><ruby><rb>顔</rb><rt>かお</rt></ruby>&nbsp;face; look; expression</span><span class="vocabstudy"><ruby><rb>立</rb><rt>た</rt></ruby>ったまま&nbsp;not moving from one's place</span><span class="vocabstudy"><ruby><rb>関係</rb><rt>かんけい</rt></ruby>しない&nbsp;not be engage; show no interest</span>
+		<span class="vocabstudy"><ruby><rb>来</rb><rt>き</rt></ruby>た&nbsp;came</span><span class="vocabstudy"><ruby><rb>小川</rb><rt>おがわ</rt></ruby>&nbsp;Ogawa (Sanshirō's family name)</span>
+
+	</StudyGuide>
+);
