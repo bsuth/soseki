@@ -28,14 +28,14 @@ export default class ChapterText extends React.Component {
 	// NOTE: The wrapping div is necessary. <CSSTransitions> requires 
 	// a hook to apply the various css animation classes.
 	render() {
-		let { path, StudyGuides, children } = this.props;
+		let { book, chapter, path, StudyGuides, children } = this.props;
 		return(
 			<div>
  
 				{ StudyGuides.map(x => <Route key={x.path} path={x.path} component={x.component}/>) }
 				<Route exact path={path} component={ () => (
 					<div className="page">
-						<h2 className="ChapterTitle">Botchan Chapter 1</h2>
+						<h2 className="ChapterTitle">{ book } Chapter {chapter}</h2>
 						<hr style={{ width: '45px', margin: 'auto' }} />
 						{ children }
 					</div>
