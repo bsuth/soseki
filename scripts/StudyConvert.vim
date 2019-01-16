@@ -10,6 +10,11 @@ normal gg
 call search("Chapter")
 normal b"zyiw5w"yyiw
 
+" remove zero padding from y
+while @y[0] == 0
+	let @y = @y[1:]
+endwhile
+
 " remove everything that is not content
 call search("section\"")
 normal kVggd
@@ -23,16 +28,6 @@ call RemoveTag("vocabulary")
 
 " remove unnecessary japanese
 %s/ class="japanese"//g
-
-" remove unnecessary vocabdef classes
-normal gg
-let vstart = search("section\"")
-let vend = search("section\"")
-vstart,vend s/ class="vocabdef"//g
-
-" change vocabulary sections vocabdef classes to vocabstudy classes
-let vstart = search("section\"")
-vstart,$ s/vocabdef/vocabstudy/g
 
 " add new template beginning
 let @a = "// React\n
@@ -63,6 +58,20 @@ endwhile
 while search("<span") != 0
 	normal kddj
 endwhile
+
+" remove unnecessary vocabdef classes
+normal gg
+let vstart = search("section\"")
+let vend = search("section\"")
+call search("section\"", 'b')
+normal j
+while line(".") != vend
+	s/ class="vocabdef"//g	
+	normal j
+endwhile
+
+" change vocabulary sections vocabdef classes to vocabstudy classes
+%s/vocabdef/vocabstudy/g
 
 " save and quit
 :w

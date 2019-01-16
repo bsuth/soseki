@@ -1,0 +1,15 @@
+#!/bin/bash
+
+wget -O Chapter2.js http://www.sosekiproject.org/botchan/botchanchapter02.html
+wget -O StudyGuide12.js http://www.sosekiproject.org/botchan/botchanchapter02-012.html
+wget -O StudyGuide13.js http://www.sosekiproject.org/botchan/botchanchapter02-013.html
+wget -O StudyGuide14.js http://www.sosekiproject.org/botchan/botchanchapter02-014.html
+wget -O StudyGuide15.js http://www.sosekiproject.org/botchan/botchanchapter02-015.html
+wget -O StudyGuide16.js http://www.sosekiproject.org/botchan/botchanchapter02-016.html
+wget -O StudyGuide17.js http://www.sosekiproject.org/botchan/botchanchapter02-017.html
+wget -O StudyGuide18.js http://www.sosekiproject.org/botchan/botchanchapter02-018.html
+wget -O StudyGuide19.js http://www.sosekiproject.org/botchan/botchanchapter02-019.html
+wget -O StudyGuide20.js http://www.sosekiproject.org/botchan/botchanchapter02-020.html
+
+vim -c 'source ~/soseki/scripts/TextConvert.vim' Chapter2.js
+vim -c 'bufdo source ~/soseki/scripts/StudyConvert.vim' StudyGuide*.js

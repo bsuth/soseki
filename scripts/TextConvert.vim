@@ -24,9 +24,6 @@ function! ConvertSectionBreak()
 		endif
 	endwhile
 
-	" store array index
-	let @d = @a - 1
-
 	" get study guide link
 	call search("chapter")
 	normal b"xyt.
@@ -46,6 +43,9 @@ function! ConvertSectionBreak()
 	" remove unnecessary word placed by x register
 	call search('chapter')
 	normal 7x
+
+	" increment array index
+	let @d = @d + 1
 	
 endfunction
 
@@ -84,60 +84,65 @@ endfunction
 
 "-- MAIN --"
 
-function! ConvertMain()
+" extract current book and chapter
+call search("pagetitle")
+norm f>l"zyiw
+let @w = @z
+let @z = tolower(@z)
+call search("Chapter")
+norm w"yyw
 
-	" extract current book and chapter
-	call search("pagetitle")
-	norm f>l"zyiw
-	let @z = tolower(@z)
-	call search("Chapter")
-	norm w"yyw
+" remove everything that is not content
+let @/="jtext"
+normal ggVnjd
+let @/="japanese"
+normal GVNjd
+normal gg
 
-	" remove everything that is not content
-	let @/="jtext"
-	normal ggVnjd
-	let @/="japanese"
-	normal GVNjd
-	normal gg
+" first 'section #num' tag is different from the rest
+call search('section ')
+normal cwSection
 
-	" first 'section #num' tag is different from the rest
-	call search('section ')
-	normal cwSection
+" convert beginning of document to new template
+let @a = "// React\n
+			\import React from 'react'\n\n
+			\// Components\n
+			\import ChapterText from '../../components/ChapterText'\n
+			\import SectionBreak from '../../components/SectionBreak'\n\n
+			\// Routes\n\n\n
+			\const StudyGuides = [\n
+			\];\n\n
+			\export default () => (\n
+			\\t<ChapterText book='"
+let @a = @a . @w . "' chapter={" . @y . "} "
+let @a = @a . "path='/" .  @z . "/chapter" . @y . "' StudyGuides={StudyGuides}>\n"
+let @a = @a . "\t\t<div onClick={void(0)}>\n\n"
+normal gg"aP
 
-	" convert beginning of document to new template
-	let @a = "// React\n
-				\import React from 'react'\n\n
-				\// Components\n
-				\import ChapterText from '../../components/ChapterText'\n
-				\import SectionBreak from '../../components/SectionBreak'\n\n
-				\// Routes\n\n\n
-				\const StudyGuides = [\n
-				\];\n\n
-				\export default () => (\n
-				\\t<ChapterText path='/"
-	let @a = @a . @z . "/chapter" . @y . "' StudyGuides={StudyGuides}>\n"
-	let @a = @a . "\t\t<div onClick={void(0)}>\n\n"
-	normal gg"aP
+" init array index
+let @d = 0
 
-	" convert sections to React components
-	" keep track of study guides
-	while search('sectionheader') != 0
-		call ConvertSectionBreak()
-		call AddGuide()
-		call AddRoute()
-	endwhile
+" convert sections to React components
+" keep track of study guides
+while search('sectionheader') != 0
+	call ConvertSectionBreak()
+	call AddGuide()
+	call AddRoute()
+endwhile
 
-	" convert end of document to new template
-	let @a = "\n\t\t</div>\n
-				\\t</ChapterText>\n
-				\);"
-	norm G$"ap
+" convert end of document to new template
+let @a = "\n\t\t</div>\n
+			\\t</ChapterText>\n
+			\);"
+norm G$"ap
 
-	" remove unnecessary class="japanese"
-	%s/ class="japanese"//g
+" remove unnecessary class="japanese"
+%s/ class="japanese"//g
 
-	" save and quit
-	" :wq
-endfunction
+" remove buggy <p> ending tag
+%s/<p\/>/<\/p>/g
 
+" save and quit
+:wq
+	
 "-- MAIN --"
