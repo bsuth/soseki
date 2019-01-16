@@ -73,6 +73,9 @@ endwhile
 " change vocabulary sections vocabdef classes to vocabstudy classes
 %s/vocabdef/vocabstudy/g
 
+" remove tag errors
+%s/<ruby><rb><rt>//g
+
 " save and quit
 :w
 :bd

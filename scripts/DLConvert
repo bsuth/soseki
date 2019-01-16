@@ -1,15 +1,28 @@
 #!/bin/bash
 
-wget -O Chapter2.js http://www.sosekiproject.org/botchan/botchanchapter02.html
-wget -O StudyGuide12.js http://www.sosekiproject.org/botchan/botchanchapter02-012.html
-wget -O StudyGuide13.js http://www.sosekiproject.org/botchan/botchanchapter02-013.html
-wget -O StudyGuide14.js http://www.sosekiproject.org/botchan/botchanchapter02-014.html
-wget -O StudyGuide15.js http://www.sosekiproject.org/botchan/botchanchapter02-015.html
-wget -O StudyGuide16.js http://www.sosekiproject.org/botchan/botchanchapter02-016.html
-wget -O StudyGuide17.js http://www.sosekiproject.org/botchan/botchanchapter02-017.html
-wget -O StudyGuide18.js http://www.sosekiproject.org/botchan/botchanchapter02-018.html
-wget -O StudyGuide19.js http://www.sosekiproject.org/botchan/botchanchapter02-019.html
-wget -O StudyGuide20.js http://www.sosekiproject.org/botchan/botchanchapter02-020.html
+wget -O Chapter13.js http://www.sosekiproject.org/sanshiro/sanshirochapter13.html
+wget -O StudyGuide240.js http://www.sosekiproject.org/sanshiro/sanshirochapter13-240.html
+wget -O StudyGuide241.js http://www.sosekiproject.org/sanshiro/sanshirochapter13-241.html
+#wget -O StudyGuide242.js http://www.sosekiproject.org/sanshiro/sanshirochapter13-242.html
+#wget -O StudyGuide243.js http://www.sosekiproject.org/sanshiro/sanshirochapter13-243.html
+#wget -O StudyGuide244.js http://www.sosekiproject.org/sanshiro/sanshirochapter13-244.html
+#wget -O StudyGuide245.js http://www.sosekiproject.org/sanshiro/sanshirochapter13-245.html
+#wget -O StudyGuide246.js http://www.sosekiproject.org/sanshiro/sanshirochapter13-246.html
+#wget -O StudyGuide247.js http://www.sosekiproject.org/sanshiro/sanshirochapter13-247.html
+#wget -O StudyGuide248.js http://www.sosekiproject.org/sanshiro/sanshirochapter13-248.html
+#wget -O StudyGuide249.js http://www.sosekiproject.org/sanshiro/sanshirochapter13-249.html
+#wget -O StudyGuide250.js http://www.sosekiproject.org/sanshiro/sanshirochapter13-250.html
+#wget -O StudyGuide251.js http://www.sosekiproject.org/sanshiro/sanshirochapter13-251.html
+#wget -O StudyGuide252.js http://www.sosekiproject.org/sanshiro/sanshirochapter13-252.html
+#wget -O StudyGuide253.js http://www.sosekiproject.org/sanshiro/sanshirochapter13-253.html
+#wget -O StudyGuide254.js http://www.sosekiproject.org/sanshiro/sanshirochapter13-254.html
+#wget -O StudyGuide255.js http://www.sosekiproject.org/sanshiro/sanshirochapter13-255.html
+#wget -O StudyGuide256.js http://www.sosekiproject.org/sanshiro/sanshirochapter13-256.html
+#wget -O StudyGuide257.js http://www.sosekiproject.org/sanshiro/sanshirochapter13-257.html
+#wget -O StudyGuide258.js http://www.sosekiproject.org/sanshiro/sanshirochapter13-258.html
+#wget -O StudyGuide259.js http://www.sosekiproject.org/sanshiro/sanshirochapter13-259.html
+#wget -O StudyGuide260.js http://www.sosekiproject.org/sanshiro/sanshirochapter13-260.html
+#wget -O StudyGuide261.js http://www.sosekiproject.org/sanshiro/sanshirochapter13-261.html
 
-vim -c 'source ~/soseki/scripts/TextConvert.vim' Chapter2.js
+vim -c 'source ~/soseki/scripts/TextConvert.vim' Chapter13.js
 vim -c 'bufdo source ~/soseki/scripts/StudyConvert.vim' StudyGuide*.js

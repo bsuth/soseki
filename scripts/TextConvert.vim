@@ -89,6 +89,10 @@ call search("pagetitle")
 norm f>l"zyiw
 let @w = @z
 let @z = tolower(@z)
+
+" manually set book for sanshiro due to characters
+let @z = 'sanshiro'
+
 call search("Chapter")
 norm w"yyw
 
