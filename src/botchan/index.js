@@ -5,19 +5,6 @@ import React from 'react'
 import ChapterSelect from '../components/ChapterSelect'
 import AsyncComponent from '../components/AsyncComponent'
 
-// Routes
-//import Chapter1 from './Chapter1/Chapter1'
-//import Chapter2 from './Chapter2/Chapter2'
-//import Chapter3 from './Chapter3/Chapter3'
-//import Chapter4 from './Chapter4/Chapter4'
-//import Chapter5 from './Chapter5/Chapter5'
-//import Chapter6 from './Chapter6/Chapter6'
-//import Chapter7 from './Chapter7/Chapter7'
-//import Chapter8 from './Chapter8/Chapter8'
-//import Chapter9 from './Chapter9/Chapter9'
-//import Chapter10 from './Chapter10/Chapter10'
-//import Chapter11 from './Chapter11/Chapter11'
-
 // Images
 import Cover from './sosekiportrait.jpg'
 
