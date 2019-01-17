@@ -12,8 +12,8 @@ import styles from './home.module.scss'
 import Book from './components/book'
 
 // Routes
-import Botchan from './botchan/botchan'
-import Sanshiro from './sanshiro/index'
+import Botchan from'./botchan/index'
+import Sanshiro from'./sanshiro/index'
 import Kokoro from './kokoro/index'
 import Neko from './neko/index'
 import TenNights from './shortstories/tennights/tennights'
