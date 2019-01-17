@@ -25,13 +25,13 @@ function! ConvertSectionBreak()
 	endwhile
 
 	" get study guide link
-	call search("chapter")
-	normal b"xyt.
+	call search("source")
+	normal f""xyi"
 
 	" create section break
 	let @c = "\t\t\t<SectionBreak\n"
 	let @c = @c . "\t\t\t\tstudyguide={StudyGuides[" . @d . "].path}\n"
-	let @c = @c . "\t\t\t\taudio={'http://www.sosekiproject.org/" . @z . "/audio/" . @x . ".mp3'}\n"
+	let @c = @c . "\t\t\t\taudio={'http://www.sosekiproject.org/" . @z . "/" . @x . "'}\n"
 	let @c = @c . "\t\t\t\tnum={" . @a . "}\n"
 	let @c = @c . "\t\t\t/>\n"
 
@@ -39,10 +39,6 @@ function! ConvertSectionBreak()
 	call search('sectionheader', 'b')
 	let @/ = 'div'
 	normal Vnd"cP
-
-	" remove unnecessary word placed by x register
-	call search('chapter')
-	normal 7x
 
 	" increment array index
 	let @d = @d + 1
@@ -56,10 +52,13 @@ endfunction
 function! AddGuide()
 	" construct new study guide entry
 	let @b = "\t{\n
-				\\t\tpath: \"/" . @z . "/chapter" . @y . "/"
+				\\t\tpath: \"/" 
+	let @b = @b . @z . "/chapter" . @y . "/"
 	let @b = @b . "studyguide" . @a . "\",\n"
 	let @b = @b . "\t\tcomponent: StudyGuide" . @a . ",\n"
 	let @b = @b . "\t},\n"
+
+
 	
 	" add to array
 	normal gg
@@ -90,11 +89,8 @@ norm f>l"zyiw
 let @w = @z
 let @z = tolower(@z)
 
-" manually set book for sanshiro due to characters
-let @z = 'sanshiro'
-
-call search("Chapter")
-norm w"yyw
+" manually set chapter for kokoro
+let @y = 6
 
 " remove everything that is not content
 let @/="jtext"
