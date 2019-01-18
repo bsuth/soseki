@@ -6,7 +6,7 @@ import { Route } from 'react-router-dom'
 import { TABLET, DESKTOP, MediaEnum } from './resources/jsglobals'
 
 // Styles
-import styles from './home.module.scss'
+import './pages.scss'
 
 // Components
 import Book from './components/book'
@@ -15,7 +15,6 @@ import Book from './components/book'
 import Botchan from'./botchan/index'
 import Sanshiro from'./sanshiro/index'
 import Kokoro from './kokoro/index'
-import Neko from './neko/index'
 import TenNights from './shortstories/tennights/tennights'
 import Buncho from './shortstories/buncho/buncho'
 import Tower from './shortstories/tower/tower'
@@ -24,7 +23,6 @@ import Tower from './shortstories/tower/tower'
 import BotchanCover from './resources/botchancover.jpg'
 import SanshiroCover from './resources/sanshirocover.jpg'
 import KokoroCover from './resources/kokorocover.jpg'
-import NekoCover from './resources/nekocover.jpg'
 import TenNightsCover from './resources/tennightscover.jpg'
 import BunchoCover from './resources/bunchocover.jpg'
 import TowerCover from './resources/towercover.jpg'
@@ -69,7 +67,7 @@ export default class Home extends React.Component {
 						<Route key={x.data.title_en} path={x.data.path} component={x.component} /> 
 					)}
 					<Route exact path="/" component={ () => (
-						<div className="page" id={styles.home}>
+						<div className="page home">
 							{ Books.map(x => <Book 
 								key={x.data.title_en} 
 								data={x.data} 
@@ -173,23 +171,6 @@ const Books = [
 			<SVG.Kokoro_Tablet />,
 		],
 		component: Kokoro,
-	},
-	{
-		data: {
-			title_en: 'I am a Cat',
-			title_jp: '吾輩は猫である',
-			year: '1905',
-			desc: 'A lost cat takes up residence in the home of a teacher, from where he offers a no-holds-barred commentary on his master, his master\'s household, the neighborhood, Japanese society, and human beings in general.',
-			img: NekoCover,
-			imgAlt: 'I am a Cat cover',
-			path: '/neko',
-		},
-		svg: [
-			<SVG.Neko_Mobile />,
-			<SVG.Neko_Tablet />,
-			<SVG.Neko_Desktop />,
-		],
-		component: Neko,
 	},
 	{
 		data: {
