@@ -110,13 +110,6 @@
 	height: 250px;
 	position: relative;
 	box-shadow: 10px 12px 5px black;
-
-	// Necessary to have img appear above
-	// short story decoration
-	img { 
-		position: relative;
-		z-index: 1; 
-	}
 }
 
 @media only screen and (min-width: $TABLET) {
@@ -130,22 +123,3 @@
 }
 
 ////////// COVER //////////
-
-
-
-
-////////// SHORT STORY DECORATION //////////
-
-.short_story_dec {
-	width: 200%;
-	height: 150%;
-
-	position: absolute;
-	top: 50%; left: 50%;
-	transform: translate(-50%, -50%);
-	z-index: 0;
-
-	background-image: radial-gradient(white, transparent 80%);
-}
-
-////////// SHORT STORY DECORATION //////////
