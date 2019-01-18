@@ -199,6 +199,10 @@ $line-transforms: (
 	overflow-x: auto;
 	font-size: 25px;
 
+	a {
+		color: white;
+	}
+
 	li {
 		// This must be padding! If this is
 		// margin, then the last child will
