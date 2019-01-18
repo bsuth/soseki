@@ -108,7 +108,15 @@
 
 .cover {
 	height: 250px;
+	position: relative;
 	box-shadow: 10px 12px 5px black;
+
+	// Necessary to have img appear above
+	// short story decoration
+	img { 
+		position: relative;
+		z-index: 1; 
+	}
 }
 
 @media only screen and (min-width: $TABLET) {
@@ -126,87 +134,18 @@
 
 
 
-////////// MASK //////////
+////////// SHORT STORY DECORATION //////////
 
-.mask {
-	width: 100%;
-	height: 100%;
+.short_story_dec {
+	width: 200%;
+	height: 150%;
 
-	position: fixed;
-	top: 0; left: 0;
+	position: absolute;
+	top: 50%; left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 0;
 
-	display: none;
-
-	background: rgba(20, 20, 20, 0.9);
+	background-image: radial-gradient(white, transparent 80%);
 }
 
-////////// MASK //////////
-
-
-
-
-////////// ALTERNATE DESKTOP LAYOUT //////////
-
-//@media only screen and (min-width: $DESKTOP) {
-	//.book {
-		//width: 25%;
-		//height: auto;
-		//flex-direction: column;
-//
-		//// SVG's need to be able to extend
-		//// outside of the box's width. This
-		//// shouldn't affect any other objects
-		//// since the svg is absolutely positioned.
-		//svg {
-			//width: 200%;
-		//}
-	//}
-//}
-
-//@media only screen and (min-width: $DESKTOP) {
-	//.desc {
-		//width: 300px;
-		//margin: 0;
-		//position: absolute;
-		//display: none;
-	//}
-//
-//
-	//// Change the position of the description and
-	//// the text direction based on whether the book
-	//// lies on the left or right side of the page.
-//
-	//.book:nth-child(n+1):nth-child(-n+2) > .desc,
-	//.book:nth-child(n+5) > .desc {
-		//left: 125%;
-		//right: auto;
-		//text-align: left;
-	//}
-//
-	//.book:nth-child(n+3):nth-child(-n+4) > .desc {
-		//left: auto;
-		//right: 125%;
-		//text-align: right;
-	//}
-//}
-
-//@media only screen and (min-width: $DESKTOP) {
-	//.cover {
-		//margin: 0;
-//
-		//// Negate the 'order: -1' from the tablet
-		//// layout by setting order back to 0.
-		//order: 0;
-	//}
-//}
-
-//@media only screen and (min-width: $DESKTOP) {
-	//.cover:hover ~ * {
-		//z-index: 1;
-		//display: block;
-	//}
-//
-	//.cover:hover, {
-		//z-index: 2;
-	//}
-//}
+////////// SHORT STORY DECORATION //////////

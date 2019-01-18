@@ -41,6 +41,10 @@ export default ({data, mode, svg}) => {
 		</>
 	);
 
+	// Decoration for short stories
+	// This is simply a white glow around the book, rather than an svg
+	let bookBorder = svg ? {} : { boxShadow: '0 0 80px 20px rgba(256, 256, 256, 0.7)' };
+
 	// Tablet/Desktop: Wrap the text for tablet/desktop layout 
 	// to use 'flexbox' and css 'order' to mimic a 2d layout 
 	// without having to rely on CSS Grid.
@@ -53,7 +57,7 @@ export default ({data, mode, svg}) => {
 		<div className={styles.book}>
 
 			{ svg }
-			<Link to={path} className={styles.cover}> 
+			<Link to={path} className={styles.cover} style={bookBorder}> 
 				<img src={img} alt={imgAlt} />
 			</Link>
 			{ TextElements }
