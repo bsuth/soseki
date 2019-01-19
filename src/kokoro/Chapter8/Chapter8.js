@@ -28,81 +28,81 @@ import StudyGuide144 from './StudyGuide144'
 
 const StudyGuides = [
 	{
-		path: "/kokoro/chapter6/studyguide127",
+		path: "/kokoro/chapter8/studyguide127",
 		component: StudyGuide127,
 	},
 	{
-		path: "/kokoro/chapter6/studyguide128",
+		path: "/kokoro/chapter8/studyguide128",
 		component: StudyGuide128,
 	},
 	{
-		path: "/kokoro/chapter6/studyguide129",
+		path: "/kokoro/chapter8/studyguide129",
 		component: StudyGuide129,
 	},
 	{
-		path: "/kokoro/chapter6/studyguide130",
+		path: "/kokoro/chapter8/studyguide130",
 		component: StudyGuide130,
 	},
 	{
-		path: "/kokoro/chapter6/studyguide131",
+		path: "/kokoro/chapter8/studyguide131",
 		component: StudyGuide131,
 	},
 	{
-		path: "/kokoro/chapter6/studyguide132",
+		path: "/kokoro/chapter8/studyguide132",
 		component: StudyGuide132,
 	},
 	{
-		path: "/kokoro/chapter6/studyguide133",
+		path: "/kokoro/chapter8/studyguide133",
 		component: StudyGuide133,
 	},
 	{
-		path: "/kokoro/chapter6/studyguide134",
+		path: "/kokoro/chapter8/studyguide134",
 		component: StudyGuide134,
 	},
 	{
-		path: "/kokoro/chapter6/studyguide135",
+		path: "/kokoro/chapter8/studyguide135",
 		component: StudyGuide135,
 	},
 	{
-		path: "/kokoro/chapter6/studyguide136",
+		path: "/kokoro/chapter8/studyguide136",
 		component: StudyGuide136,
 	},
 	{
-		path: "/kokoro/chapter6/studyguide137",
+		path: "/kokoro/chapter8/studyguide137",
 		component: StudyGuide137,
 	},
 	{
-		path: "/kokoro/chapter6/studyguide138",
+		path: "/kokoro/chapter8/studyguide138",
 		component: StudyGuide138,
 	},
 	{
-		path: "/kokoro/chapter6/studyguide139",
+		path: "/kokoro/chapter8/studyguide139",
 		component: StudyGuide139,
 	},
 	{
-		path: "/kokoro/chapter6/studyguide140",
+		path: "/kokoro/chapter8/studyguide140",
 		component: StudyGuide140,
 	},
 	{
-		path: "/kokoro/chapter6/studyguide141",
+		path: "/kokoro/chapter8/studyguide141",
 		component: StudyGuide141,
 	},
 	{
-		path: "/kokoro/chapter6/studyguide142",
+		path: "/kokoro/chapter8/studyguide142",
 		component: StudyGuide142,
 	},
 	{
-		path: "/kokoro/chapter6/studyguide143",
+		path: "/kokoro/chapter8/studyguide143",
 		component: StudyGuide143,
 	},
 	{
-		path: "/kokoro/chapter6/studyguide144",
+		path: "/kokoro/chapter8/studyguide144",
 		component: StudyGuide144,
 	},
 ];
 
 export default () => (
-	<ChapterText book='Kokoro' chapter={6} path='/kokoro/chapter6' StudyGuides={StudyGuides}>
+	<ChapterText book='Kokoro' chapter={8} path='/kokoro/chapter8' StudyGuides={StudyGuides}>
 		<div onClick={void(0)}>
 
 			<SectionBreak

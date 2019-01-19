@@ -1,0 +1,46 @@
+.home {
+	// No padding on home page. The svgs
+	// must be allowed to reach the edge of
+	// the page on the mobile and tablet layouts.
+	padding: 0;
+
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.about, .media {
+	p {
+		margin: 20px 0;
+	}
+}
+
+.features {
+	h1 {
+		margin-bottom: 10px;
+	}
+	p {
+		margin-bottom: 30px;
+	}
+}
+
+.contact {
+	img {
+		margin: auto;
+		display: block;
+	}
+}
+
+.media {
+
+}
+
+.links {
+	h1 {
+		margin-bottom: 10px;
+	}
+	hr {
+		width: 80%;
+		margin: 20px 0;
+	}
+}
