@@ -88,9 +88,8 @@ call search("pagetitle")
 norm f>l"zyiw
 let @w = @z
 let @z = tolower(@z)
-
-" manually set chapter for kokoro
-let @y = 6
+call search("Chapter")
+norm w"yyiw
 
 " remove everything that is not content
 let @/="jtext"
