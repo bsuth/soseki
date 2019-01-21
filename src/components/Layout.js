@@ -1,9 +1,7 @@
 // React
 import React from 'react'
 import Helmet from 'react-helmet'
-
-// Gatsby
-import PageTransition from 'gatsby-plugin-page-transitions'
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
 // Components
 import Navbar from './Navbar'
@@ -41,15 +39,17 @@ const Head = () => (
 // using the wrapPageElement API from
 // gatsby-browser.
 
-export default ({ children }) => (
+export default ({ children, location }) => (
 	<>
 		<Head />
 		<Navbar />
-		<PageTransition>
-			<div className="page">
-				{ children }
-			</div>
-		</PageTransition>
+		<TransitionGroup>
+			<CSSTransition key={location.key} classNames="fade" timeout={300}>
+				<div className="page">
+					{ children }
+				</div>
+			</CSSTransition>
+		</TransitionGroup>
 	</>
 );
 
