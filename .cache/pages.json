@@ -1,0 +1,92 @@
+[
+    {
+        "componentChunkName": "component---src-pages-index-js",
+        "jsonName": "index",
+        "path": "/"
+    },
+    {
+        "componentChunkName": "component---src-pages-about-js",
+        "jsonName": "about-f34",
+        "path": "/about/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "botchan-chapter-1-study-guide-1-9d2",
+        "path": "/botchan/Chapter1/StudyGuide1/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "botchan-chapter-1-study-guide-10-fdb",
+        "path": "/botchan/Chapter1/StudyGuide10/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "botchan-chapter-1-study-guide-11-35e",
+        "path": "/botchan/Chapter1/StudyGuide11/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "botchan-chapter-1-study-guide-2-471",
+        "path": "/botchan/Chapter1/StudyGuide2/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "botchan-chapter-1-study-guide-3-d05",
+        "path": "/botchan/Chapter1/StudyGuide3/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "botchan-chapter-1-study-guide-4-463",
+        "path": "/botchan/Chapter1/StudyGuide4/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "botchan-chapter-1-study-guide-5-fb3",
+        "path": "/botchan/Chapter1/StudyGuide5/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "botchan-chapter-1-study-guide-6-c46",
+        "path": "/botchan/Chapter1/StudyGuide6/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "botchan-chapter-1-study-guide-7-b76",
+        "path": "/botchan/Chapter1/StudyGuide7/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "botchan-chapter-1-study-guide-8-244",
+        "path": "/botchan/Chapter1/StudyGuide8/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "botchan-chapter-1-study-guide-9-442",
+        "path": "/botchan/Chapter1/StudyGuide9/"
+    },
+    {
+        "componentChunkName": "component---src-pages-contact-js",
+        "jsonName": "contact-26a",
+        "path": "/contact/"
+    },
+    {
+        "componentChunkName": "component---cache-dev-404-page-js",
+        "jsonName": "dev-404-page-5f9",
+        "path": "/dev-404-page/"
+    },
+    {
+        "componentChunkName": "component---src-pages-features-js",
+        "jsonName": "features-0f5",
+        "path": "/features/"
+    },
+    {
+        "componentChunkName": "component---src-pages-links-js",
+        "jsonName": "links-5ea",
+        "path": "/links/"
+    },
+    {
+        "componentChunkName": "component---src-pages-media-js",
+        "jsonName": "media-a6a",
+        "path": "/media/"
+    }
+]

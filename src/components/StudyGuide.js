@@ -1,22 +1,39 @@
 // React
 import React from 'react'
 
+// Gatsby
+import { graphql } from 'gatsby'
+import MDXRenderer from "gatsby-mdx/mdx-renderer";
+
 // Styles
 import './StudyGuide.scss'
 
 
-export default ({book, num, children}) => (
-	<div className="page">
+/////////// STUDY GUIDE ///////////
 
-		<h2 className="study_guide_title">
-			{book} Study Guide
-			<br/>
-			Section {num.toString().padStart(3, '0')}
-		</h2>	
+export default ({ data: { mdx } }) => {
+	return(
+		<div class="text">
+			<h2 className="study_guide_title">
+				{ mdx.frontmatter.title }
+			</h2>	
+			<hr style={{ width: '45px', margin: 'auto' }} />
+			<MDXRenderer>{ mdx.code.body }</MDXRenderer>
+		</div>
+	);
+}
 
-		<hr style={{ width: '45px', margin: 'auto' }} />
+export const query = graphql`
+  query($id: String) {
+    mdx(id: { eq: $id }) {
+      frontmatter {
+        title
+      }
+      code {
+        body
+      }
+    }
+  }
+`
 
-		{ children }	
-
-	</div>
-);
+/////////// STUDY GUIDE ///////////

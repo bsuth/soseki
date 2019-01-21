@@ -1,44 +1,168 @@
-//
-// CSS GLOBAL VARIABLES
-// --------------------
-//
-// Global values to be used across all sass files.
-// This file is imported via @import, to allow 
-// for maintainability.
-//
-// NOTE: All values here should agree with those
-// in the jsglobals.js file!!!
-// 
+/*
+ * CSS GLOBAL VARIABLES
+ * --------------------
+ *
+ * Global values to be used across all sass files.
+ * This file is imported via @import, to allow 
+ * for maintainability.
+ *
+ * NOTE: All values here should agree with those
+ * in the jsglobals.js file!!!
+*/ 
 
-//
 // RESTRAINTS
 // ----------
-//
 $MAX-WIDTH: 1200PX;
 
 
-//
 // MEDIA QUERIES
 // -------------
-//
 $TABLET: 600px;
 $DESKTOP: 1024px;
 
 
-//
 // COLORS
 // ------
-//
 $BACKGROUND: #181818;
 $FOREGROUND: #e0e0e0;
 $WHITE: #e0e0e0;
 
 
-//
 // NAVBAR
 // ------
-//
 $NAVBAR_HEIGHT_M: 65px;
 $NAVBAR_HEIGHT: 140px;
 $NAVBAR_TOP: 50px;
 $NAVBAR_TOTAL: $NAVBAR_HEIGHT + $NAVBAR_TOP;
+
+
+
+
+/*
+ * CSS GLOBAL STYLES
+ * -----------------
+ * 
+ * This includes the styles for the pages that can be
+ * accessed via the navbar as well as the html/body elements.
+ * Some CSS defaults are also removed here.
+*/
+
+
+////////// DEFAULTS //////////
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+a { 
+	color: aqua; 
+	text-decoration: none; 
+}
+
+ul {
+	list-style-type: none;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+////////// DEFAULTS //////////
+
+
+
+
+////////// BODY //////////
+
+body {
+	max-width: $MAX-WIDTH;
+	margin: 0 auto;
+
+	// Force all position absolute and fixed elements
+	// to treat this as the parent.
+	position: relative;
+
+	background: $BACKGROUND;
+	color: $FOREGROUND;
+
+	font-size: 18px;
+	font-family: 'Cormorant Garamond', serif;
+}
+
+////////// BODY //////////
+
+
+
+
+////////// INDEX //////////
+
+// This is chosen to be an id rather than a
+// class so that the padding here has enough
+// css priveledge to override the padding given
+// to every page.
+
+#index {
+	// No padding on home page. The svgs must
+	// be allowed to reach the edge of the pages
+	padding: 0;
+
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+////////// INDEX //////////
+
+
+
+
+////////// ABOUT/MEDIA //////////
+
+.about, .media {
+	p { margin: 20px 0; }
+}
+
+////////// ABOUT/MEDIA //////////
+
+
+
+
+////////// FEATURES //////////
+
+.features {
+	h1 { margin-bottom: 10px; }
+	p { margin-bottom: 30px; }
+}
+
+////////// FEATURES //////////
+
+
+
+
+////////// CONTACT //////////
+
+.contact {
+	img {
+		margin: auto;
+		display: block;
+	}
+}
+
+////////// CONTACT //////////
+
+
+
+
+////////// LINKS //////////
+
+.links {
+	h1 { margin-bottom: 10px; }
+	hr {
+		width: 80%;
+		margin: 20px 0;
+	}
+}
+
+////////// LINKS //////////

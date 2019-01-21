@@ -2,6 +2,9 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
 
+// Components
+import Layout from './Layout'
+
 // Globals
 import { TABLET, NAVBAR_HEIGHT_M, NAVBAR_TOTAL } from '../resources/jsglobals'
 
@@ -12,12 +15,11 @@ import './ChapterText.scss'
 ////////// CHAPTERTEXT //////////
 
 // This component is responsible for rendering the
-// text pages as well as the routes to the study guides.
-// It also implements some features unavailable to pure
-// css, such as changing the text color of the parent div
+// text pages. It also implements some features unavailable 
+// to pure css, such as changing the text color of the parent div
 // when hovering a vocab term and adjusting the height of
 // the vocab defs depending on whether the navbar is 
-// currently hidden.
+// currently hidden or not.
 
 export default class ChapterText extends React.Component {
 	constructor(props) {
@@ -25,23 +27,14 @@ export default class ChapterText extends React.Component {
 		this.props = props;
 	}
 
-	// NOTE: The wrapping div is necessary. <CSSTransitions> requires 
-	// a hook to apply the various css animation classes.
 	render() {
 		let { book, chapter, path, StudyGuides, children } = this.props;
 		return(
-			<div>
- 
-				{ StudyGuides.map(x => <Route key={x.path} path={x.path} component={x.component}/>) }
-				<Route exact path={path} component={ () => (
-					<div className="page">
-						<h2 className="ChapterTitle">{ book } Chapter {chapter}</h2>
-						<hr style={{ width: '45px', margin: 'auto' }} />
-						{ children }
-					</div>
-				)}/>
-
-			</div>
+			<>
+				<h2 className="chapter_title">{ book } Chapter {chapter}</h2>
+				<hr style={{ width: '45px', margin: 'auto' }} />
+				{ children }
+			</>
 		);
 	}
 
@@ -57,7 +50,7 @@ export default class ChapterText extends React.Component {
 
 	// When the user is directed to this page via a link,
 	// this is required in order to attach the event listeners
-	// to the 'vocab' class elements. I'm not quite sure why
+	// to the 'vocab' class elements. I'm not quite sure why this
 	// is necessary, but only attaching the event listeners in
 	// componentDidMount() does not suffice, and all elements 
 	// will lack event listeners unless the page is refreshed.
@@ -76,7 +69,8 @@ export default class ChapterText extends React.Component {
 	}
 
 	handleScroll = () => {
-		this.handleExit(this.lastEvent);
+		let { lastEvent, handleExit } = this;
+		handleExit(lastEvent);
 	}
 
 	handleEnter = (event) => {
