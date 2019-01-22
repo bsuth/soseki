@@ -11,7 +11,11 @@ import './StudyGuide.scss'
 
 /////////// STUDY GUIDE ///////////
 
+// This component is used to render all of the
+// study guide pages from mdx files.
+
 export default ({ data: { mdx } }) => {
+	console.log(mdx.id);
 	return(
 		<div class="text">
 			<h2 className="study_guide_title">
@@ -23,6 +27,7 @@ export default ({ data: { mdx } }) => {
 	);
 }
 
+// Query the document to be rendered.
 export const query = graphql`
   query($id: String) {
     mdx(id: { eq: $id }) {

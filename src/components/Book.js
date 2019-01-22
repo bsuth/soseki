@@ -42,6 +42,7 @@ export default ({data, mode, svg}) => {
 	);
 
 	// Decoration for short stories
+	// (Short stories will pass an empty string as the svg prop)
 	// This is simply a white glow around the book, rather than an svg
 	let bookGlow = svg ? {} : { boxShadow: '0 0 80px 20px rgba(256, 256, 256, 0.7)' };
 
@@ -54,13 +55,11 @@ export default ({data, mode, svg}) => {
 
 	return(
 		<div className={styles.book}>
-
 			{ svg }
 			<Link to={path} className={styles.cover} style={bookGlow}> 
 				<img src={img} alt={imgAlt} />
 			</Link>
 			{ TextElements }
-
 		</div>
 	);
 }

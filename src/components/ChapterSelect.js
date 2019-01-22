@@ -1,9 +1,8 @@
 // React
 import React from 'react'
-import { Link, Route } from 'react-router-dom'
 
-// Components
-import Layout from './Layout'
+// Gatsby
+import { Link } from 'gatsby'
 
 // Styles
 import styles from './ChapterSelect.module.scss'
@@ -25,8 +24,7 @@ import styles from './ChapterSelect.module.scss'
 // rendered in its own component.
 
 export default (props) => {
-	let { root, imgSrc, imgAlt } = props;
-	let { Left, Right } = props;
+	let { Left, Right, imgSrc, imgAlt } = props;
 
 	let colors = {
 		background: props.colorPrimary,
@@ -34,14 +32,12 @@ export default (props) => {
 	};
 
 	return(
-		<Layout>
-
+		<div id={styles.wrapper}>
 			<h2 className={styles.title}>Botchan</h2>
 			<Column data={Left} colors={colors} />
 			<img className={styles.img} src={imgSrc} alt={imgAlt} />
 			<Column data={Right} colors={colors} />
-
-		</Layout>
+		</div>
 	);
 }
 
@@ -52,7 +48,7 @@ export default (props) => {
 
 ////////// COLUMN //////////
 
-// Component to map data to the actual link
+// Component that maps data to the actual link
 // elements that get rendered on screen.
 
 const Column = ({ data, colors }) => (

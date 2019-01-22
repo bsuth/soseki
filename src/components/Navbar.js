@@ -98,21 +98,21 @@ export default class Navbar extends React.Component {
 
 		return (
 			<div id={styles.navbar} className={hidden ? styles.hide : styles.show}>
-
 				<Icon className={iconClass} click={iconClick} />
 				<h1 id={styles.title} className={titleClass}> Sōseki Project </h1>
 				<Menu id={styles.menu} className={menuClass} />
 				<hr className={styles.hr} />
-
 			</div>
 		);
 	}
 
+	// Add event listeners
 	componentDidMount() {
 		window.addEventListener('resize', this.handleResize);
 		window.addEventListener('scroll', this.handleScroll);
 	}
 
+	// Remove event listeners set in componentDidMount()
 	componentWillUnmount() {
 		window.removeEventListener('resize', this.handleResize);
 		window.removeEventListener('scroll', this.handleScroll);

@@ -9,13 +9,12 @@
 	margin-top: $NAVBAR_HEIGHT_M;
 	margin-bottom: 50px;
 
-	/* The home page (index.js) must not be
-	 * allowed to have any padding and for index.js to be
-	 * able to override the current padding given to
-	 * every other page, it must be implemented one level
-	 * beneath the <Layout> level, hence why the padding 
-	 * is given to the direct children of the .page class.
-	*/
+	// The home page (index.js) must not be
+	// allowed to have any padding and for index.js to be
+	// able to override the current padding given to
+	// every other page, it must be implemented one level
+	// beneath the <Layout> level, hence why the padding 
+	// is given to the direct children of the .page class.
 	> div { padding: 0 6%; }
 }
 

@@ -14,7 +14,11 @@ $TITLE_HEIGHT: 50px;
 
 ////////// WRAPPER //////////
 
-.wrapper {
+// The wrapper must be an id in order for
+// the padding to replace the padding set
+// in the .page > div selector
+
+#wrapper {
 	// Leave room for title
 	// --------------------
 	// NOTE: This must be padding, as this class 

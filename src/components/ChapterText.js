@@ -1,9 +1,9 @@
 // React
 import React from 'react'
-import { Route } from 'react-router-dom'
 
-// Components
-import Layout from './Layout'
+// Gatsby
+import { graphql } from 'gatsby'
+import MDXRenderer from "gatsby-mdx/mdx-renderer";
 
 // Globals
 import { TABLET, NAVBAR_HEIGHT_M, NAVBAR_TOTAL } from '../resources/jsglobals'
@@ -22,22 +22,26 @@ import './ChapterText.scss'
 // currently hidden or not.
 
 export default class ChapterText extends React.Component {
-	constructor(props) {
-		super(props);
-		this.props = props;
+	constructor({ data: { mdx } }) {
+		super({ data: { mdx } });
+		this.mdx = mdx;
 	}
 
 	render() {
-		let { book, chapter, path, StudyGuides, children } = this.props;
+		let { mdx } = this;
 		return(
-			<>
-				<h2 className="chapter_title">{ book } Chapter {chapter}</h2>
+			<div onClick={void(0)}>
+				<h2 className="chapter_title">
+					{ mdx.frontmatter.title }
+				</h2>
 				<hr style={{ width: '45px', margin: 'auto' }} />
-				{ children }
-			</>
+				<MDXRenderer>{ mdx.code.body }</MDXRenderer>
+			</div>
 		);
 	}
 
+	// Attach hover event listeners to all vocab elements and
+	// a scroll event listener for the window.
 	componentDidMount() {
 		window.addEventListener('scroll', this.handleScroll);
 		let vocabArray = document.getElementsByClassName("vocab");
@@ -58,6 +62,7 @@ export default class ChapterText extends React.Component {
 		this.componentDidMount();
 	}
 
+	// Clean up the event listeners set in componentDidMount()
 	componentWillUnmount() {
 		window.removeEventListener('scroll', this.handleScroll);
 		let vocabArray = document.getElementsByClassName("vocab");
@@ -68,11 +73,15 @@ export default class ChapterText extends React.Component {
 		}
 	}
 
+	// Clear any hover effects when the user scrolls
 	handleScroll = () => {
 		let { lastEvent, handleExit } = this;
 		handleExit(lastEvent);
 	}
 
+	// Show the vocab definition of the hovered vocab and fade out any
+	// surrounding text. Note that the position of the vocab definition
+	// will differ depending on whether the navbar is currently showing or not.
 	handleEnter = (event) => {
 		this.lastEvent = event;
 		let vocab = event.target;
@@ -92,6 +101,7 @@ export default class ChapterText extends React.Component {
 		}
 	}
 
+	// Revert all effects made in the handleEnter() event listener
 	handleExit = (event) => {
 		if(event) {
 			let vocab = event.target;
@@ -103,5 +113,19 @@ export default class ChapterText extends React.Component {
 		}
 	}
 };
+
+// Query the document to be rendered.
+export const query = graphql`
+  query($id: String) {
+    mdx(id: { eq: $id }) {
+      frontmatter {
+        title
+      }
+      code {
+        body
+      }
+    }
+  }
+`
 
 ////////// CHAPTERTEXT //////////
