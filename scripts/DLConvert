@@ -1,0 +1,28 @@
+#!/bin/bash
+
+wget -O Chapter13.js http://www.sosekiproject.org/sanshiro/sanshirochapter13.html
+wget -O StudyGuide1.js http://www.sosekiproject.org/sanshiro/sanshirochapter13-1.html
+wget -O StudyGuide2.js http://www.sosekiproject.org/sanshiro/sanshirochapter13-2.html
+#wget -O StudyGuide3.js http://www.sosekiproject.org/sanshiro/sanshirochapter13-3.html
+#wget -O StudyGuide4.js http://www.sosekiproject.org/sanshiro/sanshirochapter13-4.html
+#wget -O StudyGuide5.js http://www.sosekiproject.org/sanshiro/sanshirochapter13-5.html
+#wget -O StudyGuide6.js http://www.sosekiproject.org/sanshiro/sanshirochapter13-6.html
+#wget -O StudyGuide7.js http://www.sosekiproject.org/sanshiro/sanshirochapter13-7.html
+#wget -O StudyGuide8.js http://www.sosekiproject.org/sanshiro/sanshirochapter13-8.html
+#wget -O StudyGuide9.js http://www.sosekiproject.org/sanshiro/sanshirochapter13-9.html
+#wget -O StudyGuide10.js http://www.sosekiproject.org/sanshiro/sanshirochapter13-10.html
+#wget -O StudyGuide11.js http://www.sosekiproject.org/sanshiro/sanshirochapter13-11.html
+#wget -O StudyGuide12.js http://www.sosekiproject.org/sanshiro/sanshirochapter13-12.html
+#wget -O StudyGuide13.js http://www.sosekiproject.org/sanshiro/sanshirochapter13-13.html
+#wget -O StudyGuide14.js http://www.sosekiproject.org/sanshiro/sanshirochapter13-14.html
+#wget -O StudyGuide15.js http://www.sosekiproject.org/sanshiro/sanshirochapter13-15.html
+#wget -O StudyGuide16.js http://www.sosekiproject.org/sanshiro/sanshirochapter13-16.html
+#wget -O StudyGuide17.js http://www.sosekiproject.org/sanshiro/sanshirochapter13-17.html
+#wget -O StudyGuide18.js http://www.sosekiproject.org/sanshiro/sanshirochapter13-18.html
+#wget -O StudyGuide19.js http://www.sosekiproject.org/sanshiro/sanshirochapter13-19.html
+#wget -O StudyGuide20.js http://www.sosekiproject.org/sanshiro/sanshirochapter13-20.html
+#wget -O StudyGuide21.js http://www.sosekiproject.org/sanshiro/sanshirochapter13-21.html
+#wget -O StudyGuide22.js http://www.sosekiproject.org/sanshiro/sanshirochapter13-22.html
+
+vim -c 'source ~/soseki/scripts/TextConvert.vim' Chapter13.js
+vim -c 'bufdo source ~/soseki/scripts/StudyConvert.vim' StudyGuide*.js
