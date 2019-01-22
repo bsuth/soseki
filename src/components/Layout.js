@@ -37,10 +37,12 @@ const Head = () => (
 
 // This is wrapped around every page
 // using the wrapPageElement API from
-// gatsby-browser.
+// gatsby-browser. The wrapping <div>
+// is necessary, otherwise 'gatsby build'
+// will have trouble finding the index node.
 
 export default ({ children, location }) => (
-	<>
+	<div>
 		<Head />
 		<Navbar />
 		<TransitionGroup>
@@ -50,7 +52,7 @@ export default ({ children, location }) => (
 				</div>
 			</CSSTransition>
 		</TransitionGroup>
-	</>
+	</div>
 );
 
 /////////// LAYOUT //////////
