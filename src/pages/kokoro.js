@@ -8,9 +8,10 @@ import ChapterSelect from 'components/ChapterSelect'
 import Cover from 'images/kokoroindex.jpg'
 
 
+////////// KOKORO //////////
+
 export default () => (
 	<ChapterSelect
-		root='/kokoro'
 		imgSrc={Cover}
 		imgAlt="Soseki in his Study"
 		Left={ChaptersLeft}
@@ -19,6 +20,13 @@ export default () => (
 		colorSecondary='#2d2d2d'
 	/>
 );
+
+////////// KOKORO //////////
+
+
+
+
+////////// KOKORO //////////
 
 const ChaptersLeft = [
 	{
@@ -97,3 +105,5 @@ const ChaptersRight = [
 		path: '/kokoro/chapter12',
 	},
 ];
+
+////////// KOKORO //////////

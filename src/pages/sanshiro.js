@@ -8,6 +8,8 @@ import ChapterSelect from 'components/ChapterSelect'
 import Cover from 'images/sanshiroindex.jpg'
 
 
+////////// SANSHIRO //////////
+
 export default () => (
 	<ChapterSelect
 		imgSrc={Cover}
@@ -18,6 +20,13 @@ export default () => (
 		colorSecondary='#610561'
 	/>
 );
+
+////////// SANSHIRO //////////
+
+
+
+
+////////// CHAPTER SELECTION //////////
 
 const ChaptersLeft = [
 	{
@@ -102,3 +111,5 @@ const ChaptersRight = [
 		path: '/sanshiro/chapter13',
 	},
 ];
+
+////////// CHAPTER SELECTION //////////

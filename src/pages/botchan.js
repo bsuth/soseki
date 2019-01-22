@@ -8,6 +8,8 @@ import ChapterSelect from 'components/ChapterSelect'
 import Cover from 'images/sosekiportrait.jpg'
 
 
+////////// BOTCHAN //////////
+
 export default () => (
 	<ChapterSelect
 		imgSrc={Cover}
@@ -18,6 +20,13 @@ export default () => (
 		colorSecondary="rgb(76, 50, 22)"
 	/>
 );
+
+////////// BOTCHAN //////////
+
+
+
+
+/////////// CHAPTER SELECTION //////////
 
 const ChaptersLeft = [
 	{
@@ -90,3 +99,5 @@ const ChaptersRight = [
 		path: '/botchan/chapter11',
 	},
 ];
+
+/////////// CHAPTER SELECTION //////////

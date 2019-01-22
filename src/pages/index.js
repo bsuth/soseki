@@ -19,12 +19,10 @@ import TowerCover from '../images/towercover.jpg'
 
 ////////// INDEX //////////
 
-/*
- * NOTE: When the media query changes, this component 
- * is responsible for notifying all of its children to
- * update accordingly. This is controlled via 'state' to 
- * allow for automatic rerendering.
-*/
+// NOTE: When the media query changes, this component 
+// is responsible for notifying all of its children to
+// update accordingly. This is controlled via 'state' to 
+// allow for automatic rerendering.
 
 export default class Index extends React.Component {
 	constructor() {
@@ -49,16 +47,8 @@ export default class Index extends React.Component {
 	}
 
 	componentDidMount() {
-		let mediaQuery = window.innerWidth;
-		if(mediaQuery < TABLET) {
-			this.state = { mode: MediaEnum.mobile };
-		} else if(mediaQuery < DESKTOP) {
-			this.state = { mode: MediaEnum.tablet };
-		} else {
-			this.state = { mode: MediaEnum.desktop };
-		}
-
 		window.addEventListener('resize', this.handleResize);
+		this.handleResize();
 	}
 
 	componentWillUnmount() {
