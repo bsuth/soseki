@@ -29,15 +29,7 @@ import TowerCover from '../images/towercover.jpg'
 export default class Index extends React.Component {
 	constructor() {
 		super();
-		
-		let mediaQuery = window.innerWidth;
-		if(mediaQuery < TABLET) {
-			this.state = { mode: MediaEnum.mobile };
-		} else if(mediaQuery < DESKTOP) {
-			this.state = { mode: MediaEnum.tablet };
-		} else {
-			this.state = { mode: MediaEnum.desktop };
-		}
+		this.state = { mode: MediaEnum.mobile }
 	}
 
 	render() {
@@ -57,6 +49,15 @@ export default class Index extends React.Component {
 	}
 
 	componentDidMount() {
+		let mediaQuery = window.innerWidth;
+		if(mediaQuery < TABLET) {
+			this.state = { mode: MediaEnum.mobile };
+		} else if(mediaQuery < DESKTOP) {
+			this.state = { mode: MediaEnum.tablet };
+		} else {
+			this.state = { mode: MediaEnum.desktop };
+		}
+
 		window.addEventListener('resize', this.handleResize);
 	}
 

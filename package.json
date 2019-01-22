@@ -16,7 +16,6 @@
     "@mdx-js/tag": "^0.16.6",
     "gatsby": "^2.0.76",
     "gatsby-mdx": "^0.3.5",
-    "gatsby-plugin-page-transitions": "^1.0.7",
     "gatsby-plugin-sass": "^2.0.7",
     "gatsby-source-filesystem": "^2.0.16",
     "node-sass": "^4.11.0",

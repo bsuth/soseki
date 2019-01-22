@@ -14,10 +14,12 @@ import './src/resources/cssglobals.scss'
 // element with our custom <Layout> component.
 // This prevents <Layout> from unmounting on
 // page change. The 'element' props is the React 
-// element built by Gatsby.
+// element built by Gatsby and props is passed so
+// the <CSSTransition> component can use the location
+// to determine when to deploy animations between pages.
 
 export const wrapPageElement = ({ element, props }) => (
-	<Layout>
+	<Layout {...props}>
 		{ element }
 	</Layout>
 );

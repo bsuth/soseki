@@ -1,6 +1,18 @@
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 
+// Tell Webpack where to resolve imports.
+exports.onCreateWebpackConfig = ({ actions }) => {
+	actions.setWebpackConfig({
+		resolve: {
+			modules: [
+				path.resolve(__dirname, 'src'), 
+				'node_modules'
+			]
+		}
+	})
+}
+
 exports.onCreateNode = ({ node, getNode, actions }) => {
 	if(node.internal.type === 'Mdx') {
 		const slug = createFilePath({ node, getNode });
@@ -20,6 +32,7 @@ exports.createPages = ({ graphql, actions }) => {
       allMdx {
         edges {
           node {
+						id
             fields {
               slug
             }
@@ -29,10 +42,13 @@ exports.createPages = ({ graphql, actions }) => {
     }
   `
 	).then(result => {
-			result.data.allMdx.edges.forEach(({ node }) => {
+		result.data.allMdx.edges.forEach(({ node }) => {
+			let Template = node.fields.slug.includes('study') ? 
+				'StudyGuide.js' : 'ChapterText.js';
+
 			actions.createPage({
 				path: node.fields.slug,
-				component: path.resolve('./src/components/StudyGuide.js'),
+				component: path.resolve('./src/components/' + Template),
 				context: {
 					// Data passed to context is available
 					// in page queries as GraphQL variables.
