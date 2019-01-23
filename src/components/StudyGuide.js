@@ -17,7 +17,7 @@ import './StudyGuide.scss'
 export default ({ data: { mdx } }) => {
 	console.log(mdx.id);
 	return(
-		<div class="text">
+		<div className="text">
 			<h2 className="study_guide_title">
 				{ mdx.frontmatter.title }
 			</h2>	
