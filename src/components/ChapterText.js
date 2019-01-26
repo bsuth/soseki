@@ -23,7 +23,7 @@ import './ChapterText.scss'
 
 export default class ChapterText extends React.Component {
 	constructor({ data: { mdx } }) {
-		super({ data: { mdx } });
+		super();
 		this.mdx = mdx;
 	}
 
