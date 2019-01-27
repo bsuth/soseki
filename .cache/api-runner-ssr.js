@@ -1,6 +1,9 @@
 var plugins = [{
       plugin: require('/home/bsuth/soseki/node_modules/gatsby-mdx/gatsby-ssr'),
       options: {"plugins":[]},
+    },{
+      plugin: require('/home/bsuth/soseki/node_modules/gatsby-plugin-layout/gatsby-ssr'),
+      options: {"plugins":[],"component":"/home/bsuth/soseki/src/components/Layout.js"},
     }]
 // During bootstrap, we write requires at top of this file which looks like:
 // var plugins = [

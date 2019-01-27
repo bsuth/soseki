@@ -685,6 +685,86 @@
         "path": "/botchan/chapter9/studyguide98/"
     },
     {
+        "componentChunkName": "component---src-components-chapter-text-js",
+        "jsonName": "buncho-dfa",
+        "path": "/buncho/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "buncho-studyguide-1-071",
+        "path": "/buncho/studyguide1/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "buncho-studyguide-10-4f3",
+        "path": "/buncho/studyguide10/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "buncho-studyguide-11-9e1",
+        "path": "/buncho/studyguide11/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "buncho-studyguide-12-76f",
+        "path": "/buncho/studyguide12/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "buncho-studyguide-13-b40",
+        "path": "/buncho/studyguide13/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "buncho-studyguide-14-847",
+        "path": "/buncho/studyguide14/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "buncho-studyguide-15-8d2",
+        "path": "/buncho/studyguide15/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "buncho-studyguide-2-af5",
+        "path": "/buncho/studyguide2/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "buncho-studyguide-3-d8f",
+        "path": "/buncho/studyguide3/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "buncho-studyguide-4-ffd",
+        "path": "/buncho/studyguide4/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "buncho-studyguide-5-d04",
+        "path": "/buncho/studyguide5/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "buncho-studyguide-6-5b6",
+        "path": "/buncho/studyguide6/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "buncho-studyguide-7-704",
+        "path": "/buncho/studyguide7/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "buncho-studyguide-8-045",
+        "path": "/buncho/studyguide8/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "buncho-studyguide-9-20b",
+        "path": "/buncho/studyguide9/"
+    },
+    {
         "componentChunkName": "component---src-pages-contact-js",
         "jsonName": "contact-26a",
         "path": "/contact/"
@@ -1868,6 +1948,106 @@
         "componentChunkName": "component---src-pages-links-js",
         "jsonName": "links-5ea",
         "path": "/links/"
+    },
+    {
+        "componentChunkName": "component---src-components-chapter-text-js",
+        "jsonName": "london-03f",
+        "path": "/london/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "london-studyguide-1-6f1",
+        "path": "/london/studyguide1/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "london-studyguide-10-289",
+        "path": "/london/studyguide10/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "london-studyguide-11-2b6",
+        "path": "/london/studyguide11/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "london-studyguide-12-c79",
+        "path": "/london/studyguide12/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "london-studyguide-13-3fe",
+        "path": "/london/studyguide13/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "london-studyguide-14-b2f",
+        "path": "/london/studyguide14/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "london-studyguide-15-0c9",
+        "path": "/london/studyguide15/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "london-studyguide-16-a78",
+        "path": "/london/studyguide16/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "london-studyguide-17-3ff",
+        "path": "/london/studyguide17/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "london-studyguide-18-d8f",
+        "path": "/london/studyguide18/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "london-studyguide-19-e52",
+        "path": "/london/studyguide19/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "london-studyguide-2-d6f",
+        "path": "/london/studyguide2/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "london-studyguide-3-6ed",
+        "path": "/london/studyguide3/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "london-studyguide-4-18f",
+        "path": "/london/studyguide4/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "london-studyguide-5-7b6",
+        "path": "/london/studyguide5/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "london-studyguide-6-ea6",
+        "path": "/london/studyguide6/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "london-studyguide-7-69d",
+        "path": "/london/studyguide7/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "london-studyguide-8-848",
+        "path": "/london/studyguide8/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "london-studyguide-9-098",
+        "path": "/london/studyguide9/"
     },
     {
         "componentChunkName": "component---src-pages-media-js",
@@ -3148,5 +3328,130 @@
         "componentChunkName": "component---src-components-study-guide-js",
         "jsonName": "sanshiro-chapter-9-studyguide-186-e03",
         "path": "/sanshiro/chapter9/studyguide186/"
+    },
+    {
+        "componentChunkName": "component---src-components-chapter-text-js",
+        "jsonName": "tennights-840",
+        "path": "/tennights/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "tennights-studyguide-1-2ef",
+        "path": "/tennights/studyguide1/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "tennights-studyguide-10-8cd",
+        "path": "/tennights/studyguide10/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "tennights-studyguide-11-f6a",
+        "path": "/tennights/studyguide11/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "tennights-studyguide-12-d54",
+        "path": "/tennights/studyguide12/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "tennights-studyguide-13-dbd",
+        "path": "/tennights/studyguide13/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "tennights-studyguide-14-5f7",
+        "path": "/tennights/studyguide14/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "tennights-studyguide-15-6f0",
+        "path": "/tennights/studyguide15/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "tennights-studyguide-16-263",
+        "path": "/tennights/studyguide16/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "tennights-studyguide-17-f95",
+        "path": "/tennights/studyguide17/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "tennights-studyguide-18-146",
+        "path": "/tennights/studyguide18/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "tennights-studyguide-19-6d9",
+        "path": "/tennights/studyguide19/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "tennights-studyguide-2-4b0",
+        "path": "/tennights/studyguide2/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "tennights-studyguide-20-04e",
+        "path": "/tennights/studyguide20/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "tennights-studyguide-21-78f",
+        "path": "/tennights/studyguide21/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "tennights-studyguide-22-11a",
+        "path": "/tennights/studyguide22/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "tennights-studyguide-23-654",
+        "path": "/tennights/studyguide23/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "tennights-studyguide-24-cfd",
+        "path": "/tennights/studyguide24/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "tennights-studyguide-3-294",
+        "path": "/tennights/studyguide3/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "tennights-studyguide-4-7aa",
+        "path": "/tennights/studyguide4/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "tennights-studyguide-5-7b2",
+        "path": "/tennights/studyguide5/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "tennights-studyguide-6-74c",
+        "path": "/tennights/studyguide6/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "tennights-studyguide-7-016",
+        "path": "/tennights/studyguide7/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "tennights-studyguide-8-fdc",
+        "path": "/tennights/studyguide8/"
+    },
+    {
+        "componentChunkName": "component---src-components-study-guide-js",
+        "jsonName": "tennights-studyguide-9-e15",
+        "path": "/tennights/studyguide9/"
     }
 ]
