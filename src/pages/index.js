@@ -46,6 +46,10 @@ export default class Index extends React.Component {
 		);
 	}
 
+	// We call handleResize here to avoid having to
+	// make a reference to the window object in the
+	// constructor (at Gatsby build time the window
+	// object is undefined)
 	componentDidMount() {
 		window.addEventListener('resize', this.handleResize);
 		this.handleResize();
@@ -170,7 +174,7 @@ const Books = [
 			desc: 'An impressionistic account of the author\'s sole excursion to the Tower of London during his two years of study abroad in the city. A mix of memories from the visit and fantasies evoked by the sights and sounds and history of the site.',
 			img: TowerCover,
 			imgAlt: 'The Tower of London cover',
-			path: '/tower',
+			path: '/london',
 		},
 		svg: [
 			'',

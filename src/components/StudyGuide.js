@@ -15,12 +15,11 @@ import './StudyGuide.scss'
 // study guide pages from mdx files.
 
 export default ({ data: { mdx } }) => {
-	console.log(mdx.id);
 	return(
-		<div className="text">
-			<h2 className="study_guide_title">
+		<div className="text studyguide">
+			<h1 className="study_guide_title">
 				{ mdx.frontmatter.title }
-			</h2>	
+			</h1>	
 			<hr style={{ width: '45px', margin: 'auto' }} />
 			<MDXRenderer>{ mdx.code.body }</MDXRenderer>
 		</div>

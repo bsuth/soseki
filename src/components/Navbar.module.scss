@@ -13,6 +13,7 @@
 	max-width: $MAX-WIDTH;
 
 	position: fixed;
+	top: 0;
 	z-index: 5;
 
 	display: flex;
@@ -41,16 +42,26 @@
 	animation: slideNavDown 250ms forwards;
 }
 
+//@keyframes slideNavUp {
+	//0% { top: 0%; }
+	//90% { top: -70%; }
+	//100% { top: -100%; }
+//}
+//
+//@keyframes slideNavDown {
+	//0% { top: -100%; }
+	//70% { top: -10%; }
+	//100% { top: 0%; }
+//}
+
 @keyframes slideNavUp {
-	0% { top: 0%; }
-	90% { top: -70%; }
-	100% { top: -100%; }
+	0% { transform: scale(1); }
+	100% { transform: scale(0.7); }
 }
 
 @keyframes slideNavDown {
-	0% { top: -100%; }
-	70% { top: -10%; }
-	100% { top: 0%; }
+	0% { transform: scale(0.7); }
+	100% { transform: scale(1); }
 }
 
 ////////// NAVBAR //////////
@@ -92,7 +103,7 @@ $ICON_WIDTH: 16%;
 }
 
 
-// Navbar animation //
+// Icon transformation animation //
 $line-transforms: (
 	('0px, 9px', '13px, 13px', 45deg, 0.5, 4px),
 	('8px, 20px', '20px, 20px', -45deg, 0.417, 4px),
@@ -152,7 +163,7 @@ $line-transforms: (
 }
 
 
-// Hide/Show Animations //
+// Toggle menu animation: hide title //
 #title.hideTitle {
 	animation: slideTitleUp 250ms forwards;
 }
@@ -249,7 +260,7 @@ $line-transforms: (
 }
 
 
-// Hide/Show Animations //
+// Toggle menu animation: show menu //
 #menu.hideMenu { 
 	animation: slideMenuDown 250ms forwards;
 }

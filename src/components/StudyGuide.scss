@@ -1,25 +1,26 @@
-////////// STUDY GUIDE TITLE //////////
+////////// STUDY GUIDE //////////
 
-.study_guide_title {
-	margin: 20px;
-	font-size: 35px;
-	text-align: center;
+.studyguide {
+	// Study guide title
+	h1 {
+		margin: 20px;
+		font-size: 35px;
+		text-align: center;
+	}
+
+	// Section titles
+	h2 {
+		margin: 20px 0;
+		font-size: 30px;
+		text-align: center;
+	}
+
+	p {
+		margin: 20px 0;
+	}
 }
 
-////////// STUDY GUIDE TITLE //////////
-
-
-
-
-////////// SECTION TITLE //////////
-
-.section {
-	margin: 20px 0;
-	font-size: 30px;
-	text-align: center;
-}
-
-////////// SECTION TITLE //////////
+////////// STUDY GUIDE //////////
 
 
 

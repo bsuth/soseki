@@ -1,38 +1,32 @@
 // Globals
 @import '../resources/cssglobals';
 
-// NOTE: We need the title to appear towards the
-// top, which poses a problem since our wrapper
-// needs 'flex-direction: row' for the tablet
-// and desktop layouts. To fix this, we apply a
-// padding to our wrapper and absolute position
-// the title to take this space. The amount to 
-// pad as well as the height of the actual title
-// is stored in the following variable.
-$TITLE_HEIGHT: 50px;
-
-
 ////////// WRAPPER //////////
 
-// The wrapper must be an id in order for
+// NOTE: The wrapper must be an id in order for
 // the padding to replace the padding set
 // in the .page > div selector
 
+// NOTE: We need the title to appear at the top,
+// which poses a problem since our wrapper
+// needs 'flex-direction: row' for the tablet
+// and desktop layouts. To fix this, we apply a
+// padding to our wrapper and absolute position
+// the title to take this space this must be padding, 
+// as this class shares a div with the .page class, 
+// which already has its own margin to account for
+// the fixed navbar.
+$TOP_PADDING: 70px;
+
 #wrapper {
-	// Leave room for title
-	// --------------------
-	// NOTE: This must be padding, as this class 
-	// shares a div with the .page class, which
-	// already has its own margin to account for
-	// the fixed navbar.
-	padding-top: $TITLE_HEIGHT;
+	padding-top: $TOP_PADDING;
 
 	display: flex;
 	flex-direction: column;
 }
 
 @media only screen and (min-width: $TABLET) {
-	.wrapper {
+	#wrapper {
 		flex-direction: row;
 		justify-content: center;
 	}
@@ -46,11 +40,9 @@ $TITLE_HEIGHT: 50px;
 ////////// TITLE //////////
 
 .title {
-	height: $TITLE_HEIGHT;
-
 	position: absolute;
-	top: 0; left: 50%;
-	transform: translateX(-50%);
+	top: $TOP_PADDING / 2; left: 50%;
+	transform: translate(-50%, -50%);
 
 	font-size: 30px;
 	font-family: 'Cinzel', serif;

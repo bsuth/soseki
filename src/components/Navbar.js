@@ -85,7 +85,7 @@ export default class Navbar extends React.Component {
 	constructor() {
 		super();
 		this.state = { 
-			toggleMenu: !(window.innerWidth < TABLET), 
+			toggleMenu: false, 
 			hidden: false,
 			lastScroll: 0,
 		};
@@ -107,9 +107,14 @@ export default class Navbar extends React.Component {
 	}
 
 	// Add event listeners
+	// We call handleResize here to avoid having to
+	// make a reference to the window object in the
+	// constructor (at Gatsby build time the window
+	// object is undefined)
 	componentDidMount() {
 		window.addEventListener('resize', this.handleResize);
 		window.addEventListener('scroll', this.handleScroll);
+		this.handleResize()
 	}
 
 	// Remove event listeners set in componentDidMount()
