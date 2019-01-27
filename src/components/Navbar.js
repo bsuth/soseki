@@ -18,8 +18,7 @@ import styles from './Navbar.module.scss'
 
 const Icon = ({ click, className }) => (
 	<svg 
-		id={styles.icon}
-		className={className}
+		className={`${styles.icon} ${className}`}
 		onClick={click}
 		xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'
 	>
@@ -77,53 +76,51 @@ const Menu = ({ className }) => (
 ////////// NAVBAR //////////
 
 // This component controls everything pertaining to
-// the navbar, including conditional rendering of
-// the title/<hr> (tablet & desktop) and toggling 
-// the drop down menu (mobile).
+// the navbar, including handling all event listeners,
+// controlling animation classes, and toggling the
+// drop down menu (mobile).
 
 export default class Navbar extends React.Component {
 	constructor() {
 		super();
 		this.state = { 
 			toggleMenu: false, 
-			hidden: false,
 			lastScroll: 0,
 		};
 	}
 
 	render() {
-		let { hidden } = this.state;
-		let { iconClass, titleClass, menuClass } = this.state;
+		let { navClass, iconClass, titleClass, menuClass } = this.state;
 		let { iconClick } = this;
 
 		return (
-			<div id={styles.navbar} className={hidden ? styles.hide : styles.show}>
+			<div id={styles.navbar} className={navClass}>
 				<Icon className={iconClass} click={iconClick} />
-				<h1 id={styles.title} className={titleClass}> Sōseki Project </h1>
-				<Menu id={styles.menu} className={menuClass} />
+				<h1 className={`${styles.title} ${titleClass}`}> Sōseki Project </h1>
+				<Menu className={`${styles.menu} ${menuClass}`} />
 				<hr className={styles.hr} />
 			</div>
 		);
 	}
 
-	// Add event listeners
-	// We call handleResize here to avoid having to
-	// make a reference to the window object in the
-	// constructor (at Gatsby build time the window
-	// object is undefined)
+	// NOTE: We call handleResize here to avoid having to make a reference 
+	// to the window object in the constructor (at Gatsby build time 
+	// the window object is undefined)
 	componentDidMount() {
 		window.addEventListener('resize', this.handleResize);
-		window.addEventListener('scroll', this.handleScroll);
 		this.handleResize()
 	}
 
-	// Remove event listeners set in componentDidMount()
+	// Remove all possible event listeners 
 	componentWillUnmount() {
 		window.removeEventListener('resize', this.handleResize);
-		window.removeEventListener('scroll', this.handleScroll);
+		window.removeEventListener('scroll', this.mobileScroll);
+		window.removeEventListener('scroll', this.webScroll);
+		window.removeEventListener('mouseenter', this.navHoverEnter);
+		window.removeEventListener('mouseleave', this.navHoverLeave);
 	}
 
-	// Toggle to display the navbar menu.
+	// Toggle to display the navbar menu (mobile)
 	iconClick = () => {
 		if(this.state.toggleMenu) {
 			this.setState(({ toggleMenu }) => ({
@@ -142,37 +139,74 @@ export default class Navbar extends React.Component {
 		}
 	}
 
-	// If the media query changes, hide or show the navbar accordingly.
+	// If the media query changes, hide or show the navbar accordingly
 	handleResize = () => {
-		this.setState({ 
-			toggleMenu: !(window.innerWidth < TABLET)
-		});
+		let navRef = document.getElementById(styles.navbar);
+		if(window.innerWidth < TABLET) {
+			navRef.removeEventListener('mouseenter', this.navHoverEnter);
+			navRef.removeEventListener('mouseleave', this.navHoverLeave);
+			window.removeEventListener('scroll', this.webScroll);
+			window.addEventListener('scroll', this.mobileScroll);
+			this.setState({ toggleMenu: false });
+		} else {
+			window.removeEventListener('scroll', this.mobileScroll);
+			window.addEventListener('scroll', this.webScroll);
+			this.setState({ toggleMenu: true });
+			this.webScroll();
+		}
 	}
 
 	// Show or hide the navbar based on whether the user scrolls up or
 	// down, respectively. This only takes effect when the user has
 	// scrolled at least the height of the navbar itself or if the
 	// navbar is already hidden.
-	handleScroll = () => {
-		let { lastScroll, hidden } = this.state;
-		let newScroll = window.pageYOffset || document.documentElement.scrollTop; 
-		let navbarHeight = document.getElementById(styles.navbar).offsetHeight;
+	mobileScroll = () => {
+		let { lastScroll, navClass } = this.state;
+		let { hideNav, showNav } = styles;
+		let newScroll = window.pageYOffset; 
 
-		if(newScroll > navbarHeight || hidden) {
-			// Only show/hide when the user has scrolled at least 50px up
-			// or down. This is done to reduce sensitivity.
-			if(Math.abs(newScroll - lastScroll) > 50) {
-				this.setState({ 
-					hidden: (newScroll > lastScroll), 
-					lastScroll: newScroll,
-				});
-			}
+		// Only show/hide when the user has scrolled at least 50px up
+		// or down. This is done to reduce sensitivity.
+		if(Math.abs(newScroll - lastScroll) > 50) {
+			this.setState({ 
+				navClass: newScroll > lastScroll ? hideNav : showNav,
+				lastScroll: newScroll,
+			});
+		}
 
-			// Set global variable to be read by other components.
-			// The <ChapterText> component needs to be able to read this
-			// in order to adjust the positioning of hovered vocab defs.
-			window.NavHidden = this.state.hidden;
-		} 
+		// Set global variable to be read by other components.
+		// The <ChapterText> component needs to be able to read this
+		// in order to adjust the positioning of hovered vocab defs.
+		window.NavHidden = (navClass === hideNav);
+	}
+
+	webScroll = () => {
+		let { navClass } = this.state;
+		let { navbar, hideNav, showNav } = styles;
+		let navRef = document.getElementById(navbar);
+
+		if(window.pageYOffset > navRef.offsetHeight) {
+			navRef.addEventListener('mouseenter', this.navHoverEnter);
+			navRef.addEventListener('mouseleave', this.navHoverLeave);
+			this.setState({ navClass: hideNav })
+		} else {
+			navRef.removeEventListener('mouseenter', this.navHoverEnter);
+			navRef.removeEventListener('mouseleave', this.navHoverLeave);
+			this.setState({ navClass: showNav })
+		}
+
+		// Set global variable to be read by other components.
+		// The <ChapterText> component needs to be able to read this
+		// in order to adjust the positioning of hovered vocab defs.
+		window.NavHidden = (navClass === hideNav);
+	}
+
+	navHoverEnter = () => {
+		this.setState({ navClass: styles.showNav })
+	}
+
+	navHoverLeave = () => {
+		this.setState({ navClass: styles.hideNav })
 	}
 }
 
