@@ -21,47 +21,49 @@
 
 	overflow: hidden;
 	background: $BACKGROUND;
+	transition: 350ms cubic-bezier(0.04, 1.08, 0.49, 0.99);
 }
 
 @media only screen and (min-width: $TABLET) {
 	#navbar {
 		height: $NAVBAR_TOTAL; // NOTE: border-sizing: border-box;
 		padding-top: $NAVBAR_TOP;
-
 		flex-direction: column;
 	}
 }
 
 
-// Hide/Show Animation //
-.hide { 
-	animation: slideNavUp 250ms forwards;
+// Hide/Show Animations //
+#navbar.hideNav { 
+	top: -100%;
 }
 
-.show {
-	animation: slideNavDown 250ms forwards;
+#navbar.showNav {
+	top: 0;
 }
 
-//@keyframes slideNavUp {
-	//0% { top: 0%; }
-	//90% { top: -70%; }
-	//100% { top: -100%; }
-//}
-//
-//@keyframes slideNavDown {
-	//0% { top: -100%; }
-	//70% { top: -10%; }
-	//100% { top: 0%; }
-//}
+@media only screen and (min-width: $TABLET) {
+	#navbar.hideNav {
+		width: 80px;
+		height: 80px;
 
-@keyframes slideNavUp {
-	0% { transform: scale(1); }
-	100% { transform: scale(0.7); }
-}
+		top: 20px; left: 20px;
+		border: 2px solid white;
+		border-radius: 50px;
 
-@keyframes slideNavDown {
-	0% { transform: scale(0.7); }
-	100% { transform: scale(1); }
+		> * { display: none; }
+
+		.icon { 
+			width: 50px;
+			height: 50px;
+			margin: 0;
+
+			position: absolute;
+			top: 50%; left: 50%;
+			transform: translate(-50%, -50%);
+			display: block; 
+		}
+	}
 }
 
 ////////// NAVBAR //////////
@@ -82,7 +84,7 @@
 $ICON_WIDTH: 16%;
 
 
-#icon {
+.icon {
 	width: 9%;
 	height: 40px;
 	margin-left: 7%;
@@ -97,7 +99,7 @@ $ICON_WIDTH: 16%;
 }
 
 @media only screen and (min-width: $TABLET) {
-	#icon {
+	.icon {
 		display: none;
 	}
 }
@@ -113,12 +115,12 @@ $line-transforms: (
 @for $i from 1 through 3 {
 	$line: nth($line-transforms, $i);
 	
-	#icon line:nth-child(#{$i}) {
+	.icon line:nth-child(#{$i}) {
 		transform: translate(#{nth($line, 1)});
 		stroke-width: 2px;
 	}
 
-	#icon.cross line:nth-child(#{$i}) {
+	.icon.cross line:nth-child(#{$i}) {
 		transform:
 			translate(#{nth($line, 2)}) 
 			rotate(#{nth($line, 3)}) 
@@ -134,7 +136,7 @@ $line-transforms: (
 
 ////////// TITLE //////////
 
-#title {
+.title {
 	width:  100% - $ICON_WIDTH;
 	height: 100%;
 
@@ -150,7 +152,7 @@ $line-transforms: (
 }
 
 @media only screen and (min-width: $TABLET) {
-	#title {
+	.title {
 		width: auto;
 		height: auto;
 
@@ -164,11 +166,11 @@ $line-transforms: (
 
 
 // Toggle menu animation: hide title //
-#title.hideTitle {
+.title.hideTitle {
 	animation: slideTitleUp 250ms forwards;
 }
 
-#title.showTitle {
+.title.showTitle {
 	animation: slideTitleDown 250ms forwards;
 }
 
@@ -186,7 +188,7 @@ $line-transforms: (
 
 // Animations removed for tablet/desktop layout
 @media only screen and (min-width: $TABLET) {
-	#title.hideTitle, #title.showTitle {
+	.title.hideTitle, .title.showTitle {
 		animation: none;
 	}
 }
@@ -198,7 +200,7 @@ $line-transforms: (
 
 ////////// MENU //////////
 
-#menu {
+.menu {
 	width: 100% - $ICON_WIDTH;
 	height: 100%;
 
@@ -234,7 +236,7 @@ $line-transforms: (
 }
 
 @media only screen and (min-width: $TABLET) {
-	#menu {
+	.menu {
 		width: 90%;
 		height: auto;
 		margin: auto;
@@ -245,6 +247,10 @@ $line-transforms: (
 
 		flex-direction: row;
 		background: transparent;
+
+		// Necessary to prevent scrollbar from
+		// showing in navShow animation for tablet/desktop
+		overflow: hidden;
 
 		li {
 			flex: auto;
@@ -261,11 +267,11 @@ $line-transforms: (
 
 
 // Toggle menu animation: show menu //
-#menu.hideMenu { 
+.menu.hideMenu { 
 	animation: slideMenuDown 250ms forwards;
 }
 
-#menu.showMenu {
+.menu.showMenu {
 	animation: slideMenuUp 250ms forwards;
 }
 
@@ -283,7 +289,7 @@ $line-transforms: (
 
 // Animations removed for tablet/desktop layout
 @media only screen and (min-width: $TABLET) {
-	#menu.hideMenu, #menu.showMenu {
+	.menu.hideMenu, .menu.showMenu {
 		animation: none;
 	}
 }
