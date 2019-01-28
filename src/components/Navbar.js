@@ -105,7 +105,8 @@ export default class Navbar extends React.Component {
 
 	// NOTE: We call handleResize here to avoid having to make a reference 
 	// to the window object in the constructor (at Gatsby build time 
-	// the window object is undefined)
+	// the window object is undefined). This attaches some additional
+	// event listeners
 	componentDidMount() {
 		window.addEventListener('resize', this.handleResize);
 		this.handleResize()
@@ -120,7 +121,9 @@ export default class Navbar extends React.Component {
 		window.removeEventListener('mouseleave', this.navHoverLeave);
 	}
 
-	// Toggle to display the navbar menu (mobile)
+	// Toggle between showing the title and showing
+	// the menu (mobile). Also triggers the animation
+	// for the icon transformation
 	iconClick = () => {
 		if(this.state.toggleMenu) {
 			this.setState(({ toggleMenu }) => ({
@@ -139,7 +142,9 @@ export default class Navbar extends React.Component {
 		}
 	}
 
-	// If the media query changes, hide or show the navbar accordingly
+	// If the media query changes, adjust the event listeners.
+	// The navbar hide/show behavior on scrolling acts differently
+	// for the different layouts and requires different listeners.
 	handleResize = () => {
 		let navRef = document.getElementById(styles.navbar);
 		if(window.innerWidth < TABLET) {
@@ -156,10 +161,9 @@ export default class Navbar extends React.Component {
 		}
 	}
 
-	// Show or hide the navbar based on whether the user scrolls up or
-	// down, respectively. This only takes effect when the user has
-	// scrolled at least the height of the navbar itself or if the
-	// navbar is already hidden.
+	// Show or hide the navbar based on whether the user scrolls 
+	// up or down. Scrolling down hides the navbar while scrolling
+	// up will reveal it again.
 	mobileScroll = () => {
 		let { lastScroll, navClass } = this.state;
 		let { hideNav, showNav } = styles;
@@ -180,6 +184,10 @@ export default class Navbar extends React.Component {
 		window.NavHidden = (navClass === hideNav);
 	}
 
+	// Hide the navbar when the user has scrolled at least the height
+	// of the navbar. The user may reveal the navbar again by either
+	// scrolling back to the top of the page or by hovering the 
+	// minimized icon that appears when the navbar is hidden.
 	webScroll = () => {
 		let { navClass } = this.state;
 		let { navbar, hideNav, showNav } = styles;
