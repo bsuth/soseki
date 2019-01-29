@@ -1,42 +1,4 @@
-/*
- * CSS GLOBAL VARIABLES
- * --------------------
- *
- * Global values to be used across all sass files.
- * This file is imported via @import, to allow 
- * for maintainability.
- *
- * NOTE: All values here should agree with those
- * in the jsglobals.js file!!!
-*/ 
-
-// RESTRAINTS
-// ----------
-$MAX-WIDTH: 1200PX;
-
-
-// MEDIA QUERIES
-// -------------
-$TABLET: 600px;
-$DESKTOP: 1024px;
-
-
-// COLORS
-// ------
-$BACKGROUND: #181818;
-$FOREGROUND: #e0e0e0;
-$WHITE: #e0e0e0;
-
-
-// NAVBAR
-// ------
-$NAVBAR_HEIGHT_M: 65px;
-$NAVBAR_HEIGHT: 140px;
-$NAVBAR_TOP: 50px;
-$NAVBAR_TOTAL: $NAVBAR_HEIGHT + $NAVBAR_TOP;
-
-
-
+@import './cssGlobalVars.scss';
 
 /*
  * CSS GLOBAL STYLES
@@ -44,7 +6,8 @@ $NAVBAR_TOTAL: $NAVBAR_HEIGHT + $NAVBAR_TOP;
  * 
  * This includes the styles for the pages that can be
  * accessed via the navbar as well as the html/body elements.
- * Some CSS defaults are also removed here.
+ * Font-faces are also defined here and some CSS defaults are 
+ * removed for convenience.
 */
 
 
@@ -74,6 +37,23 @@ ul {
 
 
 
+////////// FONT FACES //////////
+
+@font-face {
+	font-family: Cormorant Garamond;
+	src: url(CormorantGaramond-Medium.ttf);
+}
+
+@font-face {
+	font-family: Cinzel;
+	src: url(Cinzel-Regular.ttf);
+}
+
+////////// FONT FACES //////////
+
+
+
+
 ////////// BODY //////////
 
 body {
@@ -88,7 +68,7 @@ body {
 	color: $FOREGROUND;
 
 	font-size: 18px;
-	font-family: 'Cormorant Garamond', serif;
+	font-family: 'Cormorant Garamond';
 }
 
 ////////// BODY //////////
