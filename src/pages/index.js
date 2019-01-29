@@ -5,7 +5,7 @@ import React from 'react'
 import Book from '../components/Book'
 
 // Globals/SVGs
-import { TABLET, DESKTOP, MediaEnum } from '../resources/jsglobals'
+import { TABLET, DESKTOP, MediaEnum } from '../resources/jsGlobalVars'
 import * as SVG from '../resources/svg'
 
 // Images
