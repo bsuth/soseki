@@ -1,5 +1,5 @@
 // Globals
-@import '../resources/cssglobals';
+@import '../resources/cssGlobalVars';
 
 
 ////////// NAVBAR //////////
@@ -175,7 +175,7 @@ $line-transforms: (
 	align-items: center;
 
 	font-size: 25px;
-	font-family: 'Cinzel', serif;
+	font-family: Cinzel;
 }
 
 @media only screen and (min-width: $TABLET) {
@@ -258,7 +258,7 @@ $line-transforms: (
 
 	.underline {
 		width: 15px;
-		border-color: $WHITE;
+		border-color: $FOREGROUND;
 	}
 }
 

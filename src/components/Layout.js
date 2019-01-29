@@ -1,6 +1,6 @@
 // React
 import React from 'react'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
 // Components
@@ -24,7 +24,6 @@ const Head = () => (
 		<title>Sōseki Project</title>
 		<html lang="en" />
 		<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
-		<link href="https://fonts.googleapis.com/css?family=Cinzel|Cormorant+Garamond" rel="stylesheet"/>
 	</Helmet>
 );
 

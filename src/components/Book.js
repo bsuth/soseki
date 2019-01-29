@@ -3,7 +3,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 // Globals
-import { MediaEnum } from '../resources/jsglobals'
+import { MediaEnum } from '../resources/jsGlobalVars'
 
 // Styles
 import styles from './Book.module.scss'

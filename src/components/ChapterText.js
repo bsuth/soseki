@@ -6,7 +6,7 @@ import { graphql } from 'gatsby'
 import MDXRenderer from "gatsby-mdx/mdx-renderer";
 
 // Globals
-import { TABLET, NAVBAR_HEIGHT_M, NAVBAR_TOTAL } from '../resources/jsglobals'
+import { TABLET, NAVBAR_HEIGHT_M, NAVBAR_TOTAL } from '../resources/jsGlobalVars'
 
 // Styles
 import './ChapterText.scss'

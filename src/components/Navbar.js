@@ -3,7 +3,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 // Globals
-import { TABLET } from '../resources/jsglobals'
+import { TABLET } from '../resources/jsGlobalVars'
 
 // Styles
 import styles from './Navbar.module.scss'

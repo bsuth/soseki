@@ -1,5 +1,5 @@
 // Globals
-@import '../resources/cssglobals';
+@import '../resources/cssGlobalVars';
 
 ////////// WRAPPER //////////
 
@@ -45,7 +45,7 @@ $TOP_PADDING: 70px;
 	transform: translate(-50%, -50%);
 
 	font-size: 30px;
-	font-family: 'Cinzel', serif;
+	font-family: Cinzel;
 }
 
 ////////// TITLE //////////
