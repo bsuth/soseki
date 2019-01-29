@@ -28,14 +28,14 @@ export default class ChapterText extends React.Component {
 	}
 
 	render() {
-		let { mdx } = this;
+		let { frontmatter, code } = this.mdx;
 		return(
 			<div onClick={void(0)}>
 				<h2 className="chapter_title">
-					{ mdx.frontmatter.title }
+					{ frontmatter.title }
 				</h2>
 				<hr style={{ width: '45px', margin: 'auto' }} />
-				<MDXRenderer>{ mdx.code.body }</MDXRenderer>
+				<MDXRenderer>{ code.body }</MDXRenderer>
 			</div>
 		);
 	}
@@ -60,13 +60,13 @@ export default class ChapterText extends React.Component {
 	// will lack event listeners unless the page is refreshed.
 	componentDidUpdate() {
 		this.componentDidMount();
+		this.vocabArray = document.getElementsByClassName("vocab");
 	}
 
 	// Clean up the event listeners set in componentDidMount()
 	componentWillUnmount() {
+		let { vocabArray } = this;
 		window.removeEventListener('scroll', this.handleScroll);
-		let vocabArray = document.getElementsByClassName("vocab");
-
 		for(let i = 0; i < vocabArray.length; ++i) {
 			vocabArray[i].removeEventListener('mouseenter', this.handleEnter);
 			vocabArray[i].removeEventListener('mouseleave', this.handleExit);
@@ -79,7 +79,7 @@ export default class ChapterText extends React.Component {
 		handleExit(lastEvent);
 	}
 
-	// Show the vocab definition of the hovered vocab and fade out any
+	// Show the vocab definition of the hovered vocab and fade out all
 	// surrounding text. Note that the position of the vocab definition
 	// will differ depending on whether the navbar is currently showing or not.
 	handleEnter = (event) => {
@@ -87,7 +87,7 @@ export default class ChapterText extends React.Component {
 		let vocab = event.target;
 		let vocabdef = vocab.getElementsByClassName("vocabdef")[0];
 
-		vocab.parentElement.style.color = '#a0a0a0';
+		vocab.parentElement.parentElement.style.color = '#a0a0a0';
 		vocab.style.color = 'white';
 		vocabdef.style.display = 'block';
 
@@ -95,7 +95,7 @@ export default class ChapterText extends React.Component {
 		// the appropriate height for the vocab def of the currently
 		// hovered vocab.
 		if(window.NavHidden) {
-			vocabdef.style.top = '5px';
+			vocabdef.style.top = window.innerWidth < TABLET ? '5px' : '20px';
 		} else {
 			vocabdef.style.top = (window.innerWidth < TABLET ? NAVBAR_HEIGHT_M : NAVBAR_TOTAL) + 'px';
 		}
@@ -107,7 +107,7 @@ export default class ChapterText extends React.Component {
 			let vocab = event.target;
 			let vocabdef = vocab.getElementsByClassName("vocabdef")[0];
 
-			vocab.parentElement.style.color = 'white';
+			vocab.parentElement.parentElement.style.color = 'white';
 			vocab.style.color = 'inherit';
 			vocabdef.style.display = 'none';
 		}
