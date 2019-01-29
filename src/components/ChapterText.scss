@@ -42,6 +42,10 @@
 	top: 0; left: 50%;
 	transform: translateX(-50%);
 
+	// Make the vocab def appear above
+	// the navbar
+	z-index: 3;
+
 	display: none;
 
 	border-radius: 3px;

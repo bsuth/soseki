@@ -59,7 +59,9 @@
 		margin-left: 5%;
 
 		top: 20px;
-		z-index: 0;
+		// Make navbar appear above books (index.js) but
+		// above vocabdefs (ChapterTest.js)
+		z-index: 2;
 
 		border: 2px solid white;
 		border-radius: 50px;
