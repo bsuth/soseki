@@ -770,11 +770,6 @@
         "path": "/contact/"
     },
     {
-        "componentChunkName": "component---cache-dev-404-page-js",
-        "jsonName": "dev-404-page-5f9",
-        "path": "/dev-404-page/"
-    },
-    {
         "componentChunkName": "component---src-pages-features-js",
         "jsonName": "features-0f5",
         "path": "/features/"
