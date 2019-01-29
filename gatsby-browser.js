@@ -1,2 +1,2 @@
 // Global Styles
-import 'resources/cssglobals.scss'
+import 'resources/globalStyles.scss'
