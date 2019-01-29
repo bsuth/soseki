@@ -47,7 +47,14 @@
 		width: 80px;
 		height: 80px;
 
-		top: 20px; left: 20px;
+		// Align the collapsed icon with the edge of
+		// <hr> element to prevent having the icon look
+		// somewhat offset
+		margin-left: 5%;
+
+		top: 20px;
+		z-index: 0;
+
 		border: 2px solid white;
 		border-radius: 50px;
 

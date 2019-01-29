@@ -165,7 +165,7 @@ export default class Navbar extends React.Component {
 	// up or down. Scrolling down hides the navbar while scrolling
 	// up will reveal it again.
 	mobileScroll = () => {
-		let { lastScroll, navClass } = this.state;
+		let { lastScroll } = this.state;
 		let { hideNav, showNav } = styles;
 		let newScroll = window.pageYOffset; 
 
@@ -176,12 +176,12 @@ export default class Navbar extends React.Component {
 				navClass: newScroll > lastScroll ? hideNav : showNav,
 				lastScroll: newScroll,
 			});
-		}
 
-		// Set global variable to be read by other components.
-		// The <ChapterText> component needs to be able to read this
-		// in order to adjust the positioning of hovered vocab defs.
-		window.NavHidden = (navClass === hideNav);
+			// Set global variable to be read by other components.
+			// The <ChapterText> component needs to be able to read this
+			// in order to adjust the positioning of hovered vocab defs.
+			window.NavHidden = (newScroll > lastScroll);
+		}
 	}
 
 	// Hide the navbar when the user has scrolled at least the height
@@ -189,24 +189,24 @@ export default class Navbar extends React.Component {
 	// scrolling back to the top of the page or by hovering the 
 	// minimized icon that appears when the navbar is hidden.
 	webScroll = () => {
-		let { navClass } = this.state;
 		let { navbar, hideNav, showNav } = styles;
 		let navRef = document.getElementById(navbar);
 
+		// NOTE: window.NavHidden is a global variable to be read by 
+		// other components. The <ChapterText> component needs to be 
+		// able to read this in order to adjust the positioning of 
+		// hovered vocab defs.
 		if(window.pageYOffset > navRef.offsetHeight) {
 			navRef.addEventListener('mouseenter', this.navHoverEnter);
 			navRef.addEventListener('mouseleave', this.navHoverLeave);
 			this.setState({ navClass: hideNav })
+			window.NavHidden = true;
 		} else {
 			navRef.removeEventListener('mouseenter', this.navHoverEnter);
 			navRef.removeEventListener('mouseleave', this.navHoverLeave);
 			this.setState({ navClass: showNav })
+			window.NavHidden = false;
 		}
-
-		// Set global variable to be read by other components.
-		// The <ChapterText> component needs to be able to read this
-		// in order to adjust the positioning of hovered vocab defs.
-		window.NavHidden = (navClass === hideNav);
 	}
 
 	navHoverEnter = () => {
