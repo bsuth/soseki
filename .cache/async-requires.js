@@ -2,6 +2,7 @@
 const preferDefault = m => m && m.default || m
 
 exports.components = {
+  "component---node-modules-gatsby-plugin-offline-app-shell-js": () => import("/home/bsuth/soseki/node_modules/gatsby-plugin-offline/app-shell.js" /* webpackChunkName: "component---node-modules-gatsby-plugin-offline-app-shell-js" */),
   "component---src-components-study-guide-js": () => import("/home/bsuth/soseki/src/components/StudyGuide.js" /* webpackChunkName: "component---src-components-study-guide-js" */),
   "component---src-components-chapter-text-js": () => import("/home/bsuth/soseki/src/components/ChapterText.js" /* webpackChunkName: "component---src-components-chapter-text-js" */),
   "component---src-pages-about-js": () => import("/home/bsuth/soseki/src/pages/about.js" /* webpackChunkName: "component---src-pages-about-js" */),
