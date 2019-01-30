@@ -14,7 +14,7 @@
   "dependencies": {
     "@mdx-js/mdx": "^0.16.6",
     "@mdx-js/tag": "^0.16.6",
-    "gatsby": "^2.0.76",
+    "gatsby": "^2.0.106",
     "gatsby-mdx": "^0.3.5",
     "gatsby-plugin-layout": "^1.0.11",
     "gatsby-plugin-manifest": "^2.0.15",
@@ -23,8 +23,8 @@
     "gatsby-plugin-sass": "^2.0.7",
     "gatsby-source-filesystem": "^2.0.16",
     "node-sass": "^4.11.0",
-    "react": "^16.5.1",
-    "react-dom": "^16.5.1",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
     "react-helmet": "^5.2.0",
     "react-transition-group": "^2.5.3"
   },

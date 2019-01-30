@@ -77,19 +77,23 @@ class RouteHandler extends _react.default.Component {
       const Dev404Page = _syncRequires.default.components[dev404Page.componentChunkName];
 
       if (!_loader.default.getPage(`/404.html`)) {
-        return _react.default.createElement(Dev404Page, (0, _extends2.default)({
+        return _react.default.createElement(_navigation.RouteUpdates, {
+          location: location
+        }, _react.default.createElement(Dev404Page, (0, _extends2.default)({
           pages: _pages.default
-        }, this.props));
+        }, this.props)));
       }
 
       return _react.default.createElement(_ensureResources.default, {
         location: location
-      }, locationAndPageResources => _react.default.createElement(Dev404Page, (0, _extends2.default)({
+      }, locationAndPageResources => _react.default.createElement(_navigation.RouteUpdates, {
+        location: location
+      }, _react.default.createElement(Dev404Page, (0, _extends2.default)({
         pages: _pages.default,
         custom404: _react.default.createElement(_jsonStore.default, (0, _extends2.default)({
           pages: _pages.default
         }, this.props, locationAndPageResources))
-      }, this.props)));
+      }, this.props))));
     }
   }
 

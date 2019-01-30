@@ -78,7 +78,8 @@ var _default = (pagePath, callback) => {
   let bodyHtml = ``;
   let headComponents = [React.createElement("meta", {
     name: "generator",
-    content: `Gatsby ${gatsbyVersion}`
+    content: `Gatsby ${gatsbyVersion}`,
+    key: `generator-${gatsbyVersion}`
   })];
   let htmlAttributes = {};
   let bodyAttributes = {};
