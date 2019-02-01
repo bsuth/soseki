@@ -110,6 +110,7 @@ export default class Navbar extends React.Component {
 	// event listeners
 	componentDidMount() {
 		window.addEventListener('resize', this.handleResize);
+		alert('hello');
 		this.handleResize()
 	}
 
