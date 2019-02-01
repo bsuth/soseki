@@ -17,16 +17,16 @@ import styles from './Navbar.module.scss'
 // animations between the ddm and cross icons.
 
 const Icon = ({ click, className }) => (
-	<div onClick={click}>
-		<svg 
-			className={`${styles.icon} ${className}`}
-			xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'
-		>
-			<line x2='40'/>
-			<line x2='24'/>
-			<line x2='10'/>
-		</svg>
-	</div>
+	<svg 
+		onClick={click}
+		onTouchStart={click}
+		className={`${styles.icon} ${className}`}
+		xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'
+	>
+		<line x2='40'/>
+		<line x2='24'/>
+		<line x2='10'/>
+	</svg>
 );
 
 ///////// NAVBAR ICON //////////
