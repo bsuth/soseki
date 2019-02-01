@@ -93,6 +93,7 @@ export default class Navbar extends React.Component {
 	render() {
 		let { navClass, iconClass, titleClass, menuClass } = this.state;
 		let { iconClick } = this;
+		alert('hello');
 
 		return (
 			<div id={styles.navbar} className={navClass}>
@@ -110,7 +111,6 @@ export default class Navbar extends React.Component {
 	// event listeners
 	componentDidMount() {
 		window.addEventListener('resize', this.handleResize);
-		alert('hello');
 		this.handleResize()
 	}
 
