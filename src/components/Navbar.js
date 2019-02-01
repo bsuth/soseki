@@ -116,8 +116,8 @@ export default class Navbar extends React.Component {
 	// Remove all possible event listeners 
 	componentWillUnmount() {
 		window.removeEventListener('resize', this.handleResize);
-		window.removeEventListener('scroll', this.mobileScroll);
-		window.removeEventListener('scroll', this.webScroll);
+		document.removeEventListener('scroll', this.mobileScroll);
+		document.removeEventListener('scroll', this.webScroll);
 		window.removeEventListener('mouseenter', this.navHoverEnter);
 		window.removeEventListener('mouseleave', this.navHoverLeave);
 	}
@@ -151,12 +151,12 @@ export default class Navbar extends React.Component {
 		if(window.innerWidth < TABLET) {
 			navRef.removeEventListener('mouseenter', this.navHoverEnter);
 			navRef.removeEventListener('mouseleave', this.navHoverLeave);
-			window.removeEventListener('scroll', this.webScroll);
-			window.addEventListener('scroll', this.mobileScroll);
+			document.removeEventListener('scroll', this.webScroll);
+			document.addEventListener('scroll', this.mobileScroll);
 			this.setState({ toggleMenu: false });
 		} else {
-			window.removeEventListener('scroll', this.mobileScroll);
-			window.addEventListener('scroll', this.webScroll);
+			document.removeEventListener('scroll', this.mobileScroll);
+			document.addEventListener('scroll', this.webScroll);
 			this.setState({ toggleMenu: true });
 			this.webScroll();
 		}
@@ -201,12 +201,12 @@ export default class Navbar extends React.Component {
 			navRef.addEventListener('mouseenter', this.navHoverEnter);
 			navRef.addEventListener('mouseleave', this.navHoverLeave);
 			this.setState({ navClass: hideNav })
-			window.NavHidden = true;
+			document.NavHidden = true;
 		} else {
 			navRef.removeEventListener('mouseenter', this.navHoverEnter);
 			navRef.removeEventListener('mouseleave', this.navHoverLeave);
 			this.setState({ navClass: showNav })
-			window.NavHidden = false;
+			document.NavHidden = false;
 		}
 	}
 
