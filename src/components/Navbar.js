@@ -20,6 +20,7 @@ const Icon = ({ click, className }) => (
 	<svg 
 		className={`${styles.icon} ${className}`}
 		onClick={click}
+		onTouchStart={click}
 		xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'
 	>
 		<line x2='40'/>
