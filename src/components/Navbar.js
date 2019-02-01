@@ -93,7 +93,7 @@ export default class Navbar extends React.Component {
 	render() {
 		let { navClass, iconClass, titleClass, menuClass } = this.state;
 		let { iconClick } = this;
-		alert('hello');
+		window.alert('hello');
 
 		return (
 			<div id={styles.navbar} className={navClass}>
