@@ -2,9 +2,9 @@
 const preferDefault = m => m && m.default || m
 
 exports.components = {
-  "component---node-modules-gatsby-plugin-offline-app-shell-js": () => import("/home/bsuth/soseki/node_modules/gatsby-plugin-offline/app-shell.js" /* webpackChunkName: "component---node-modules-gatsby-plugin-offline-app-shell-js" */),
   "component---src-components-study-guide-js": () => import("/home/bsuth/soseki/src/components/StudyGuide.js" /* webpackChunkName: "component---src-components-study-guide-js" */),
   "component---src-components-chapter-text-js": () => import("/home/bsuth/soseki/src/components/ChapterText.js" /* webpackChunkName: "component---src-components-chapter-text-js" */),
+  "component---cache-dev-404-page-js": () => import("/home/bsuth/soseki/.cache/dev-404-page.js" /* webpackChunkName: "component---cache-dev-404-page-js" */),
   "component---src-pages-about-js": () => import("/home/bsuth/soseki/src/pages/about.js" /* webpackChunkName: "component---src-pages-about-js" */),
   "component---src-pages-botchan-js": () => import("/home/bsuth/soseki/src/pages/botchan.js" /* webpackChunkName: "component---src-pages-botchan-js" */),
   "component---src-pages-contact-js": () => import("/home/bsuth/soseki/src/pages/contact.js" /* webpackChunkName: "component---src-pages-contact-js" */),
