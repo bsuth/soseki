@@ -24,7 +24,7 @@ import styles from './ChapterSelect.module.scss'
 // rendered in its own component.
 
 export default (props) => {
-	let { Left, Right, imgSrc, imgAlt } = props;
+	let { title, Left, Right, imgSrc, imgAlt } = props;
 
 	let colors = {
 		background: props.colorPrimary,
@@ -33,7 +33,7 @@ export default (props) => {
 
 	return(
 		<div id={styles.wrapper}>
-			<h2 className={styles.title}>Botchan</h2>
+			<h2 className={styles.title}>{ title }</h2>
 			<Column data={Left} colors={colors} />
 			<img className={styles.img} src={imgSrc} alt={imgAlt} />
 			<Column data={Right} colors={colors} />

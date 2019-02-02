@@ -14,7 +14,6 @@
   "dependencies": {
     "@mdx-js/mdx": "^0.16.6",
     "@mdx-js/tag": "^0.16.6",
-    "babel-preset-gatsby": "^0.1.6",
     "gatsby": "^2.0.106",
     "gatsby-cli": "^2.4.8",
     "gatsby-mdx": "^0.3.5",
@@ -37,7 +36,5 @@
   "bugs": {
     "url": "https://github.com/bsuth/soseki/issues"
   },
-  "devDependencies": {
-    "@babel/plugin-proposal-object-rest-spread": "^7.3.1"
-  }
+  "devDependencies": {}
 }

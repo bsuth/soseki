@@ -12,6 +12,7 @@ import Cover from 'images/sosekiportrait.jpg'
 
 export default () => (
 	<ChapterSelect
+		title={'Botchan'}
 		imgSrc={Cover}
 		imgAlt="Soseki Portrait"
 		Left={ChaptersLeft}

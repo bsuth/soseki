@@ -12,6 +12,7 @@ import Cover from 'images/sanshiroindex.jpg'
 
 export default () => (
 	<ChapterSelect
+		title={'Sanshirō'}
 		imgSrc={Cover}
 		imgAlt="Sanshiro Index Image"
 		Left={ChaptersLeft}
