@@ -17,16 +17,14 @@ import styles from './Navbar.module.scss'
 // animations between the ddm and cross icons.
 
 const Icon = ({ click, className }) => (
-	<div role="button" onClick={click}>
-		<svg 
-			className={`${styles.icon} ${className}`}
-			xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'
-		>
-			<line x2='40'/>
-			<line x2='24'/>
-			<line x2='10'/>
-		</svg>
-	</div>
+	<svg 
+		className={`${styles.icon} ${className}`}
+		xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'
+	>
+		<line x2='40'/>
+		<line x2='24'/>
+		<line x2='10'/>
+	</svg>
 );
 
 ///////// NAVBAR ICON //////////
@@ -113,15 +111,11 @@ export default class Navbar extends React.Component {
 		this.handleResize()
 	}
 
-	componentDidUpdate() {
-		this.componentDidMount();
-	}
-
 	// Remove all possible event listeners 
 	componentWillUnmount() {
 		window.removeEventListener('resize', this.handleResize);
-		document.removeEventListener('scroll', this.mobileScroll);
-		document.removeEventListener('scroll', this.webScroll);
+		window.removeEventListener('scroll', this.mobileScroll);
+		window.removeEventListener('scroll', this.webScroll);
 		window.removeEventListener('mouseenter', this.navHoverEnter);
 		window.removeEventListener('mouseleave', this.navHoverLeave);
 	}
@@ -155,12 +149,12 @@ export default class Navbar extends React.Component {
 		if(window.innerWidth < TABLET) {
 			navRef.removeEventListener('mouseenter', this.navHoverEnter);
 			navRef.removeEventListener('mouseleave', this.navHoverLeave);
-			document.removeEventListener('scroll', this.webScroll);
-			document.addEventListener('scroll', this.mobileScroll);
+			window.removeEventListener('scroll', this.webScroll);
+			window.addEventListener('scroll', this.mobileScroll);
 			this.setState({ toggleMenu: false });
 		} else {
-			document.removeEventListener('scroll', this.mobileScroll);
-			document.addEventListener('scroll', this.webScroll);
+			window.removeEventListener('scroll', this.mobileScroll);
+			window.addEventListener('scroll', this.webScroll);
 			this.setState({ toggleMenu: true });
 			this.webScroll();
 		}
@@ -205,12 +199,12 @@ export default class Navbar extends React.Component {
 			navRef.addEventListener('mouseenter', this.navHoverEnter);
 			navRef.addEventListener('mouseleave', this.navHoverLeave);
 			this.setState({ navClass: hideNav })
-			document.NavHidden = true;
+			window.NavHidden = true;
 		} else {
 			navRef.removeEventListener('mouseenter', this.navHoverEnter);
 			navRef.removeEventListener('mouseleave', this.navHoverLeave);
 			this.setState({ navClass: showNav })
-			document.NavHidden = false;
+			window.NavHidden = false;
 		}
 	}
 
