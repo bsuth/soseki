@@ -1,6 +1,10 @@
 // React
 import React from 'react'
 
+// Images
+import webHover from 'images/webHover.png'
+import mobileHover from 'images/mobileHover.png'
+
 
 ////////// FEATURES ///////////
 
@@ -15,7 +19,10 @@ export default () => (
 
 		<h1>Chapter Page</h1>
 		<p>The Chapter Page includes the full text for the chapter, broken into sections. Within the chapter text, hovering (with a mouse) over any underlined word or phrase will cause its reading and English definition to appear at the top of the page in the vocabulary bar. Any surrounding text will also be dimmed to make it easier for the reader to find his/her place in the text again. The contents of the vocabulary bar should appear as in the screen clip below. (If the furigana displays to the right of the kanji rather than above, then the browser being used does not support html ruby tags. Updating to a newer browser release or installing a ruby tag plug-in will solve the problem. All of the new mainstream browsers support ruby tags and will display furigana correctly.) Mobile users can use the hover feature by simply tapping on the underlined vocabulary</p>
-		<p><img src="images/vocabhoverscreenshot.jpg" alt="Mouse Hover Feature" /></p>
+		<p className="img-wrapper">
+			<img className="mobileHover" src={ mobileHover } alt="hover feature mobile" />
+			<img className="webHover" src={ webHover } alt="hover feature web" />
+		</p>
 
 		<h1>Sections</h1>
 		<p>Each work has been broken into sections. These breaks have been made for purposes of this website and have no correspondence in the original texts. Sections are numbered sequentially from the start of a work to its end and do not reset with a new chapter. For reference purposes, a name like "Botchan Section 035" will uniquely identify a section of text.</p>

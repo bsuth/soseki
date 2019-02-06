@@ -114,6 +114,24 @@ body {
 .features {
 	h1 { margin-bottom: 10px; }
 	p { margin-bottom: 30px; }
+
+	.img-wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+
+	.webHover {
+		width: 65%;
+		margin: 0 10px;
+		min-width: 300px;
+	}
+
+	.mobileHover {
+		width: 15%;
+		min-width: 300px;
+	}
 }
 
 ////////// FEATURES //////////

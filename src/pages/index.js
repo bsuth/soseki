@@ -2,19 +2,19 @@
 import React from 'react'
 
 // Components
-import Book from '../components/Book'
+import Book from 'components/Book'
 
 // Globals/SVGs
-import { TABLET, DESKTOP, MediaEnum } from '../resources/jsGlobalVars'
-import * as SVG from '../resources/svg'
+import { TABLET, DESKTOP, MediaEnum } from 'resources/jsGlobalVars'
+import * as SVG from 'resources/svg'
 
 // Images
-import BotchanCover from '../images/botchancover.jpg'
-import SanshiroCover from '../images/sanshirocover.jpg'
-import KokoroCover from '../images/kokorocover.jpg'
-import TenNightsCover from '../images/tennightscover.jpg'
-import BunchoCover from '../images/bunchocover.jpg'
-import TowerCover from '../images/towercover.jpg'
+import BotchanCover from 'images/botchancover.jpg'
+import SanshiroCover from 'images/sanshirocover.jpg'
+import KokoroCover from 'images/kokorocover.jpg'
+import TenNightsCover from 'images/tennightscover.jpg'
+import BunchoCover from 'images/bunchocover.jpg'
+import TowerCover from 'images/towercover.jpg'
 
 
 ////////// INDEX //////////
