@@ -1,14 +1,14 @@
 var plugins = [{
-      plugin: require('/home/bsuth/soseki/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
+      plugin: require('/home/bsuth/tempSoseki/soseki/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
       options: {"plugins":[]},
     },{
-      plugin: require('/home/bsuth/soseki/node_modules/gatsby-mdx/gatsby-ssr'),
+      plugin: require('/home/bsuth/tempSoseki/soseki/node_modules/gatsby-mdx/gatsby-ssr'),
       options: {"plugins":[]},
     },{
-      plugin: require('/home/bsuth/soseki/node_modules/gatsby-plugin-layout/gatsby-ssr'),
-      options: {"plugins":[],"component":"/home/bsuth/soseki/src/components/Layout.js"},
+      plugin: require('/home/bsuth/tempSoseki/soseki/node_modules/gatsby-plugin-layout/gatsby-ssr'),
+      options: {"plugins":[],"component":"/home/bsuth/tempSoseki/soseki/src/components/Layout.js"},
     },{
-      plugin: require('/home/bsuth/soseki/node_modules/gatsby-plugin-manifest/gatsby-ssr'),
+      plugin: require('/home/bsuth/tempSoseki/soseki/node_modules/gatsby-plugin-manifest/gatsby-ssr'),
       options: {"plugins":[],"name":"Soseki Project","short_name":"Soseki","start_url":"/","background_color":"#181818","theme_color":"#e8e8e8","display":"standalone"},
     }]
 // During bootstrap, we write requires at top of this file which looks like:
