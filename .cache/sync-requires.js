@@ -5,9 +5,9 @@ const preferDefault = m => m && m.default || m
 
 
 exports.components = {
+  "component---node-modules-gatsby-plugin-offline-app-shell-js": hot(preferDefault(require("/home/bsuth/soseki/node_modules/gatsby-plugin-offline/app-shell.js"))),
   "component---src-components-study-guide-js": hot(preferDefault(require("/home/bsuth/soseki/src/components/StudyGuide.js"))),
   "component---src-components-chapter-text-js": hot(preferDefault(require("/home/bsuth/soseki/src/components/ChapterText.js"))),
-  "component---cache-dev-404-page-js": hot(preferDefault(require("/home/bsuth/soseki/.cache/dev-404-page.js"))),
   "component---src-pages-about-js": hot(preferDefault(require("/home/bsuth/soseki/src/pages/about.js"))),
   "component---src-pages-botchan-js": hot(preferDefault(require("/home/bsuth/soseki/src/pages/botchan.js"))),
   "component---src-pages-contact-js": hot(preferDefault(require("/home/bsuth/soseki/src/pages/contact.js"))),
