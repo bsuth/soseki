@@ -5,6 +5,7 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
 // Components
 import Navbar from './Navbar'
+import Depreciate from './Depreciate'
 
 // Styles
 import './Layout.scss'
@@ -51,6 +52,7 @@ export default ({ children, location }) => (
 				</div>
 			</CSSTransition>
 		</TransitionGroup>
+		<Depreciate />
 	</div>
 );
 

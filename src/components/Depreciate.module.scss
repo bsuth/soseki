@@ -1,0 +1,25 @@
+// Globals
+@import '../resources/cssGlobalVars';
+
+
+////////// DEPRECIATE //////////
+
+#depreciate {
+    width: 300px;
+    padding: 5px;
+
+	position: fixed;
+	left: 20px;
+	bottom: 20px;
+	z-index: 99;
+
+	background: $BACKGROUND;
+    border: 1px solid $FOREGROUND;
+}
+
+@media only screen and (min-width: $TABLET) {
+	#depreciate {
+	}
+}
+
+////////// DEPRECIATE //////////
