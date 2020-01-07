@@ -770,6 +770,11 @@
         "path": "/contact/"
     },
     {
+        "componentChunkName": "component---src-pages-depreciate-js",
+        "jsonName": "depreciate-6eb",
+        "path": "/depreciate/"
+    },
+    {
         "componentChunkName": "component---src-pages-features-js",
         "jsonName": "features-0f5",
         "path": "/features/"
