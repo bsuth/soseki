@@ -6,7 +6,7 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 
 exports.__esModule = true;
 exports.graphql = graphql;
-exports.StaticQuery = exports.StaticQueryContext = void 0;
+exports.useStaticQuery = exports.StaticQuery = exports.StaticQueryContext = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -42,6 +42,22 @@ const StaticQuery = props => _react.default.createElement(StaticQueryContext.Con
 });
 
 exports.StaticQuery = StaticQuery;
+
+const useStaticQuery = query => {
+  if (typeof _react.default.useContext !== `function` && process.env.NODE_ENV === `development`) {
+    throw new Error(`You're likely using a version of React that doesn't support Hooks\n` + `Please update React and ReactDOM to 16.8.0 or later to use the useStaticQuery hook.`);
+  }
+
+  const context = _react.default.useContext(StaticQueryContext);
+
+  if (context[query] && context[query].data) {
+    return context[query].data;
+  } else {
+    throw new Error(`The result of this StaticQuery could not be fetched.\n\n` + `This is likely a bug in Gatsby and if refreshing the page does not fix it, ` + `please open an issue in https://github.com/gatsbyjs/gatsby/issues`);
+  }
+};
+
+exports.useStaticQuery = useStaticQuery;
 StaticQuery.propTypes = {
   data: _propTypes.default.object,
   query: _propTypes.default.string.isRequired,

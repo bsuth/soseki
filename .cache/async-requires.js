@@ -2,6 +2,7 @@
 const preferDefault = m => m && m.default || m
 
 exports.components = {
+<<<<<<< HEAD
   "component---node-modules-gatsby-plugin-offline-app-shell-js": () => import("/home/bsuth/soseki/node_modules/gatsby-plugin-offline/app-shell.js" /* webpackChunkName: "component---node-modules-gatsby-plugin-offline-app-shell-js" */),
   "component---src-components-study-guide-js": () => import("/home/bsuth/soseki/src/components/StudyGuide.js" /* webpackChunkName: "component---src-components-study-guide-js" */),
   "component---src-components-chapter-text-js": () => import("/home/bsuth/soseki/src/components/ChapterText.js" /* webpackChunkName: "component---src-components-chapter-text-js" */),
@@ -14,7 +15,21 @@ exports.components = {
   "component---src-pages-links-js": () => import("/home/bsuth/soseki/src/pages/links.js" /* webpackChunkName: "component---src-pages-links-js" */),
   "component---src-pages-media-js": () => import("/home/bsuth/soseki/src/pages/media.js" /* webpackChunkName: "component---src-pages-media-js" */),
   "component---src-pages-sanshiro-js": () => import("/home/bsuth/soseki/src/pages/sanshiro.js" /* webpackChunkName: "component---src-pages-sanshiro-js" */)
+=======
+  "component---node-modules-gatsby-plugin-offline-app-shell-js": () => import("/home/bsuth/tempSoseki/soseki/node_modules/gatsby-plugin-offline/app-shell.js" /* webpackChunkName: "component---node-modules-gatsby-plugin-offline-app-shell-js" */),
+  "component---src-components-study-guide-js": () => import("/home/bsuth/tempSoseki/soseki/src/components/StudyGuide.js" /* webpackChunkName: "component---src-components-study-guide-js" */),
+  "component---src-components-chapter-text-js": () => import("/home/bsuth/tempSoseki/soseki/src/components/ChapterText.js" /* webpackChunkName: "component---src-components-chapter-text-js" */),
+  "component---src-pages-about-js": () => import("/home/bsuth/tempSoseki/soseki/src/pages/about.js" /* webpackChunkName: "component---src-pages-about-js" */),
+  "component---src-pages-botchan-js": () => import("/home/bsuth/tempSoseki/soseki/src/pages/botchan.js" /* webpackChunkName: "component---src-pages-botchan-js" */),
+  "component---src-pages-contact-js": () => import("/home/bsuth/tempSoseki/soseki/src/pages/contact.js" /* webpackChunkName: "component---src-pages-contact-js" */),
+  "component---src-pages-features-js": () => import("/home/bsuth/tempSoseki/soseki/src/pages/features.js" /* webpackChunkName: "component---src-pages-features-js" */),
+  "component---src-pages-index-js": () => import("/home/bsuth/tempSoseki/soseki/src/pages/index.js" /* webpackChunkName: "component---src-pages-index-js" */),
+  "component---src-pages-kokoro-js": () => import("/home/bsuth/tempSoseki/soseki/src/pages/kokoro.js" /* webpackChunkName: "component---src-pages-kokoro-js" */),
+  "component---src-pages-links-js": () => import("/home/bsuth/tempSoseki/soseki/src/pages/links.js" /* webpackChunkName: "component---src-pages-links-js" */),
+  "component---src-pages-media-js": () => import("/home/bsuth/tempSoseki/soseki/src/pages/media.js" /* webpackChunkName: "component---src-pages-media-js" */),
+  "component---src-pages-sanshiro-js": () => import("/home/bsuth/tempSoseki/soseki/src/pages/sanshiro.js" /* webpackChunkName: "component---src-pages-sanshiro-js" */)
+>>>>>>> f078ff8e1c361d5452dbc3c4708ff016671e3ab1
 }
 
-exports.data = () => import(/* webpackChunkName: "pages-manifest" */ "/home/bsuth/soseki/.cache/data.json")
+exports.data = () => import(/* webpackChunkName: "pages-manifest" */ "/home/bsuth/tempSoseki/soseki/.cache/data.json")
 

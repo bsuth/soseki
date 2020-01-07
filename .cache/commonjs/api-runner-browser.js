@@ -9,7 +9,7 @@ const _require$publicLoader = require(`./loader`).publicLoader,
 
 exports.apiRunner = (api, args = {}, defaultReturn, argTransform) => {
   // Hooks for cypress-gatsby's API handler
-  if (window.Cypress) {
+  if (process.env.CYPRESS_SUPPORT) {
     if (window.___apiHandler) {
       window.___apiHandler(api);
     } else if (window.___resolvedAPIs) {
